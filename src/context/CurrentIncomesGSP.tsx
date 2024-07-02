@@ -20,6 +20,8 @@ export interface ChildData {
     educationTransportation: string | null;
     educationPersonalCare: string | null;
     educationDayCare: string | null;
+    futureEducationPersonalCareExpenses: number;
+    futureEducationDayCareExpenses: number;
     customTuition: number;
 }
 
@@ -29,7 +31,7 @@ interface CurrentIncomesState {
     */
     familyStatus: string | null;
     partnerCommunityStatus: string | null;
-    apartmentSquareFootage: number | null;
+    apartmentSquareFootage: number;
     hasChildren: string | null;
     numberOfChildren: number;
     childrenData: ChildData[];
@@ -42,7 +44,7 @@ interface CurrentIncomesState {
     educationSystem: string[];
     educationSystemBudgets: number[];
     educationSystemFees: number[];
-    educationTuitionFees: number[];
+    // educationTuitionFees: number[];
     memberPositionScope: string | null;
     memberPartnerPositionScope: string | null;
     familyNationalInsurance: number | null;
@@ -120,7 +122,9 @@ type CurrentIncomesActionType =
     | 'SET_DECEASED_SENIORITY_ADDITION'
     | 'SET_WELFARE'
     | 'SET_GOLDEN_AGE_AMOUNT'
-    | 'SET_OTHER_INCOME';
+    | 'SET_OTHER_INCOME'
+    /* Extra Imports */
+    | 'SET_WELFARE_EXPENSES';
 
 interface CurrentIncomesAction {
     type: CurrentIncomesActionType;
@@ -148,11 +152,13 @@ const currentIncomesInitialState: CurrentIncomesState = {
             futureKindergartenExpenses: 0 , // Initialize with 0
             futureSchoolExpenses: 0, // Initialize with 0
             futureHighSchoolExpenses: 0, // Initialize with 0
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -169,11 +175,13 @@ const currentIncomesInitialState: CurrentIncomesState = {
             futureKindergartenExpenses: 0, // Initialize with 0
             futureSchoolExpenses: 0, // Initialize with 0
             futureHighSchoolExpenses: 0, // Initialize with 0
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -190,11 +198,13 @@ const currentIncomesInitialState: CurrentIncomesState = {
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -211,11 +221,13 @@ const currentIncomesInitialState: CurrentIncomesState = {
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -232,11 +244,13 @@ const currentIncomesInitialState: CurrentIncomesState = {
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
     ],
@@ -291,7 +305,7 @@ export const setPartnerCommunityStatus = (newStatus: string | null): CurrentInco
     payload: newStatus,
 });
 
-export const apartmentSquareFootage = (newApartmentSquareFootage: number | null): CurrentIncomesAction => ({
+export const apartmentSquareFootage = (newApartmentSquareFootage: number): CurrentIncomesAction => ({
     type: 'SET_APARTMENT_SQUARE_FOOTAGE',
     payload: newApartmentSquareFootage,
 });
@@ -456,7 +470,7 @@ export const setPartnerSeniorityAddition = (newPartnerSeniorityAddition: number)
     payload: newPartnerSeniorityAddition,
 });
 
-export const setDeceasedSeniorityAddition = (newDeceasedSeniorityAddition: number): Action => ({
+export const setDeceasedSeniorityAddition = (newDeceasedSeniorityAddition: number): CurrentIncomesAction => ({
     type: 'SET_DECEASED_SENIORITY_ADDITION',
     payload: newDeceasedSeniorityAddition,
 });

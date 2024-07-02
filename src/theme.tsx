@@ -13,13 +13,13 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
     const themeConfig = {
         token: {
             borderRadius: 6,
-            colorBgBase: '#fff', // Base background color
+            colorBgBase: '#052b68', // Base background color
             colorError: '#ef3131',
             colorInfo: '#1677ff',
             colorLink: '#1677ff',
             colorPrimary: '#1890ff', // Primary color
             colorSuccess: '#52c41a',
-            colorTextBase: '#0c0909',
+            colorTextBase: '#f6f1f1',
             colorWarning: '#faad14',
             controlHeight: 32,
             fontFamily: 'Noto Sans Hebrew', // Font family
@@ -40,7 +40,7 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
             motionUnit: 0.1,
             opacityImage: 1,
             sizePopupArrow: 16,
-            sizeStep: 4,
+            sizeStep: 6,
             sizeUnit: 4,
             wireframe: false
         },

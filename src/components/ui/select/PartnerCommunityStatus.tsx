@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Select } from 'antd';
+import styles from './css/select.module.css';
 
 const { Option } = Select;
 

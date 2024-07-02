@@ -339,8 +339,8 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
             setFutureNetIncome(futureNetIncome || 0);
             setFutureGrossIncome(futureGrossIncome || 0);
             setFuturePartnerNetIncome(futurePartnerNetIncome || 0),
-                setFuturePartnerGrossIncome(futurePartnerGrossIncome || 0),
-                setFutureNationalInsuranceAllowance(futureNationalInsuranceAllowance);
+            setFuturePartnerGrossIncome(futurePartnerGrossIncome || 0),
+            setFutureNationalInsuranceAllowance(futureNationalInsuranceAllowance);
             setFutureNationalInsuranceAllowanceCommunity(nationalInsuranceChildrenCount || 0);
             setFutureRecoveryFee(futureRecoveryFee || 0);
             setFuturePartnerRecoveryFee(futurePartnerRecoveryFee || 0);
@@ -976,13 +976,13 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     </Tooltip>
                 </Form.Item>
                 {drawerContentKey && (
-                <InfoDrawer
-                    title="מידע"
-                    //content={drawerContent}
-                    open={drawerOpen}
-                    onClose={closeDrawer}
-                    contentKey={drawerContentKey}
-                />
+                    <InfoDrawer
+                        title="מידע"
+                        //content={drawerContent}
+                        open={drawerOpen}
+                        onClose={closeDrawer}
+                        contentKey={drawerContentKey}
+                    />
                 )}
             </Form>
         </Card>

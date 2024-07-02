@@ -42,12 +42,12 @@ const StepsBar: React.FC = () => {
             </Steps>
             <div className={styles.stepsAction}>
                 {currentStep > 0 && (
-                    <Button style={{ margin: '0 20px' }} onClick={() => prev()}>
+                    <Button className={styles.buttonPrev} size="large" onClick={() => prev()}>
                         הקודם
                     </Button>
                 )}
                 {currentStep < steps.length - 1 && (
-                    <Button type="primary" onClick={() => next()}>
+                    <Button className={styles.buttonPrev} size="large" type="primary" onClick={() => next()}>
                         הבא
                     </Button>
                 )}

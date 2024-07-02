@@ -67,7 +67,7 @@
     max-height: 90%;
     /* Allow cards to take up full width */
     margin-bottom: 1rem;
-    border-radius: 18px;
+    border-radius: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
     padding: 20px;
     flex-grow: 1;

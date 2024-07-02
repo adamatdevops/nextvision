@@ -20,13 +20,15 @@ export interface ChildData {
     educationTransportation: string | null;
     educationPersonalCare: string | null;
     educationDayCare: string | null;
+    futureEducationPersonalCareExpenses: number;
+    futureEducationDayCareExpenses: number;
     customTuition: number;
 }
 
 export interface FutureIncomesState {
     familyStatus: string | null;
     partnerCommunityStatus: string | null;
-    apartmentSquareFootage: number | null;
+    apartmentSquareFootage: number;
     hasChildren: string | null;
     numberOfChildren: number;
     childrenData: ChildData[];
@@ -174,6 +176,8 @@ const futureIncomesInitialState: FutureIncomesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -195,6 +199,8 @@ const futureIncomesInitialState: FutureIncomesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -216,6 +222,8 @@ const futureIncomesInitialState: FutureIncomesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -237,6 +245,8 @@ const futureIncomesInitialState: FutureIncomesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -258,6 +268,8 @@ const futureIncomesInitialState: FutureIncomesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
     ],
@@ -323,7 +335,7 @@ export const setPartnerCommunityStatus = (newStatus: string | null): FutureIncom
     payload: newStatus,
 });
 
-export const apartmentSquareFootage = (newApartmentSquareFootage: number | null): FutureIncomesAction => ({
+export const apartmentSquareFootage = (newApartmentSquareFootage: number): FutureIncomesAction => ({
     type: 'SET_APARTMENT_SQUARE_FOOTAGE',
     payload: newApartmentSquareFootage,
 });

@@ -6,7 +6,7 @@ import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
 import { childrenData, useFutureExpensesState } from '../../context/FutureExpensesGSP'; // Import the hook
 //import { childrenData, useGlobalState } from '../../GlobalStateProvider'; // Import the hook
-import type { ChildData } from '../../GlobalStateProvider';
+// import type { ChildData } from '../../GlobalStateProvider';
 
 import styles from './css/AccountBalance.module.css';
 
@@ -273,14 +273,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             setFutureInternetExpenses(futureInternetExpenses || 0);
             setFutureVehicleExpenses(futureVehicleExpenses || 0);
             setFutureEducationSystemExpenses(totalEducationSystemFees || 0);
-            // setFutureKindergartenExpenses(futureKindergartenExpenses);
-            // setFutureSchoolExpenses(futureSchoolExpenses);
-            // setFutureHighSchoolExpenses(futureHighSchoolExpenses);
-            //setFuturePrivateLessonExpenses(futurePrivateLessonExpenses);
-            //setFutureTeenageClassExpenses(futureTeenageClassExpenses);
             setFutureEducationTransportationExpenses(futureEducationTransportationExpenses || 0);
-            //setFutureEducationPersonalCareExpenses(futureEducationPersonalCareExpenses || 0),
-            //setFutureEducationDayCareExpenses(futureEducationDayCareExpenses || 0),
             // setFutureTuitionsExpenses( futureTuitionsExpenses || 0);
             //setFutureSafetyNetExpenses(futureSafetyNetExpenses || 0);
             setFutureHealthInsuranceExpenses(futureChildrenHealthInsuranceExpenses + 226 || 0);
@@ -311,14 +304,9 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             setFutureInternetExpenses(futureInternetExpenses || 0);
             setFutureVehicleExpenses(futureVehicleExpenses || 0);
             setFutureEducationSystemExpenses(totalEducationSystemFees);
-            //setFutureKindergartenExpenses(futureKindergartenExpenses || 0);
-            // setFutureSchoolExpenses(futureSchoolExpenses || 0);
-            // setFutureHighSchoolExpenses(futureHighSchoolExpenses || 0);
             //setFuturePrivateLessonExpenses(futurePrivateLessonExpenses);
             //setFutureTeenageClassExpenses(futureTeenageClassExpenses);
             setFutureEducationTransportationExpenses(futureEducationTransportationExpenses || 0);
-            // setFutureEducationPersonalCareExpenses(futureEducationPersonalCareExpenses || 0);
-            //setFutureEducationDayCareExpenses(futureEducationDayCareExpenses || 0);
             // setFutureTuitionsExpenses(futureTuitionsExpenses || 0);
             //setFutureSafetyNetExpenses(futureSafetyNetExpenses || 0);
             setFutureHealthInsuranceExpenses(futureChildrenHealthInsuranceExpenses + 226 || 0);
@@ -359,8 +347,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             //state.futurePrivateLessonExpenses,
             //state.futureTeenageClassExpenses, // IMPORTANT: Adding this might trigger an error
             futureEducationTransportationExpenses,
-            futureEducationPersonalCareExpenses,
-            futureEducationDayCareExpenses,
+            //futureEducationPersonalCareExpenses,
+            //futureEducationDayCareExpenses,
             // futureTuitionsExpenses,
             // futureSafetyNetExpenses,
             futureHealthInsuranceExpenses,
@@ -730,7 +718,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         />
                     </Tooltip>
                 </Form.Item>
-                                <Form.Item
+                <Form.Item
                     label="הסעות"
                     labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
                     wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
@@ -780,7 +768,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         >
                             <InputNumber
                                 value={state.futureEducationDayCareExpenses[childIndex] || 0}
-                                    onChange={(value) => handleFutureEducationDayCareExpenseExpenseChange(childIndex, value)}
+                                    onChange={(value) => handleFutureEducationDayCareExpenseChange(childIndex, value)}
                                 min={0}
                                 style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
                             />

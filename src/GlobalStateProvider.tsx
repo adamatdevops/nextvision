@@ -1553,7 +1553,6 @@ const reducer = (state: State, action: Action): State => {
             );
             return { ...state, childrenData: updatedChildrenDataFutureHighSchoolExpenses };
         }
-
         case 'SET_FUTURE_PRIVATE_LESSON_EXPENSES':
             return { ...state, futurePrivateLessonExpenses: action.payload };
         case 'SET_FUTURE_TEENAGE_CLASS_EXPENSES':

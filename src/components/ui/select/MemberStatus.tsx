@@ -1,6 +1,7 @@
 /* ./src/pages/SocaialSim/SocialSimulator.tsx */
 import React from 'react';
 import { Form, Select } from 'antd';
+import styles from './css/select.module.css';
 
 const { Option } = Select;
 
@@ -10,12 +11,6 @@ interface MemberStatusProps {
 }
 
 const MemberStatus: React.FC<MemberStatusProps> = ({ status, onStatusChange }) => {
-    // const [selectedFamilyStatus, setFamilyStatus] = useState<string | null>(null);
-
-    // const handleStatusChange = (value: string) => {
-    //     setFamilyStatus(value);
-    //     props.onStatusChange(value);
-    // };
 
     return (
         <Form.Item label="סטטוס משפחתי">

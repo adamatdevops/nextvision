@@ -20,6 +20,8 @@ export interface ChildData {
     educationTransportation: string | null;
     educationPersonalCare: string | null;
     educationDayCare: string | null;
+    futureEducationPersonalCareExpenses: number;
+    futureEducationDayCareExpenses: number;
     customTuition: number;
 }
 
@@ -29,7 +31,7 @@ interface FutureExpensesState {
     */
     familyStatus: string | null;
     partnerCommunityStatus: string | null;
-    apartmentSquareFootage: number | null;
+    apartmentSquareFootage: number;
     hasChildren: string | null;
     numberOfChildren: number;
     childrenData: ChildData[];
@@ -68,8 +70,8 @@ interface FutureExpensesState {
     futurePrivateLessonExpenses: number[];
     futureTeenageClassExpenses: number[];
     futureEducationTransportationExpenses: number;
-    futureEducationPersonalCareExpenses: number,
-    futureEducationDayCareExpenses: number,
+    futureEducationPersonalCareExpenses: number[],
+    futureEducationDayCareExpenses: number[],
     // futureTuitionsExpenses: number;
     //futureSafetyNetExpenses: number;
     futureHealthInsuranceExpenses: number;
@@ -87,7 +89,9 @@ interface FutureExpensesState {
     // futureDecorationsExpenses: number;
     futureOtherExpenses: number;
     /* Added */
-    futureGrossIncome: number
+    futureGrossIncome: number;
+    teenageClassExpenses: number[];
+    privateLessonExpenses: number[];
 }
 
 // Define action types as a union of string literals for better type safety
@@ -155,7 +159,9 @@ type FutureExpensesActionType =
     | 'SET_FUTURE_DECORATIONS_EXPENSES'
     | 'SET_FUTURE_OTHER_EXPENSES'
     /* Added */
-    | 'SET_FUTURE_GROSS_INCOME';
+    | 'SET_FUTURE_GROSS_INCOME'
+    | 'SET_PRIVATE_LESSON_EXPENSES'
+    | 'SET_TEENAGE_CLASS_EXPENSES';
 
 
 interface FutureExpensesAction {
@@ -189,6 +195,8 @@ const futureExpensesInitialState: FutureExpensesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -210,6 +218,8 @@ const futureExpensesInitialState: FutureExpensesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -231,6 +241,8 @@ const futureExpensesInitialState: FutureExpensesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -252,6 +264,8 @@ const futureExpensesInitialState: FutureExpensesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -273,6 +287,8 @@ const futureExpensesInitialState: FutureExpensesState = {
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
     ],
@@ -307,8 +323,8 @@ const futureExpensesInitialState: FutureExpensesState = {
     futurePrivateLessonExpenses: [],
     futureTeenageClassExpenses: [],
     futureEducationTransportationExpenses: 0,
-    futureEducationPersonalCareExpenses: 0,
-    futureEducationDayCareExpenses: 0,
+    futureEducationPersonalCareExpenses: [],
+    futureEducationDayCareExpenses: [],
     // futureTuitionsExpenses: 0,
     //futureSafetyNetExpenses: 0,
     futureHealthInsuranceExpenses: 0,
@@ -327,6 +343,8 @@ const futureExpensesInitialState: FutureExpensesState = {
     futureOtherExpenses: 0,
     /* Added */
     futureGrossIncome: 0,
+    teenageClassExpenses: [],
+    privateLessonExpenses: [],
 };
 
 /* Define action creators for better readability and maintainability
@@ -342,7 +360,7 @@ export const setPartnerCommunityStatus = (newStatus: string | null): FutureExpen
     payload: newStatus,
 });
 
-export const apartmentSquareFootage = (newApartmentSquareFootage: number | null): FutureExpensesAction => ({
+export const apartmentSquareFootage = (newApartmentSquareFootage: number): FutureExpensesAction => ({
     type: 'SET_APARTMENT_SQUARE_FOOTAGE',
     payload: newApartmentSquareFootage,
 });
@@ -530,14 +548,14 @@ export const setFutureEducationTransportationExpenses = (newFutureTransportation
     payload: newFutureTransportationExpenses,
 });
 
-export const setFutureEducationPersonalCareExpenses = (newFutureEducationPersonalCareExpenses: number): FutureExpensesAction => ({
+export const setFutureEducationPersonalCareExpenses = (index: number, value: number): FutureExpensesAction => ({
     type: 'SET_FUTURE_EDUCATION_PERSONAL_CARE_EXPENSES',
-    payload: newFutureEducationPersonalCareExpenses,
+    payload: { index, value },
 });
 
-export const setFutureEducationDayCareExpenses = (newFutureEducationDayCareExpenses: number): FutureExpensesAction => ({
+export const setFutureEducationDayCareExpenses = (index: number, value: number): FutureExpensesAction => ({
     type: 'SET_FUTURE_EDUCATION_DAY_CARE_EXPENSES',
-    payload: newFutureEducationDayCareExpenses,
+    payload: { index, value },
 });
 
 // const setFutureTuitionsExpenses = (newTuitionsExpenses: number): Action => ({
@@ -624,6 +642,16 @@ export const setFutureOtherExpenses = (newFutureOtherExpenses: number): FutureEx
 export const setFutureGrossIncome = (newFutureGrossIncome: number): FutureExpensesAction => ({
     type: 'SET_FUTURE_GROSS_INCOME',
     payload: newFutureGrossIncome,
+});
+
+export const setPrivateLessonExpenses = (newPrivateLessonExpenses: number[]): FutureExpensesAction => ({
+    type: 'SET_PRIVATE_LESSON_EXPENSES',
+    payload: newPrivateLessonExpenses,
+});
+
+export const setTeenageClassExpenses = (newTeenageClassExpenses: number[]): FutureExpensesAction => ({
+    type: 'SET_TEENAGE_CLASS_EXPENSES',
+    payload: newTeenageClassExpenses,
 });
 
 /* Define the reducer function that takes the current state and an action */
@@ -775,10 +803,25 @@ const futureExpensesReducer = (state: FutureExpensesState, action: FutureExpense
             return { ...state, futureTeenageClassExpenses: action.payload };
         case 'SET_FUTURE_EDUCATION_TRANSPORTATION_EXPENSES':
             return { ...state, futureEducationTransportationExpenses: action.payload };
-        case 'SET_FUTURE_EDUCATION_PERSONAL_CARE_EXPENSES':
-            return { ...state, futureEducationPersonalCareExpenses: action.payload };
-        case 'SET_FUTURE_EDUCATION_DAY_CARE_EXPENSES':
-            return { ...state, futureEducationDayCareExpenses: action.payload };
+
+        case 'SET_FUTURE_EDUCATION_PERSONAL_CARE_EXPENSES': {
+            const updatedChildrenDataFuturePersonalCareExpenses = state.childrenData.map((child, index) =>
+                index === action.payload.index
+                ? { ...child, futureEducationPersonalCareExpenses: action.payload.value }
+                : child
+            );
+            return { ...state, childrenData: updatedChildrenDataFuturePersonalCareExpenses };
+        }
+
+        case 'SET_FUTURE_EDUCATION_DAY_CARE_EXPENSES': {
+            const updatedChildrenDataFutureDayCareExpenses = state.childrenData.map((child, index) =>
+                index === action.payload.index
+                ? { ...child, futureEducationDayCareExpenses: action.payload.value }
+                : child
+            );
+            return { ...state, childrenData: updatedChildrenDataFutureDayCareExpenses };
+        }
+
         // case 'SET_FUTURE_TUITIONS_EXPENSES':
         //     return { ...state, futureTuitionsExpenses: action.payload };
         // case 'SET_FUTURE_SAFETY_NET_EXPENSES':
@@ -814,6 +857,10 @@ const futureExpensesReducer = (state: FutureExpensesState, action: FutureExpense
         /* Added */
         case 'SET_FUTURE_GROSS_INCOME':
             return { ...state, futureGrossIncome: action.payload };
+        case 'SET_PRIVATE_LESSON_EXPENSES':
+            return { ...state, privateLessonExpenses: action.payload };
+        case 'SET_TEENAGE_CLASS_EXPENSES':
+            return { ...state, teenageClassExpenses: action.payload };
         default:
             return state;
     }
@@ -861,8 +908,8 @@ const FutureExpensesContext = createContext<{
     setFuturePrivateLessonExpenses: (newFutureLessonExpenses: number[]) => void;
     setFutureTeenageClassExpenses: (newFutureTeenageClassExpenses: number[]) => void;
     setFutureEducationTransportationExpenses: (newFutureTransportationExpenses: number) => void;
-    setFutureEducationPersonalCareExpenses: (newFutureEducationPersonalCareExpenses: number) => void;
-    setFutureEducationDayCareExpenses: (newFutureEducationDayCareExpenses: number) => void;
+    setFutureEducationPersonalCareExpenses: (index: number, value: number) => void;
+    setFutureEducationDayCareExpenses: (index: number, value: number) => void;
     // setFutureTuitionsExpenses: (newFutureTuitionsExpenses: number) => void;
     // setFutureSafetyNetExpenses: (newFutureSafetyNetExpenses: number) => void;
     setFutureHealthInsuranceExpenses: (newFutureHealthInsuranceExpenses: number) => void;
@@ -881,6 +928,8 @@ const FutureExpensesContext = createContext<{
     setFutureOtherExpenses: (newFutureOtherExpenses: number) => void;
     /* Added */
     setFutureGrossIncome: (newFutureGrossIncome: number) => void;
+    setPrivateLessonExpenses: (newPrivateLessonExpenses: number[]) => void;
+    setTeenageClassExpenses: (newTeenageClassExpenses: number[]) => void;
 }>({
     state: futureExpensesInitialState,
     dispatch: () => null,
@@ -944,6 +993,8 @@ const FutureExpensesContext = createContext<{
     setFutureOtherExpenses: () => null,
     /* Added */
     setFutureGrossIncome: () => null,
+    setPrivateLessonExpenses: () => null,
+    setTeenageClassExpenses: () => null,
 });
 
 export const useFutureExpensesState = () => {
@@ -1005,7 +1056,6 @@ export const FutureExpensesProvider: React.FC<FutureExpensesProviderProps> = ({
                 setFutureVehicleExpenses: (newFutureVehicleExpenses) => dispatch({ type: 'SET_FUTURE_VEHICLE_EXPENSES', payload: newFutureVehicleExpenses }),
                 setFutureEducationSystemExpenses: (newFutureEducationSystemExpenses) =>
                     dispatch({ type: 'SET_FUTURE_EDUCATION_SYSTEM_EXPENSES', payload: newFutureEducationSystemExpenses }),
-                // setFutureKindergartenExpenses: (value) => dispatch({ type: 'SET_FUTURE_KINDERGARTEN_EXPENSES', payload: value }),
                 setFutureKindergartenExpenses: (index, value) => dispatch({ type: 'SET_FUTURE_KINDERGARTEN_EXPENSES', payload: { index, value }}),
                 //setFutureSchoolExpenses: (value) => dispatch({ type: 'SET_FUTURE_SCHOOL_EXPENSES', payload: value }),
                 setFutureSchoolExpenses: (index, value) => dispatch({ type: 'SET_FUTURE_SCHOOL_EXPENSES', payload: { index, value }}),
@@ -1015,8 +1065,8 @@ export const FutureExpensesProvider: React.FC<FutureExpensesProviderProps> = ({
                     dispatch({ type: 'SET_FUTURE_PRIVATE_LESSON_EXPENSES', payload: newFutureLessonExpenses }),
                 setFutureTeenageClassExpenses: (newFutureTeenageClassExpenses) => dispatch({ type: 'SET_FUTURE_TEENAGE_CLASS_EXPENSES', payload: newFutureTeenageClassExpenses }),
                 setFutureEducationTransportationExpenses: (newFutureTransportationExpenses) => dispatch({ type: 'SET_FUTURE_EDUCATION_TRANSPORTATION_EXPENSES', payload: newFutureTransportationExpenses }),
-                setFutureEducationPersonalCareExpenses: (newFutureEducationPersonalCareExpenses) => dispatch({ type: 'SET_FUTURE_EDUCATION_PERSONAL_CARE_EXPENSES', payload: newFutureEducationPersonalCareExpenses }),
-                setFutureEducationDayCareExpenses: (newFutureEducationDayCareExpenses) => dispatch({ type: 'SET_FUTURE_EDUCATION_DAY_CARE_EXPENSES', payload: newFutureEducationDayCareExpenses }),
+                setFutureEducationPersonalCareExpenses: (index, value) => dispatch({ type: 'SET_FUTURE_EDUCATION_PERSONAL_CARE_EXPENSES', payload: { index, value}}),
+                setFutureEducationDayCareExpenses: (index, value) => dispatch({ type: 'SET_FUTURE_EDUCATION_DAY_CARE_EXPENSES', payload: { index, value}}),
                 // setFutureTuitionsExpenses: (newFutureTuitionsExpenses) => dispatch({ type: 'SET_FUTURE_TUITIONS_EXPENSES', payload: newFutureTuitionsExpenses }),
                 // setFutureSafetyNetExpenses: (newFutureSafetyNetExpenses) =>
                 //    dispatch({ type: 'SET_FUTURE_SAFETY_NET_EXPENSES', payload: newFutureSafetyNetExpenses }),
@@ -1035,7 +1085,10 @@ export const FutureExpensesProvider: React.FC<FutureExpensesProviderProps> = ({
                 setFutureCleaningExpenses: (newFutureCleaningExpenses) => dispatch({ type: 'SET_FUTURE_CLEANING_EXPENSES', payload: newFutureCleaningExpenses }),
                 // setFutureDecorationsExpenses: (newFutureDecorationsExpenses) => dispatch({ type: 'SET_FUTURE_DECORATIONS_EXPENSES', payload: newFutureDecorationsExpenses }),
                 setFutureOtherExpenses: (newFutureOtherExpenses) => dispatch({ type: 'SET_FUTURE_OTHER_EXPENSES', payload: newFutureOtherExpenses }),
+                /* Added */
                 setFutureGrossIncome: (newFutureGrossIncome) => dispatch({ type: 'SET_FUTURE_GROSS_INCOME', payload: newFutureGrossIncome }),
+                setPrivateLessonExpenses: (newPrivateLessonExpenses) => dispatch({ type: 'SET_PRIVATE_LESSON_EXPENSES', payload: newPrivateLessonExpenses }),
+                setTeenageClassExpenses: (newTeenageClassExpenses) => dispatch({ type: 'SET_TEENAGE_CLASS_EXPENSES', payload: newTeenageClassExpenses }),
             }}
         >
             {children}

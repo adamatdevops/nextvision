@@ -26,7 +26,7 @@ export interface ChildData {
 export interface CurrentExpensesState {
     familyStatus: string | null;
     partnerCommunityStatus: string | null;
-    apartmentSquareFootage: number | null;
+    apartmentSquareFootage: number;
     hasChildren: string | null;
     numberOfChildren: number;
     childrenData: ChildData[];
@@ -289,7 +289,7 @@ export const setPartnerCommunityStatus = (newStatus: string | null): CurrentExpe
     payload: newStatus,
 });
 
-export const apartmentSquareFootage = (newApartmentSquareFootage: number | null): CurrentExpensesAction => ({
+export const apartmentSquareFootage = (newApartmentSquareFootage: number): CurrentExpensesAction => ({
     type: 'SET_APARTMENT_SQUARE_FOOTAGE',
     payload: newApartmentSquareFootage,
 });
@@ -334,7 +334,7 @@ export const memberGoldenAge = (newMemberGoldenAge: string | null): CurrentExpen
     payload: newMemberGoldenAge,
 });
 
-export const memberPartnerGoldenAge = (newMemberPartnerGoldenAge: string | null): Action => ({
+export const memberPartnerGoldenAge = (newMemberPartnerGoldenAge: string | null): CurrentExpensesAction => ({
     type: 'SET_MEMBER_PARTNER_GOLDEN_AGE',
     payload: newMemberPartnerGoldenAge,
 });
@@ -493,7 +493,7 @@ export const setFoodExpenses = (newFoodExpenses: number): CurrentExpensesAction 
     payload: newFoodExpenses,
 });
 
-export const setDiningRoomExpenses = (newDiningRoomExpenses: number): Action => ({
+export const setDiningRoomExpenses = (newDiningRoomExpenses: number): CurrentExpensesAction => ({
     type: `SET_DINING_ROOM_EXPENSES`,
     payload: newDiningRoomExpenses,
 });

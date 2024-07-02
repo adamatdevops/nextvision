@@ -1,0 +1,9 @@
+.option {
+    width: 100%;
+    background-color: #4794d7;
+    /* border: outline; */
+    border-radius: 20px;
+    /* padding: 40px; */
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    text-align: center;
+}

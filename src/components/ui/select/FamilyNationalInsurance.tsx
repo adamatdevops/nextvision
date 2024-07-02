@@ -1,37 +1,8 @@
 /* src/components/ui/select/FamilyNationalInsurance.tsx */
-// import React from 'react';
-// import { Select } from 'antd';
-// import { useGlobalState } from '../../../GlobalStateProvider';
-
-// const { Option } = Select;
-
-// const FamilyNationalInsurance: React.FC = () => {
-//     const { state, setFamilyNationalInsurance } = useGlobalState();
-
-//     const handleFamilyNationalInsuranceChange = (value: number) => {
-//         setFamilyNationalInsurance(value);
-//     };
-
-//     return (
-//         <Select
-//             placeholder="בני משפחה המוכרים בביטוח לאומי"
-//             value={state.familyNationalInsurance}
-//             onChange={handleFamilyNationalInsuranceChange}
-//         >
-//             <Option value="1">1</Option>
-//             <Option value="2">2</Option>
-//             <Option value="3">3</Option>
-//             <Option value="4">4</Option>
-//             <Option value="5">5</Option>
-//         </Select>
-//     );
-// };
-
-// export default FamilyNationalInsurance;
-
 import React from 'react';
 import { Select } from 'antd';
 import { useGlobalState } from '../../../GlobalStateProvider';
+import styles from './css/select.module.css';
 
 const { Option } = Select;
 

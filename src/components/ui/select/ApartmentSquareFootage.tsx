@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Select } from 'antd';
-
 import { useGlobalState } from "../../../GlobalStateProvider";
+import styles from './css/select.module.css';
 
 const { Option } = Select;
 

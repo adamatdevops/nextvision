@@ -71,7 +71,7 @@ const AccountBalance: React.FC = () => {
                         <p>הפרש כולל: <span className={styles.financialNumber}> ח״שׁ {balanceDifference}</span></p>
                     </Col>
                     <Col>
-                        <Button type="primary" size="large" onClick={handleCalculate}>
+                        <Button className={styles.buttonCalculate} type="primary" size="large" onClick={handleCalculate}>
                             חישוב
                         </Button>
                     </Col>

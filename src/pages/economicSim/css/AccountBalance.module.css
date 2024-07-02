@@ -13,13 +13,12 @@
 .header {
     /* background: #26CBBB; */
     background: rgba(255, 255, 255, 0.2);
-    color: rgb(80, 74, 74);
+    color: rgb(245, 245, 245);
     text-align: center;
-    padding: 1rem;
     align-items: center;
     justify-content: center;
     font-family: 'Noto Sans Hebrew', sans-serif;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 400;
     /* position: center; */
     display: flex;
@@ -32,10 +31,9 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
     padding: 20px;
     overflow: hidden;
-    width: calc(100% - 14px);
+    width: calc(25% - 10px);
     justify-content: center;
     margin: 2px 0;
-    text-align: center;
     color: #ffffff; /* White text color */
     box-sizing: border-box;
 }
@@ -72,7 +70,7 @@
     padding: 10px 0;
     justify-content: space-between;
     font-family: 'Noto Sans Hebrew', sans-serif;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .balanceInfo,
@@ -234,7 +232,9 @@
 .financialNumber {
     direction: ltr;
     unicode-bidi: bidi-override;
-    color: rgb(37, 35, 35);
+    color: rgb(248, 245, 245);
+    font-size: 20px;
+    font-family: 'Noto Sans Hebrew', sans-serif;
 }
 
 .card {
@@ -244,7 +244,7 @@
     position: relative;
     background-color: #f52f6e2a;
     margin: 8px;
-    border-radius: 20px;
+    border-radius: 28px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
@@ -257,28 +257,39 @@
 }
 
 .cardAccountBalance {
-    min-height: calc(8vh - 140px);
-    max-height: calc(16vh - 140px);
+    height: 60px;
     display: flex;
     flex-direction: column;
+    text-align: center;
     position: relative;
     background: rgba(255, 255, 255, 0.2);
     margin: 4px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     border-radius: 28px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
-    padding: 2px 2px 2px;
-    justify-content: space-between;
+    padding: 20px;
+    overflow: hidden;
+    justify-content: center;
     flex-grow: 1;
-    font-size: 28px;
+    font-size: 18px;
     font-family: 'Noto Sans Hebrew', sans-serif;
     font-weight: 400;
+    align-items: center;
     color: #ffffff; /* White text color */
     box-sizing: border-box;
+}
+
+.cardAccountBalance p {
+    font-size: 24px;
+    align-items: center;
+    position: relative;
+    display: flex-center;
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    margin: 0;
 }
 
 .cardTotalBalance {
@@ -291,7 +302,7 @@
     margin: 4px;
     margin-top: 4px;
     margin-bottom: 4px;
-    border-radius: 20px;
+    border-radius: 28px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     justify-content: space-between;
     flex-grow: 1;
@@ -313,7 +324,7 @@
 .card .ant-card-head-title {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #f2f0f0;
     font-family: 'Noto Sans Hebrew', sans-serif;
 }
 
@@ -332,7 +343,7 @@
     gap: 12px;
 }
 
-.rowGutter{
+.rowGutter {
     /* height: 100px; */
     margin: 2px 0;
     padding: 0;
@@ -348,7 +359,7 @@
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 24px;
     position: relative;
     overflow-x: hidden;
     font-family: 'Noto Sans Hebrew', sans-serif !important;
@@ -362,8 +373,35 @@
     margin-bottom: 12px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 24px;
     position: relative;
     overflow-x: hidden;
     font-family: 'Noto Sans Hebrew', sans-serif !important;
+}
+
+.buttonCalculate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    /* margin: 0 10px; */
+    background: rgba(255, 255, 255, 0.065);
+    justify-content: center;
+    /* position: relative; */
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* Blur effect for Safari */
+    border: 2px solid rgba(245, 242, 242, 0.3);
+    font-weight: 400;
+    /* padding: 10px; */
+    box-sizing: border-box;
 }

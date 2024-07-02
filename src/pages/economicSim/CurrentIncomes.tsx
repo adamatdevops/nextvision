@@ -241,7 +241,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={state.personalBudget}
                         disabled
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px'}}
                     />
                     {/* <InfoCircleOutlined className={styles.infoIcon} onClick={() => showDrawer('Details about salary')} /> */}
                     <Tooltip title="מידע על תקציב אישי">

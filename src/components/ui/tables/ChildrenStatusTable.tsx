@@ -1,7 +1,8 @@
 /* src/components/ui/tables/ChildrenStatusTable.tsx */
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Select, InputNumber, Card } from 'antd';
-import { setFutureChildrenSafetyNet, useGlobalState } from '../../../GlobalStateProvider';
+// import { setFutureChildrenSafetyNet, useGlobalState } from '../../../GlobalStateProvider';
+import { childrenData, useFutureExpensesState } from '../../../context/FutureExpensesGSP'; // Import the hook
 // import type { ChildData } from '../../../GlobalStateProvider';
 import styles from './css/ChildrenStatusTable.module.css';
 
@@ -30,6 +31,8 @@ export interface ChildData {
     educationTransportation: string | null;
     educationPersonalCare: string | null;
     educationDayCare: string | null;
+    futureEducationPersonalCareExpenses: number;
+    futureEducationDayCareExpenses: number;
     customTuition: number;
 }
 
@@ -80,7 +83,7 @@ export const educationTuitionFeesMap: { [key: string]: number } = {
 };
 
 const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChildren }) => {
-    const { state, dispatch, setEducationSystemBudgets, setEducationSystem, setEducationSystemFees, setFutureKindergartenExpenses, setFutureSchoolExpenses, setFutureHighSchoolExpenses, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setPrivateLessonExpenses } = useGlobalState();
+    const { state, dispatch, setEducationSystemBudgets, setEducationSystem, setEducationSystemFees, setFutureKindergartenExpenses, setFutureSchoolExpenses, setFutureHighSchoolExpenses, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setPrivateLessonExpenses, setFutureEducationPersonalCareExpenses, setFutureEducationDayCareExpenses } = useFutureExpensesState();
 
     const ageOptions = Array.from({ length: 18 }, (_, i) => i + 0);
     const educationLevelOptions = ['גיל הרך', 'יסודי', 'תיכון'];
@@ -114,6 +117,8 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
+            futureEducationPersonalCareExpenses: 0,
+            futureEducationDayCareExpenses: 0,
             customTuition: 0,
         }))
     );
@@ -142,6 +147,8 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                 educationTransportation: state.childrenData[i]?.educationTransportation || null,
                 educationPersonalCare: state.childrenData[i]?.educationPersonalCare || null,
                 educationDayCare: state.childrenData[i]?.educationDayCare || null,
+                futureEducationPersonalCareExpenses: state.childrenData[i]?.futureEducationPersonalCareExpenses || 0,
+                futureEducationDayCareExpenses: state.childrenData[i]?.futureEducationDayCareExpenses || 0,
                 customTuition: state.childrenData[i]?.customTuition || 0,
             }))
         );
@@ -179,7 +186,6 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                 updatedSystems[index] = value;
             }
             setEducationSystem(updatedSystems);
-
         }
 
         if (field === 'teenageClassFees') {
@@ -230,6 +236,36 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             if (field === 'educationLevel') {
                 const updatedChildrenData = state.childrenData.map((child, i) =>
                     i === index ? { ...child, educationLevel: value } : child
+                );
+                dispatch({ type: 'SET_CHILDREN_DATA', payload: updatedChildrenData });
+            }
+        }
+
+        if (field === 'educationPersonalCare') {
+            if (value === 'כן') {
+                setFutureEducationPersonalCareExpenses(index, 0); // Initialize with 0
+            }
+
+            // Ensure the global state is updated
+            // Here we ensure that the global state is updated accordingly
+            if (field === 'educationPersonalCare') {
+                const updatedChildrenData = state.childrenData.map((child, i) =>
+                    i === index ? { ...child, educationPersonalCare: value } : child
+                );
+                dispatch({ type: 'SET_CHILDREN_DATA', payload: updatedChildrenData });
+            }
+        }
+
+        if (field === 'educationDayCare') {
+            if (value === 'כן') {
+                setFutureEducationDayCareExpenses(index, 0); // Initialize with 0
+            }
+
+            // Ensure the global state is updated
+            // Here we ensure that the global state is updated accordingly
+            if (field === 'educationDayCare') {
+                const updatedChildrenData = state.childrenData.map((child, i) =>
+                    i === index ? { ...child, educationDayCare: value } : child
                 );
                 dispatch({ type: 'SET_CHILDREN_DATA', payload: updatedChildrenData });
             }
