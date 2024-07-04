@@ -13,12 +13,16 @@
     padding: 8px 0px 26px;
 }
 
-/* .header {
+.header {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     background: transparent;
     color: rgb(255, 255, 255);
     text-align: center;
+    font-size: 32px;
     padding: 1rem;
-} */
+}
 
 .footer {
     background: transparent;

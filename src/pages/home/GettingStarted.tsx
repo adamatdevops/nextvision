@@ -34,7 +34,7 @@ const GettingStarted: React.FC = () => {
 
     return (
         <DynamicLayout>
-            {/* <Header className={styles.header}>ברוכים הבאים לאפליקציה שלנו</Header> */}
+            <Header className={styles.header}>ברוכים הבאים לסימולטור מודל ההתחדשות</Header>
             <Content className={styles.content}>
                 <Card className={styles.card}>
                     <Flex gap="small">
