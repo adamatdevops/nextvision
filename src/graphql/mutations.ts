@@ -8,179 +8,167 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const createCurrentIncomeDataTable = /* GraphQL */ `mutation CreateCurrentIncomeDataTable(
-  $input: CreateCurrentIncomeDataTableInput!
-  $condition: ModelCurrentIncomeDataTableConditionInput
+export const createSimulatorDataTableSection = /* GraphQL */ `mutation CreateSimulatorDataTableSection(
+  $input: CreateSimulatorDataTableSectionInput!
+  $condition: ModelSimulatorDataTableSectionConditionInput
 ) {
-  createCurrentIncomeDataTable(input: $input, condition: $condition) {
+  createSimulatorDataTableSection(input: $input, condition: $condition) {
     id
-    sallary
-    childrenSuppelment
-    food
-    laundry
-    gas
-    hygine
-    maitanence
-    car
-    untitledfield
-    energy
-    extraHoursBenefit
-    extraFood
-    chrony
-    extraSlot
+    rowName
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateCurrentIncomeDataTableMutationVariables,
-  APITypes.CreateCurrentIncomeDataTableMutation
+  APITypes.CreateSimulatorDataTableSectionMutationVariables,
+  APITypes.CreateSimulatorDataTableSectionMutation
 >;
-export const updateCurrentIncomeDataTable = /* GraphQL */ `mutation UpdateCurrentIncomeDataTable(
-  $input: UpdateCurrentIncomeDataTableInput!
-  $condition: ModelCurrentIncomeDataTableConditionInput
+export const updateSimulatorDataTableSection = /* GraphQL */ `mutation UpdateSimulatorDataTableSection(
+  $input: UpdateSimulatorDataTableSectionInput!
+  $condition: ModelSimulatorDataTableSectionConditionInput
 ) {
-  updateCurrentIncomeDataTable(input: $input, condition: $condition) {
+  updateSimulatorDataTableSection(input: $input, condition: $condition) {
     id
-    sallary
-    childrenSuppelment
-    food
-    laundry
-    gas
-    hygine
-    maitanence
-    car
-    untitledfield
-    energy
-    extraHoursBenefit
-    extraFood
-    chrony
-    extraSlot
+    rowName
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateCurrentIncomeDataTableMutationVariables,
-  APITypes.UpdateCurrentIncomeDataTableMutation
+  APITypes.UpdateSimulatorDataTableSectionMutationVariables,
+  APITypes.UpdateSimulatorDataTableSectionMutation
 >;
-export const deleteCurrentIncomeDataTable = /* GraphQL */ `mutation DeleteCurrentIncomeDataTable(
-  $input: DeleteCurrentIncomeDataTableInput!
-  $condition: ModelCurrentIncomeDataTableConditionInput
+export const deleteSimulatorDataTableSection = /* GraphQL */ `mutation DeleteSimulatorDataTableSection(
+  $input: DeleteSimulatorDataTableSectionInput!
+  $condition: ModelSimulatorDataTableSectionConditionInput
 ) {
-  deleteCurrentIncomeDataTable(input: $input, condition: $condition) {
+  deleteSimulatorDataTableSection(input: $input, condition: $condition) {
     id
-    sallary
-    childrenSuppelment
-    food
-    laundry
-    gas
-    hygine
-    maitanence
-    car
-    untitledfield
-    energy
-    extraHoursBenefit
-    extraFood
-    chrony
-    extraSlot
+    rowName
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteCurrentIncomeDataTableMutationVariables,
-  APITypes.DeleteCurrentIncomeDataTableMutation
+  APITypes.DeleteSimulatorDataTableSectionMutationVariables,
+  APITypes.DeleteSimulatorDataTableSectionMutation
 >;
-export const createCurrentExpensesDataTable = /* GraphQL */ `mutation CreateCurrentExpensesDataTable(
-  $input: CreateCurrentExpensesDataTableInput!
-  $condition: ModelCurrentExpensesDataTableConditionInput
+export const createSimulatorDataTableModel = /* GraphQL */ `mutation CreateSimulatorDataTableModel(
+  $input: CreateSimulatorDataTableModelInput!
+  $condition: ModelSimulatorDataTableModelConditionInput
 ) {
-  createCurrentExpensesDataTable(input: $input, condition: $condition) {
+  createSimulatorDataTableModel(input: $input, condition: $condition) {
     id
-    energy
-    mintanence
-    network
-    car
-    school
-    privateLessons
+    collumnName
+    collomnInfo
+    netCost
+    grossCost
+    subtotal
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateSimulatorDataTableModelMutationVariables,
+  APITypes.CreateSimulatorDataTableModelMutation
+>;
+export const updateSimulatorDataTableModel = /* GraphQL */ `mutation UpdateSimulatorDataTableModel(
+  $input: UpdateSimulatorDataTableModelInput!
+  $condition: ModelSimulatorDataTableModelConditionInput
+) {
+  updateSimulatorDataTableModel(input: $input, condition: $condition) {
+    id
+    collumnName
+    collomnInfo
+    netCost
+    grossCost
+    subtotal
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateSimulatorDataTableModelMutationVariables,
+  APITypes.UpdateSimulatorDataTableModelMutation
+>;
+export const deleteSimulatorDataTableModel = /* GraphQL */ `mutation DeleteSimulatorDataTableModel(
+  $input: DeleteSimulatorDataTableModelInput!
+  $condition: ModelSimulatorDataTableModelConditionInput
+) {
+  deleteSimulatorDataTableModel(input: $input, condition: $condition) {
+    id
+    collumnName
+    collomnInfo
+    netCost
+    grossCost
+    subtotal
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteSimulatorDataTableModelMutationVariables,
+  APITypes.DeleteSimulatorDataTableModelMutation
+>;
+export const createEducationDataTable = /* GraphQL */ `mutation CreateEducationDataTable(
+  $input: CreateEducationDataTableInput!
+  $condition: ModelEducationDataTableConditionInput
+) {
+  createEducationDataTable(input: $input, condition: $condition) {
+    id
+    tuition
     classes
-    safetyNet
-    dental
-    food
-    laundry
-    extraSlot
-    gas
-    shifts
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.CreateCurrentExpensesDataTableMutationVariables,
-  APITypes.CreateCurrentExpensesDataTableMutation
->;
-export const updateCurrentExpensesDataTable = /* GraphQL */ `mutation UpdateCurrentExpensesDataTable(
-  $input: UpdateCurrentExpensesDataTableInput!
-  $condition: ModelCurrentExpensesDataTableConditionInput
-) {
-  updateCurrentExpensesDataTable(input: $input, condition: $condition) {
-    id
-    energy
-    mintanence
-    network
-    car
-    school
     privateLessons
-    classes
-    safetyNet
-    dental
-    food
-    laundry
-    extraSlot
-    gas
-    shifts
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateCurrentExpensesDataTableMutationVariables,
-  APITypes.UpdateCurrentExpensesDataTableMutation
+  APITypes.CreateEducationDataTableMutationVariables,
+  APITypes.CreateEducationDataTableMutation
 >;
-export const deleteCurrentExpensesDataTable = /* GraphQL */ `mutation DeleteCurrentExpensesDataTable(
-  $input: DeleteCurrentExpensesDataTableInput!
-  $condition: ModelCurrentExpensesDataTableConditionInput
+export const updateEducationDataTable = /* GraphQL */ `mutation UpdateEducationDataTable(
+  $input: UpdateEducationDataTableInput!
+  $condition: ModelEducationDataTableConditionInput
 ) {
-  deleteCurrentExpensesDataTable(input: $input, condition: $condition) {
+  updateEducationDataTable(input: $input, condition: $condition) {
     id
-    energy
-    mintanence
-    network
-    car
-    school
-    privateLessons
+    tuition
     classes
-    safetyNet
-    dental
-    food
-    laundry
-    extraSlot
-    gas
-    shifts
+    privateLessons
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteCurrentExpensesDataTableMutationVariables,
-  APITypes.DeleteCurrentExpensesDataTableMutation
+  APITypes.UpdateEducationDataTableMutationVariables,
+  APITypes.UpdateEducationDataTableMutation
+>;
+export const deleteEducationDataTable = /* GraphQL */ `mutation DeleteEducationDataTable(
+  $input: DeleteEducationDataTableInput!
+  $condition: ModelEducationDataTableConditionInput
+) {
+  deleteEducationDataTable(input: $input, condition: $condition) {
+    id
+    tuition
+    classes
+    privateLessons
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteEducationDataTableMutationVariables,
+  APITypes.DeleteEducationDataTableMutation
 >;
 export const createAccountBalanceModel = /* GraphQL */ `mutation CreateAccountBalanceModel(
   $input: CreateAccountBalanceModelInput!
@@ -189,7 +177,8 @@ export const createAccountBalanceModel = /* GraphQL */ `mutation CreateAccountBa
   createAccountBalanceModel(input: $input, condition: $condition) {
     id
     income
-    expanse
+    expense
+    subtotal
     anomaly
     createdAt
     updatedAt
@@ -207,7 +196,8 @@ export const updateAccountBalanceModel = /* GraphQL */ `mutation UpdateAccountBa
   updateAccountBalanceModel(input: $input, condition: $condition) {
     id
     income
-    expanse
+    expense
+    subtotal
     anomaly
     createdAt
     updatedAt
@@ -225,7 +215,8 @@ export const deleteAccountBalanceModel = /* GraphQL */ `mutation DeleteAccountBa
   deleteAccountBalanceModel(input: $input, condition: $condition) {
     id
     income
-    expanse
+    expense
+    subtotal
     anomaly
     createdAt
     updatedAt
@@ -284,344 +275,59 @@ export const deleteReportDataTable = /* GraphQL */ `mutation DeleteReportDataTab
   APITypes.DeleteReportDataTableMutationVariables,
   APITypes.DeleteReportDataTableMutation
 >;
-export const createFutureExpensesDataTable = /* GraphQL */ `mutation CreateFutureExpensesDataTable(
-  $input: CreateFutureExpensesDataTableInput!
-  $condition: ModelFutureExpensesDataTableConditionInput
+export const createEducationCostSection = /* GraphQL */ `mutation CreateEducationCostSection(
+  $input: CreateEducationCostSectionInput!
+  $condition: ModelEducationCostSectionConditionInput
 ) {
-  createFutureExpensesDataTable(input: $input, condition: $condition) {
+  createEducationCostSection(input: $input, condition: $condition) {
     id
-    arnnona
-    water
-    energy
-    houseMainanace
-    network
-    car
-    school
-    kintergarden
-    classes
-    privateLessons
-    safetyNet
-    healthInsurance
-    dental
-    social
-    food
-    laundry
-    tax
-    specialTax
-    cleaning
-    garden
-    extraSlot
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.CreateFutureExpensesDataTableMutationVariables,
-  APITypes.CreateFutureExpensesDataTableMutation
->;
-export const updateFutureExpensesDataTable = /* GraphQL */ `mutation UpdateFutureExpensesDataTable(
-  $input: UpdateFutureExpensesDataTableInput!
-  $condition: ModelFutureExpensesDataTableConditionInput
-) {
-  updateFutureExpensesDataTable(input: $input, condition: $condition) {
-    id
-    arnnona
-    water
-    energy
-    houseMainanace
-    network
-    car
-    school
-    kintergarden
-    classes
-    privateLessons
-    safetyNet
-    healthInsurance
-    dental
-    social
-    food
-    laundry
-    tax
-    specialTax
-    cleaning
-    garden
-    extraSlot
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateFutureExpensesDataTableMutationVariables,
-  APITypes.UpdateFutureExpensesDataTableMutation
->;
-export const deleteFutureExpensesDataTable = /* GraphQL */ `mutation DeleteFutureExpensesDataTable(
-  $input: DeleteFutureExpensesDataTableInput!
-  $condition: ModelFutureExpensesDataTableConditionInput
-) {
-  deleteFutureExpensesDataTable(input: $input, condition: $condition) {
-    id
-    arnnona
-    water
-    energy
-    houseMainanace
-    network
-    car
-    school
-    kintergarden
-    classes
-    privateLessons
-    safetyNet
-    healthInsurance
-    dental
-    social
-    food
-    laundry
-    tax
-    specialTax
-    cleaning
-    garden
-    extraSlot
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.DeleteFutureExpensesDataTableMutationVariables,
-  APITypes.DeleteFutureExpensesDataTableMutation
->;
-export const createFutureIncomesDataTable = /* GraphQL */ `mutation CreateFutureIncomesDataTable(
-  $input: CreateFutureIncomesDataTableInput!
-  $condition: ModelFutureIncomesDataTableConditionInput
-) {
-  createFutureIncomesDataTable(input: $input, condition: $condition) {
-    id
-    sallary
-    penssion
-    socialSecurityChildren
-    socialSecuritySenior
-    socialBenefits
-    medicalBenefits
-    safetyNet
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.CreateFutureIncomesDataTableMutationVariables,
-  APITypes.CreateFutureIncomesDataTableMutation
->;
-export const updateFutureIncomesDataTable = /* GraphQL */ `mutation UpdateFutureIncomesDataTable(
-  $input: UpdateFutureIncomesDataTableInput!
-  $condition: ModelFutureIncomesDataTableConditionInput
-) {
-  updateFutureIncomesDataTable(input: $input, condition: $condition) {
-    id
-    sallary
-    penssion
-    socialSecurityChildren
-    socialSecuritySenior
-    socialBenefits
-    medicalBenefits
-    safetyNet
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateFutureIncomesDataTableMutationVariables,
-  APITypes.UpdateFutureIncomesDataTableMutation
->;
-export const deleteFutureIncomesDataTable = /* GraphQL */ `mutation DeleteFutureIncomesDataTable(
-  $input: DeleteFutureIncomesDataTableInput!
-  $condition: ModelFutureIncomesDataTableConditionInput
-) {
-  deleteFutureIncomesDataTable(input: $input, condition: $condition) {
-    id
-    sallary
-    penssion
-    socialSecurityChildren
-    socialSecuritySenior
-    socialBenefits
-    medicalBenefits
-    safetyNet
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.DeleteFutureIncomesDataTableMutationVariables,
-  APITypes.DeleteFutureIncomesDataTableMutation
->;
-export const createEducationDataTable = /* GraphQL */ `mutation CreateEducationDataTable(
-  $input: CreateEducationDataTableInput!
-  $condition: ModelEducationDataTableConditionInput
-) {
-  createEducationDataTable(input: $input, condition: $condition) {
-    id
-    privateLessons
-    classes
-    school
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.CreateEducationDataTableMutationVariables,
-  APITypes.CreateEducationDataTableMutation
->;
-export const updateEducationDataTable = /* GraphQL */ `mutation UpdateEducationDataTable(
-  $input: UpdateEducationDataTableInput!
-  $condition: ModelEducationDataTableConditionInput
-) {
-  updateEducationDataTable(input: $input, condition: $condition) {
-    id
-    privateLessons
-    classes
-    school
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateEducationDataTableMutationVariables,
-  APITypes.UpdateEducationDataTableMutation
->;
-export const deleteEducationDataTable = /* GraphQL */ `mutation DeleteEducationDataTable(
-  $input: DeleteEducationDataTableInput!
-  $condition: ModelEducationDataTableConditionInput
-) {
-  deleteEducationDataTable(input: $input, condition: $condition) {
-    id
-    privateLessons
-    classes
-    school
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.DeleteEducationDataTableMutationVariables,
-  APITypes.DeleteEducationDataTableMutation
->;
-export const createDynamicDataModel = /* GraphQL */ `mutation CreateDynamicDataModel(
-  $input: CreateDynamicDataModelInput!
-  $condition: ModelDynamicDataModelConditionInput
-) {
-  createDynamicDataModel(input: $input, condition: $condition) {
-    id
-    box
-    text
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.CreateDynamicDataModelMutationVariables,
-  APITypes.CreateDynamicDataModelMutation
->;
-export const updateDynamicDataModel = /* GraphQL */ `mutation UpdateDynamicDataModel(
-  $input: UpdateDynamicDataModelInput!
-  $condition: ModelDynamicDataModelConditionInput
-) {
-  updateDynamicDataModel(input: $input, condition: $condition) {
-    id
-    box
-    text
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateDynamicDataModelMutationVariables,
-  APITypes.UpdateDynamicDataModelMutation
->;
-export const deleteDynamicDataModel = /* GraphQL */ `mutation DeleteDynamicDataModel(
-  $input: DeleteDynamicDataModelInput!
-  $condition: ModelDynamicDataModelConditionInput
-) {
-  deleteDynamicDataModel(input: $input, condition: $condition) {
-    id
-    box
-    text
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.DeleteDynamicDataModelMutationVariables,
-  APITypes.DeleteDynamicDataModelMutation
->;
-export const createFixedDataModel = /* GraphQL */ `mutation CreateFixedDataModel(
-  $input: CreateFixedDataModelInput!
-  $condition: ModelFixedDataModelConditionInput
-) {
-  createFixedDataModel(input: $input, condition: $condition) {
-    id
-    summary
-    stats
     actualCost
     communityCoverage
-    memberParticipace
+    memberPaticipance
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateFixedDataModelMutationVariables,
-  APITypes.CreateFixedDataModelMutation
+  APITypes.CreateEducationCostSectionMutationVariables,
+  APITypes.CreateEducationCostSectionMutation
 >;
-export const updateFixedDataModel = /* GraphQL */ `mutation UpdateFixedDataModel(
-  $input: UpdateFixedDataModelInput!
-  $condition: ModelFixedDataModelConditionInput
+export const updateEducationCostSection = /* GraphQL */ `mutation UpdateEducationCostSection(
+  $input: UpdateEducationCostSectionInput!
+  $condition: ModelEducationCostSectionConditionInput
 ) {
-  updateFixedDataModel(input: $input, condition: $condition) {
+  updateEducationCostSection(input: $input, condition: $condition) {
     id
-    summary
-    stats
     actualCost
     communityCoverage
-    memberParticipace
+    memberPaticipance
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateFixedDataModelMutationVariables,
-  APITypes.UpdateFixedDataModelMutation
+  APITypes.UpdateEducationCostSectionMutationVariables,
+  APITypes.UpdateEducationCostSectionMutation
 >;
-export const deleteFixedDataModel = /* GraphQL */ `mutation DeleteFixedDataModel(
-  $input: DeleteFixedDataModelInput!
-  $condition: ModelFixedDataModelConditionInput
+export const deleteEducationCostSection = /* GraphQL */ `mutation DeleteEducationCostSection(
+  $input: DeleteEducationCostSectionInput!
+  $condition: ModelEducationCostSectionConditionInput
 ) {
-  deleteFixedDataModel(input: $input, condition: $condition) {
+  deleteEducationCostSection(input: $input, condition: $condition) {
     id
-    summary
-    stats
     actualCost
     communityCoverage
-    memberParticipace
+    memberPaticipance
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteFixedDataModelMutationVariables,
-  APITypes.DeleteFixedDataModelMutation
+  APITypes.DeleteEducationCostSectionMutationVariables,
+  APITypes.DeleteEducationCostSectionMutation
 >;
 export const createSelectModel = /* GraphQL */ `mutation CreateSelectModel(
   $input: CreateSelectModelInput!
@@ -679,118 +385,4 @@ export const deleteSelectModel = /* GraphQL */ `mutation DeleteSelectModel(
 ` as GeneratedMutation<
   APITypes.DeleteSelectModelMutationVariables,
   APITypes.DeleteSelectModelMutation
->;
-export const createButtonModel = /* GraphQL */ `mutation CreateButtonModel(
-  $input: CreateButtonModelInput!
-  $condition: ModelButtonModelConditionInput
-) {
-  createButtonModel(input: $input, condition: $condition) {
-    id
-    label
-    icon
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.CreateButtonModelMutationVariables,
-  APITypes.CreateButtonModelMutation
->;
-export const updateButtonModel = /* GraphQL */ `mutation UpdateButtonModel(
-  $input: UpdateButtonModelInput!
-  $condition: ModelButtonModelConditionInput
-) {
-  updateButtonModel(input: $input, condition: $condition) {
-    id
-    label
-    icon
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateButtonModelMutationVariables,
-  APITypes.UpdateButtonModelMutation
->;
-export const deleteButtonModel = /* GraphQL */ `mutation DeleteButtonModel(
-  $input: DeleteButtonModelInput!
-  $condition: ModelButtonModelConditionInput
-) {
-  deleteButtonModel(input: $input, condition: $condition) {
-    id
-    label
-    icon
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.DeleteButtonModelMutationVariables,
-  APITypes.DeleteButtonModelMutation
->;
-export const createLayoutModel = /* GraphQL */ `mutation CreateLayoutModel(
-  $input: CreateLayoutModelInput!
-  $condition: ModelLayoutModelConditionInput
-) {
-  createLayoutModel(input: $input, condition: $condition) {
-    id
-    backgroundImage
-    theme
-    credits
-    desc
-    date
-    time
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.CreateLayoutModelMutationVariables,
-  APITypes.CreateLayoutModelMutation
->;
-export const updateLayoutModel = /* GraphQL */ `mutation UpdateLayoutModel(
-  $input: UpdateLayoutModelInput!
-  $condition: ModelLayoutModelConditionInput
-) {
-  updateLayoutModel(input: $input, condition: $condition) {
-    id
-    backgroundImage
-    theme
-    credits
-    desc
-    date
-    time
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateLayoutModelMutationVariables,
-  APITypes.UpdateLayoutModelMutation
->;
-export const deleteLayoutModel = /* GraphQL */ `mutation DeleteLayoutModel(
-  $input: DeleteLayoutModelInput!
-  $condition: ModelLayoutModelConditionInput
-) {
-  deleteLayoutModel(input: $input, condition: $condition) {
-    id
-    backgroundImage
-    theme
-    credits
-    desc
-    date
-    time
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.DeleteLayoutModelMutationVariables,
-  APITypes.DeleteLayoutModelMutation
 >;

@@ -8,173 +8,158 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
-export const onCreateCurrentIncomeDataTable = /* GraphQL */ `subscription OnCreateCurrentIncomeDataTable(
-  $filter: ModelSubscriptionCurrentIncomeDataTableFilterInput
+export const onCreateSimulatorDataTableSection = /* GraphQL */ `subscription OnCreateSimulatorDataTableSection(
+  $filter: ModelSubscriptionSimulatorDataTableSectionFilterInput
 ) {
-  onCreateCurrentIncomeDataTable(filter: $filter) {
+  onCreateSimulatorDataTableSection(filter: $filter) {
     id
-    sallary
-    childrenSuppelment
-    food
-    laundry
-    gas
-    hygine
-    maitanence
-    car
-    untitledfield
-    energy
-    extraHoursBenefit
-    extraFood
-    chrony
-    extraSlot
+    rowName
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreateCurrentIncomeDataTableSubscriptionVariables,
-  APITypes.OnCreateCurrentIncomeDataTableSubscription
+  APITypes.OnCreateSimulatorDataTableSectionSubscriptionVariables,
+  APITypes.OnCreateSimulatorDataTableSectionSubscription
 >;
-export const onUpdateCurrentIncomeDataTable = /* GraphQL */ `subscription OnUpdateCurrentIncomeDataTable(
-  $filter: ModelSubscriptionCurrentIncomeDataTableFilterInput
+export const onUpdateSimulatorDataTableSection = /* GraphQL */ `subscription OnUpdateSimulatorDataTableSection(
+  $filter: ModelSubscriptionSimulatorDataTableSectionFilterInput
 ) {
-  onUpdateCurrentIncomeDataTable(filter: $filter) {
+  onUpdateSimulatorDataTableSection(filter: $filter) {
     id
-    sallary
-    childrenSuppelment
-    food
-    laundry
-    gas
-    hygine
-    maitanence
-    car
-    untitledfield
-    energy
-    extraHoursBenefit
-    extraFood
-    chrony
-    extraSlot
+    rowName
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdateCurrentIncomeDataTableSubscriptionVariables,
-  APITypes.OnUpdateCurrentIncomeDataTableSubscription
+  APITypes.OnUpdateSimulatorDataTableSectionSubscriptionVariables,
+  APITypes.OnUpdateSimulatorDataTableSectionSubscription
 >;
-export const onDeleteCurrentIncomeDataTable = /* GraphQL */ `subscription OnDeleteCurrentIncomeDataTable(
-  $filter: ModelSubscriptionCurrentIncomeDataTableFilterInput
+export const onDeleteSimulatorDataTableSection = /* GraphQL */ `subscription OnDeleteSimulatorDataTableSection(
+  $filter: ModelSubscriptionSimulatorDataTableSectionFilterInput
 ) {
-  onDeleteCurrentIncomeDataTable(filter: $filter) {
+  onDeleteSimulatorDataTableSection(filter: $filter) {
     id
-    sallary
-    childrenSuppelment
-    food
-    laundry
-    gas
-    hygine
-    maitanence
-    car
-    untitledfield
-    energy
-    extraHoursBenefit
-    extraFood
-    chrony
-    extraSlot
+    rowName
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeleteCurrentIncomeDataTableSubscriptionVariables,
-  APITypes.OnDeleteCurrentIncomeDataTableSubscription
+  APITypes.OnDeleteSimulatorDataTableSectionSubscriptionVariables,
+  APITypes.OnDeleteSimulatorDataTableSectionSubscription
 >;
-export const onCreateCurrentExpensesDataTable = /* GraphQL */ `subscription OnCreateCurrentExpensesDataTable(
-  $filter: ModelSubscriptionCurrentExpensesDataTableFilterInput
+export const onCreateSimulatorDataTableModel = /* GraphQL */ `subscription OnCreateSimulatorDataTableModel(
+  $filter: ModelSubscriptionSimulatorDataTableModelFilterInput
 ) {
-  onCreateCurrentExpensesDataTable(filter: $filter) {
+  onCreateSimulatorDataTableModel(filter: $filter) {
     id
-    energy
-    mintanence
-    network
-    car
-    school
-    privateLessons
+    collumnName
+    collomnInfo
+    netCost
+    grossCost
+    subtotal
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateSimulatorDataTableModelSubscriptionVariables,
+  APITypes.OnCreateSimulatorDataTableModelSubscription
+>;
+export const onUpdateSimulatorDataTableModel = /* GraphQL */ `subscription OnUpdateSimulatorDataTableModel(
+  $filter: ModelSubscriptionSimulatorDataTableModelFilterInput
+) {
+  onUpdateSimulatorDataTableModel(filter: $filter) {
+    id
+    collumnName
+    collomnInfo
+    netCost
+    grossCost
+    subtotal
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateSimulatorDataTableModelSubscriptionVariables,
+  APITypes.OnUpdateSimulatorDataTableModelSubscription
+>;
+export const onDeleteSimulatorDataTableModel = /* GraphQL */ `subscription OnDeleteSimulatorDataTableModel(
+  $filter: ModelSubscriptionSimulatorDataTableModelFilterInput
+) {
+  onDeleteSimulatorDataTableModel(filter: $filter) {
+    id
+    collumnName
+    collomnInfo
+    netCost
+    grossCost
+    subtotal
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteSimulatorDataTableModelSubscriptionVariables,
+  APITypes.OnDeleteSimulatorDataTableModelSubscription
+>;
+export const onCreateEducationDataTable = /* GraphQL */ `subscription OnCreateEducationDataTable(
+  $filter: ModelSubscriptionEducationDataTableFilterInput
+) {
+  onCreateEducationDataTable(filter: $filter) {
+    id
+    tuition
     classes
-    safetyNet
-    dental
-    food
-    laundry
-    extraSlot
-    gas
-    shifts
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateCurrentExpensesDataTableSubscriptionVariables,
-  APITypes.OnCreateCurrentExpensesDataTableSubscription
->;
-export const onUpdateCurrentExpensesDataTable = /* GraphQL */ `subscription OnUpdateCurrentExpensesDataTable(
-  $filter: ModelSubscriptionCurrentExpensesDataTableFilterInput
-) {
-  onUpdateCurrentExpensesDataTable(filter: $filter) {
-    id
-    energy
-    mintanence
-    network
-    car
-    school
     privateLessons
-    classes
-    safetyNet
-    dental
-    food
-    laundry
-    extraSlot
-    gas
-    shifts
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdateCurrentExpensesDataTableSubscriptionVariables,
-  APITypes.OnUpdateCurrentExpensesDataTableSubscription
+  APITypes.OnCreateEducationDataTableSubscriptionVariables,
+  APITypes.OnCreateEducationDataTableSubscription
 >;
-export const onDeleteCurrentExpensesDataTable = /* GraphQL */ `subscription OnDeleteCurrentExpensesDataTable(
-  $filter: ModelSubscriptionCurrentExpensesDataTableFilterInput
+export const onUpdateEducationDataTable = /* GraphQL */ `subscription OnUpdateEducationDataTable(
+  $filter: ModelSubscriptionEducationDataTableFilterInput
 ) {
-  onDeleteCurrentExpensesDataTable(filter: $filter) {
+  onUpdateEducationDataTable(filter: $filter) {
     id
-    energy
-    mintanence
-    network
-    car
-    school
-    privateLessons
+    tuition
     classes
-    safetyNet
-    dental
-    food
-    laundry
-    extraSlot
-    gas
-    shifts
+    privateLessons
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeleteCurrentExpensesDataTableSubscriptionVariables,
-  APITypes.OnDeleteCurrentExpensesDataTableSubscription
+  APITypes.OnUpdateEducationDataTableSubscriptionVariables,
+  APITypes.OnUpdateEducationDataTableSubscription
+>;
+export const onDeleteEducationDataTable = /* GraphQL */ `subscription OnDeleteEducationDataTable(
+  $filter: ModelSubscriptionEducationDataTableFilterInput
+) {
+  onDeleteEducationDataTable(filter: $filter) {
+    id
+    tuition
+    classes
+    privateLessons
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteEducationDataTableSubscriptionVariables,
+  APITypes.OnDeleteEducationDataTableSubscription
 >;
 export const onCreateAccountBalanceModel = /* GraphQL */ `subscription OnCreateAccountBalanceModel(
   $filter: ModelSubscriptionAccountBalanceModelFilterInput
@@ -182,7 +167,8 @@ export const onCreateAccountBalanceModel = /* GraphQL */ `subscription OnCreateA
   onCreateAccountBalanceModel(filter: $filter) {
     id
     income
-    expanse
+    expense
+    subtotal
     anomaly
     createdAt
     updatedAt
@@ -199,7 +185,8 @@ export const onUpdateAccountBalanceModel = /* GraphQL */ `subscription OnUpdateA
   onUpdateAccountBalanceModel(filter: $filter) {
     id
     income
-    expanse
+    expense
+    subtotal
     anomaly
     createdAt
     updatedAt
@@ -216,7 +203,8 @@ export const onDeleteAccountBalanceModel = /* GraphQL */ `subscription OnDeleteA
   onDeleteAccountBalanceModel(filter: $filter) {
     id
     income
-    expanse
+    expense
+    subtotal
     anomaly
     createdAt
     updatedAt
@@ -272,329 +260,56 @@ export const onDeleteReportDataTable = /* GraphQL */ `subscription OnDeleteRepor
   APITypes.OnDeleteReportDataTableSubscriptionVariables,
   APITypes.OnDeleteReportDataTableSubscription
 >;
-export const onCreateFutureExpensesDataTable = /* GraphQL */ `subscription OnCreateFutureExpensesDataTable(
-  $filter: ModelSubscriptionFutureExpensesDataTableFilterInput
+export const onCreateEducationCostSection = /* GraphQL */ `subscription OnCreateEducationCostSection(
+  $filter: ModelSubscriptionEducationCostSectionFilterInput
 ) {
-  onCreateFutureExpensesDataTable(filter: $filter) {
+  onCreateEducationCostSection(filter: $filter) {
     id
-    arnnona
-    water
-    energy
-    houseMainanace
-    network
-    car
-    school
-    kintergarden
-    classes
-    privateLessons
-    safetyNet
-    healthInsurance
-    dental
-    social
-    food
-    laundry
-    tax
-    specialTax
-    cleaning
-    garden
-    extraSlot
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateFutureExpensesDataTableSubscriptionVariables,
-  APITypes.OnCreateFutureExpensesDataTableSubscription
->;
-export const onUpdateFutureExpensesDataTable = /* GraphQL */ `subscription OnUpdateFutureExpensesDataTable(
-  $filter: ModelSubscriptionFutureExpensesDataTableFilterInput
-) {
-  onUpdateFutureExpensesDataTable(filter: $filter) {
-    id
-    arnnona
-    water
-    energy
-    houseMainanace
-    network
-    car
-    school
-    kintergarden
-    classes
-    privateLessons
-    safetyNet
-    healthInsurance
-    dental
-    social
-    food
-    laundry
-    tax
-    specialTax
-    cleaning
-    garden
-    extraSlot
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateFutureExpensesDataTableSubscriptionVariables,
-  APITypes.OnUpdateFutureExpensesDataTableSubscription
->;
-export const onDeleteFutureExpensesDataTable = /* GraphQL */ `subscription OnDeleteFutureExpensesDataTable(
-  $filter: ModelSubscriptionFutureExpensesDataTableFilterInput
-) {
-  onDeleteFutureExpensesDataTable(filter: $filter) {
-    id
-    arnnona
-    water
-    energy
-    houseMainanace
-    network
-    car
-    school
-    kintergarden
-    classes
-    privateLessons
-    safetyNet
-    healthInsurance
-    dental
-    social
-    food
-    laundry
-    tax
-    specialTax
-    cleaning
-    garden
-    extraSlot
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnDeleteFutureExpensesDataTableSubscriptionVariables,
-  APITypes.OnDeleteFutureExpensesDataTableSubscription
->;
-export const onCreateFutureIncomesDataTable = /* GraphQL */ `subscription OnCreateFutureIncomesDataTable(
-  $filter: ModelSubscriptionFutureIncomesDataTableFilterInput
-) {
-  onCreateFutureIncomesDataTable(filter: $filter) {
-    id
-    sallary
-    penssion
-    socialSecurityChildren
-    socialSecuritySenior
-    socialBenefits
-    medicalBenefits
-    safetyNet
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateFutureIncomesDataTableSubscriptionVariables,
-  APITypes.OnCreateFutureIncomesDataTableSubscription
->;
-export const onUpdateFutureIncomesDataTable = /* GraphQL */ `subscription OnUpdateFutureIncomesDataTable(
-  $filter: ModelSubscriptionFutureIncomesDataTableFilterInput
-) {
-  onUpdateFutureIncomesDataTable(filter: $filter) {
-    id
-    sallary
-    penssion
-    socialSecurityChildren
-    socialSecuritySenior
-    socialBenefits
-    medicalBenefits
-    safetyNet
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateFutureIncomesDataTableSubscriptionVariables,
-  APITypes.OnUpdateFutureIncomesDataTableSubscription
->;
-export const onDeleteFutureIncomesDataTable = /* GraphQL */ `subscription OnDeleteFutureIncomesDataTable(
-  $filter: ModelSubscriptionFutureIncomesDataTableFilterInput
-) {
-  onDeleteFutureIncomesDataTable(filter: $filter) {
-    id
-    sallary
-    penssion
-    socialSecurityChildren
-    socialSecuritySenior
-    socialBenefits
-    medicalBenefits
-    safetyNet
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnDeleteFutureIncomesDataTableSubscriptionVariables,
-  APITypes.OnDeleteFutureIncomesDataTableSubscription
->;
-export const onCreateEducationDataTable = /* GraphQL */ `subscription OnCreateEducationDataTable(
-  $filter: ModelSubscriptionEducationDataTableFilterInput
-) {
-  onCreateEducationDataTable(filter: $filter) {
-    id
-    privateLessons
-    classes
-    school
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateEducationDataTableSubscriptionVariables,
-  APITypes.OnCreateEducationDataTableSubscription
->;
-export const onUpdateEducationDataTable = /* GraphQL */ `subscription OnUpdateEducationDataTable(
-  $filter: ModelSubscriptionEducationDataTableFilterInput
-) {
-  onUpdateEducationDataTable(filter: $filter) {
-    id
-    privateLessons
-    classes
-    school
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateEducationDataTableSubscriptionVariables,
-  APITypes.OnUpdateEducationDataTableSubscription
->;
-export const onDeleteEducationDataTable = /* GraphQL */ `subscription OnDeleteEducationDataTable(
-  $filter: ModelSubscriptionEducationDataTableFilterInput
-) {
-  onDeleteEducationDataTable(filter: $filter) {
-    id
-    privateLessons
-    classes
-    school
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnDeleteEducationDataTableSubscriptionVariables,
-  APITypes.OnDeleteEducationDataTableSubscription
->;
-export const onCreateDynamicDataModel = /* GraphQL */ `subscription OnCreateDynamicDataModel(
-  $filter: ModelSubscriptionDynamicDataModelFilterInput
-) {
-  onCreateDynamicDataModel(filter: $filter) {
-    id
-    box
-    text
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateDynamicDataModelSubscriptionVariables,
-  APITypes.OnCreateDynamicDataModelSubscription
->;
-export const onUpdateDynamicDataModel = /* GraphQL */ `subscription OnUpdateDynamicDataModel(
-  $filter: ModelSubscriptionDynamicDataModelFilterInput
-) {
-  onUpdateDynamicDataModel(filter: $filter) {
-    id
-    box
-    text
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateDynamicDataModelSubscriptionVariables,
-  APITypes.OnUpdateDynamicDataModelSubscription
->;
-export const onDeleteDynamicDataModel = /* GraphQL */ `subscription OnDeleteDynamicDataModel(
-  $filter: ModelSubscriptionDynamicDataModelFilterInput
-) {
-  onDeleteDynamicDataModel(filter: $filter) {
-    id
-    box
-    text
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnDeleteDynamicDataModelSubscriptionVariables,
-  APITypes.OnDeleteDynamicDataModelSubscription
->;
-export const onCreateFixedDataModel = /* GraphQL */ `subscription OnCreateFixedDataModel(
-  $filter: ModelSubscriptionFixedDataModelFilterInput
-) {
-  onCreateFixedDataModel(filter: $filter) {
-    id
-    summary
-    stats
     actualCost
     communityCoverage
-    memberParticipace
+    memberPaticipance
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnCreateFixedDataModelSubscriptionVariables,
-  APITypes.OnCreateFixedDataModelSubscription
+  APITypes.OnCreateEducationCostSectionSubscriptionVariables,
+  APITypes.OnCreateEducationCostSectionSubscription
 >;
-export const onUpdateFixedDataModel = /* GraphQL */ `subscription OnUpdateFixedDataModel(
-  $filter: ModelSubscriptionFixedDataModelFilterInput
+export const onUpdateEducationCostSection = /* GraphQL */ `subscription OnUpdateEducationCostSection(
+  $filter: ModelSubscriptionEducationCostSectionFilterInput
 ) {
-  onUpdateFixedDataModel(filter: $filter) {
+  onUpdateEducationCostSection(filter: $filter) {
     id
-    summary
-    stats
     actualCost
     communityCoverage
-    memberParticipace
+    memberPaticipance
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnUpdateFixedDataModelSubscriptionVariables,
-  APITypes.OnUpdateFixedDataModelSubscription
+  APITypes.OnUpdateEducationCostSectionSubscriptionVariables,
+  APITypes.OnUpdateEducationCostSectionSubscription
 >;
-export const onDeleteFixedDataModel = /* GraphQL */ `subscription OnDeleteFixedDataModel(
-  $filter: ModelSubscriptionFixedDataModelFilterInput
+export const onDeleteEducationCostSection = /* GraphQL */ `subscription OnDeleteEducationCostSection(
+  $filter: ModelSubscriptionEducationCostSectionFilterInput
 ) {
-  onDeleteFixedDataModel(filter: $filter) {
+  onDeleteEducationCostSection(filter: $filter) {
     id
-    summary
-    stats
     actualCost
     communityCoverage
-    memberParticipace
+    memberPaticipance
     createdAt
     updatedAt
     __typename
   }
 }
 ` as GeneratedSubscription<
-  APITypes.OnDeleteFixedDataModelSubscriptionVariables,
-  APITypes.OnDeleteFixedDataModelSubscription
+  APITypes.OnDeleteEducationCostSectionSubscriptionVariables,
+  APITypes.OnDeleteEducationCostSectionSubscription
 >;
 export const onCreateSelectModel = /* GraphQL */ `subscription OnCreateSelectModel(
   $filter: ModelSubscriptionSelectModelFilterInput
@@ -649,112 +364,4 @@ export const onDeleteSelectModel = /* GraphQL */ `subscription OnDeleteSelectMod
 ` as GeneratedSubscription<
   APITypes.OnDeleteSelectModelSubscriptionVariables,
   APITypes.OnDeleteSelectModelSubscription
->;
-export const onCreateButtonModel = /* GraphQL */ `subscription OnCreateButtonModel(
-  $filter: ModelSubscriptionButtonModelFilterInput
-) {
-  onCreateButtonModel(filter: $filter) {
-    id
-    label
-    icon
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateButtonModelSubscriptionVariables,
-  APITypes.OnCreateButtonModelSubscription
->;
-export const onUpdateButtonModel = /* GraphQL */ `subscription OnUpdateButtonModel(
-  $filter: ModelSubscriptionButtonModelFilterInput
-) {
-  onUpdateButtonModel(filter: $filter) {
-    id
-    label
-    icon
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateButtonModelSubscriptionVariables,
-  APITypes.OnUpdateButtonModelSubscription
->;
-export const onDeleteButtonModel = /* GraphQL */ `subscription OnDeleteButtonModel(
-  $filter: ModelSubscriptionButtonModelFilterInput
-) {
-  onDeleteButtonModel(filter: $filter) {
-    id
-    label
-    icon
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnDeleteButtonModelSubscriptionVariables,
-  APITypes.OnDeleteButtonModelSubscription
->;
-export const onCreateLayoutModel = /* GraphQL */ `subscription OnCreateLayoutModel(
-  $filter: ModelSubscriptionLayoutModelFilterInput
-) {
-  onCreateLayoutModel(filter: $filter) {
-    id
-    backgroundImage
-    theme
-    credits
-    desc
-    date
-    time
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnCreateLayoutModelSubscriptionVariables,
-  APITypes.OnCreateLayoutModelSubscription
->;
-export const onUpdateLayoutModel = /* GraphQL */ `subscription OnUpdateLayoutModel(
-  $filter: ModelSubscriptionLayoutModelFilterInput
-) {
-  onUpdateLayoutModel(filter: $filter) {
-    id
-    backgroundImage
-    theme
-    credits
-    desc
-    date
-    time
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateLayoutModelSubscriptionVariables,
-  APITypes.OnUpdateLayoutModelSubscription
->;
-export const onDeleteLayoutModel = /* GraphQL */ `subscription OnDeleteLayoutModel(
-  $filter: ModelSubscriptionLayoutModelFilterInput
-) {
-  onDeleteLayoutModel(filter: $filter) {
-    id
-    backgroundImage
-    theme
-    credits
-    desc
-    date
-    time
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnDeleteLayoutModelSubscriptionVariables,
-  APITypes.OnDeleteLayoutModelSubscription
 >;

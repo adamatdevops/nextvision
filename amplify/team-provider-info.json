@@ -52,5 +52,29 @@
         "CommunitySimulator": {}
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextvision-prod-d1463-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730335488506:role/amplify-nextvision-prod-d1463-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730335488506:role/amplify-nextvision-prod-d1463-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-nextvision-prod-d1463-deployment",
+      "UnauthRoleName": "amplify-nextvision-prod-d1463-unauthRole",
+      "StackName": "amplify-nextvision-prod-d1463",
+      "StackId": "arn:aws:cloudformation:eu-central-1:730335488506:stack/amplify-nextvision-prod-d1463/5f41abf0-39e8-11ef-900b-021377f7146d",
+      "AmplifyAppId": "ds7dacq68orgq"
+    },
+    "categories": {
+      "auth": {
+        "nextvision6bb00ca2": {}
+      },
+      "api": {
+        "nextvision": {}
+      },
+      "storage": {
+        "CommunitySimulator": {}
+      }
+    }
   }
 }
