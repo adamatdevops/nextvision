@@ -19,7 +19,7 @@ const ApartmentSquareFootage: React.FC = () => {
     } = useGlobalState();
 
 
-    const options = [40, 50, 60, 70, 100, 126];
+    const options = [40, 50, 60, 70, 100, 126, 150, 170];
 
     const handleChange = (value: any) => {
         setApartmentSquareFootage(parseInt(value)); // Parse the string value as a number

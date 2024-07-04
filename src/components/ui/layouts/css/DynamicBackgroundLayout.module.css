@@ -14,6 +14,18 @@
     padding: 8px 0px 8px;
 }
 
+.content {
+    flex: 1;
+    /* Allow content to take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    /* Optional: add a semi-transparent background */
+    padding: 40px;
+}
+
 .header {
     background: transparent;
     color: rgb(255, 255, 255);
@@ -22,8 +34,9 @@
 }
 
 .footer {
+    height: 40px;
     text-align: center;
-    padding: 2px;
+    padding: 8px;
     background: #001529;
     color: #fff;
     position: relative;
@@ -31,18 +44,11 @@
     width: 100%;
     font-family: 'Noto Sans Hebrew', sans-serif;
     font-size: 14px;
-}
-.content {
-    background: rgba(0, 0, 0, 0.5);
-    flex: 1; /* Allow content to take up available space */
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: row;
     align-items: center;
-    padding: 3rem;
-    /* Optional: add a semi-transparent background */
-    /* padding: 50px; */
 }
+
 
 /* Media Queries for Responsiveness */
 @media (min-width: 375px) {
@@ -131,4 +137,22 @@
         /* background-size: cover; */
         /* Extra Large background */
     }
+}
+
+@font-face {
+    font-family: 'Noto Sans Hebrew';
+    src: url('/fonts/NotoSans/static/NotoSansHebrew-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Hebrew';
+    src: url('/fonts/NotoSans/static/NotoSansHebrew-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Noto Sans Hebrew', sans-serif;
 }

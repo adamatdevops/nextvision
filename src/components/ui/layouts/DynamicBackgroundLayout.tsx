@@ -6,6 +6,7 @@ const { Header, Content, Footer } = Layout;
 
 interface LayoutComponentProps {
     children: React.ReactNode;
+    className?: string; // Add this line if it's missing
 }
 
 const DynamicLayout: React.FC<LayoutComponentProps> = ({ children }) => {

@@ -21,6 +21,7 @@ import FamilyNationalInsurance from '../../components/ui/select/FamilyNationalIn
 import MemberPositionScope from '../../components/ui/select/MemberPositionScope';
 import MemberPartnerPositionScope from '../../components/ui/select/MemberPartnerPositionScope';
 import DynamicLayout from '../../components/ui/layouts/DynamicBackgroundLayout';
+import FamilyAvatar from '../../components/ui/avatars/FamilyAvatar';
 import styles from './css/SocialSimulator.module.css';
 
 import { useGlobalState } from '../../GlobalStateProvider';
@@ -99,6 +100,7 @@ const SocialSimulator: React.FC = () => {
 
     return (
         <DynamicLayout>
+            <FamilyAvatar />
             <Header className={styles.header}>
                 סימולטור מודל ההתחדשות
             </Header>

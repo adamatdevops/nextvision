@@ -1,9 +1,9 @@
 /* src/components/ui/tables/ChildrenStatusTable.tsx */
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Select, InputNumber, Card } from 'antd';
-// import { setFutureChildrenSafetyNet, useGlobalState } from '../../../GlobalStateProvider';
-import { childrenData, useFutureExpensesState } from '../../../context/FutureExpensesGSP'; // Import the hook
-// import type { ChildData } from '../../../GlobalStateProvider';
+import { setFutureChildrenSafetyNet, useGlobalState } from '../../../GlobalStateProvider';
+// import { childrenData, useFutureExpensesState } from '../../../context/FutureExpensesGSP'; // Import the hook
+import type { ChildData } from '../../../GlobalStateProvider';
 import styles from './css/ChildrenStatusTable.module.css';
 
 const { Option } = Select;
@@ -26,7 +26,7 @@ export interface ChildData {
     futureKindergartenExpenses: number; // Added
     futureSchoolExpenses: number; // Added
     futureHighSchoolExpenses: number; // Added
-    //educationTuitionFees: number | null;
+    educationTuitionFees: number | null;
     class: string | null;
     educationTransportation: string | null;
     educationPersonalCare: string | null;
@@ -83,7 +83,7 @@ export const educationTuitionFeesMap: { [key: string]: number } = {
 };
 
 const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChildren }) => {
-    const { state, dispatch, setEducationSystemBudgets, setEducationSystem, setEducationSystemFees, setFutureKindergartenExpenses, setFutureSchoolExpenses, setFutureHighSchoolExpenses, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setPrivateLessonExpenses, setFutureEducationPersonalCareExpenses, setFutureEducationDayCareExpenses } = useFutureExpensesState();
+    const { state, dispatch, setEducationSystemBudgets, setEducationSystem, setEducationSystemFees, setFutureKindergartenExpenses, setFutureSchoolExpenses, setFutureHighSchoolExpenses, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setPrivateLessonExpenses, setFutureEducationPersonalCareExpenses, setFutureEducationDayCareExpenses } = useGlobalState();
 
     const ageOptions = Array.from({ length: 18 }, (_, i) => i + 0);
     const educationLevelOptions = ['גיל הרך', 'יסודי', 'תיכון'];
@@ -111,7 +111,7 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            //educationTuitionFees: null,
+            educationTuitionFees: null,
             privateLessonFees: [],
             class: '',
             educationTransportation: null,
@@ -141,7 +141,7 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                 futureKindergartenExpenses: state.childrenData[i]?.futureKindergartenExpenses || 0,
                 futureSchoolExpenses: state.childrenData[i]?.futureSchoolExpenses || 0,
                 futureHighSchoolExpenses: state.childrenData[i]?.futureHighSchoolExpenses || 0,
-                //educationTuitionFees: state.childrenData[i]?.educationTuitionFees || null,
+                educationTuitionFees: state.childrenData[i]?.educationTuitionFees || null,
                 privateLessonFees: state.childrenData[i]?.privateLessonFees || [],
                 class: '',
                 educationTransportation: state.childrenData[i]?.educationTransportation || null,

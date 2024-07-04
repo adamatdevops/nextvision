@@ -9,7 +9,9 @@ import FutureExpenses from './FutureExpenses';
 import CurrentBalance from './CurrentBalance';
 import FutureBalance from './FutureBalance';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer'; // Import InfoDrawer
+import FamilyAvatar from '../../components/ui/avatars/FamilyAvatar';
 import DynamicLayout from '../../components/ui/layouts/DynamicBackgroundLayout';
+import { useGlobalState } from '../../GlobalStateProvider';
 import styles from './css/AccountBalance.module.css';
 
 const { Header, Content, Footer } = Layout;
@@ -24,6 +26,8 @@ const AccountBalance: React.FC = () => {
 
     const [drawerVisible, setDrawerVisible] = useState(false);
     const [drawerContent, setDrawerContent] = useState('');
+
+    const { state } = useGlobalState();
 
     const showDrawer = (content: string) => {
         setDrawerContent(content);
@@ -65,15 +69,19 @@ const AccountBalance: React.FC = () => {
         <DynamicLayout>
             <Header className={styles.header}>
                 {/* <TotalBalance currentBalance={currentBalanceTotal} futureBalance={futureBalanceTotal}  /> */}
-                <Row gutter={24} align="middle" justify="space-between">
-                    <Col>
-                        <Title level={5}>הפרש כולל</Title>
-                        <p>הפרש כולל: <span className={styles.financialNumber}> ח״שׁ {balanceDifference}</span></p>
+                <Row gutter={24} align="middle" justify="space-between" className={styles.headerRow}>
+                    <Col span={12}>
+                        <span className={styles.financialNumber}> {balanceDifference} </span>
+                        <span className={styles.financialNumber} style={{ direction: 'rtl' }}> הפרש כולל:</span>
                     </Col>
-                    <Col>
+                    <Col span={6}>
                         <Button className={styles.buttonCalculate} type="primary" size="large" onClick={handleCalculate}>
                             חישוב
                         </Button>
+                    </Col>
+                    <Col span={6}>
+                        <span className={styles.loginName}>{state.loginName}</span>
+                        <FamilyAvatar />
                     </Col>
                 </Row>
             </Header>
@@ -123,9 +131,8 @@ const AccountBalance: React.FC = () => {
             </Content>
             <StepsBar />
             <InfoDrawer
-                title="Information"
                 content={drawerContent}
-                visible={drawerVisible}
+                isOpen={drawerVisible}
                 onClose={closeDrawer}
             />
         </DynamicLayout>

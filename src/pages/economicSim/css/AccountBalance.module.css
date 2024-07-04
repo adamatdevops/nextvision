@@ -11,12 +11,12 @@
 }
 
 .header {
-    /* background: #26CBBB; */
+    width: calc(35% - 60px);
     background: rgba(255, 255, 255, 0.2);
     color: rgb(245, 245, 245);
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-family: 'Noto Sans Hebrew', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -28,14 +28,26 @@
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
     padding: 20px;
-    overflow: hidden;
-    width: calc(25% - 10px);
-    justify-content: center;
+    overflow: hidden;    
     margin: 2px 0;
-    color: #ffffff; /* White text color */
     box-sizing: border-box;
+}
+
+.headerRow {
+    width: 100%;
+}
+
+.headerCol {
+    margin-right: 8px;
+    align-items: center;
+}
+
+.loginName {
+    margin-left: 8px;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Noto Sans Hebrew', sans-serif;
 }
 
 .footer {
@@ -53,7 +65,7 @@
 .content {
     padding: 4px;
     background: transparent;
-    min-height: calc(100vh - 220px);
+    min-height: calc(100vh - 200px);
     /* Adjust this based on the height of the header and footer */
     display: flex;
     flex-direction: column;
@@ -234,6 +246,7 @@
     unicode-bidi: bidi-override;
     color: rgb(248, 245, 245);
     font-size: 20px;
+    font-weight: 400;
     font-family: 'Noto Sans Hebrew', sans-serif;
 }
 
@@ -382,16 +395,15 @@
 .buttonCalculate {
     display: flex;
     flex-direction: row;
+    /* justify-content: space-between; */
     justify-content: center;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
-
     font-size: 18px;
     font-family: 'Noto Sans Hebrew', sans-serif;
     /* margin: 0 10px; */
     background: rgba(255, 255, 255, 0.065);
-    justify-content: center;
     /* position: relative; */
     text-align: center;
     border-radius: 20px;
@@ -404,4 +416,22 @@
     font-weight: 400;
     /* padding: 10px; */
     box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Noto Sans Hebrew';
+    src: url('/fonts/NotoSans/static/NotoSansHebrew-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Hebrew';
+    src: url('/fonts/NotoSans/static/NotoSansHebrew-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Noto Sans Hebrew', sans-serif;
 }

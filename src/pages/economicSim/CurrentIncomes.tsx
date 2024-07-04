@@ -5,9 +5,9 @@ import { InfoCircleOutlined } from '@ant-design/icons';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
 import styles from './css/AccountBalance.module.css';
-import { useCurrentIncomesState } from '../../context/CurrentIncomesGSP'; // Import the hook
-// import { useGlobalState } from '../../GlobalStateProvider'; // Import the hook
-// import type { ChildData } from '../../GlobalStateProvider';
+// import { useCurrentIncomesState } from '../../context/CurrentIncomesGSP'; // Import the hook
+import { childrenData, useGlobalState } from '../../GlobalStateProvider'; // Import the hook
+import type { ChildData } from '../../GlobalStateProvider';
 
 const { Title } = Typography;
 
@@ -87,7 +87,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
         setMemberPartnerGoldenAge,
         setGoldenAgeAmount,
         setOtherIncome,
-    } = useCurrentIncomesState();
+    } = useGlobalState();
 
     const {
         personalBudget,
@@ -555,7 +555,6 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                 </Form.Item>
                 {drawerContentKey && (
                 <InfoDrawer
-                    title="מידע"
                     //content={drawerContent}
                     open={drawerOpen}
                     onClose={closeDrawer}

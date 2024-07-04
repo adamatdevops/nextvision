@@ -23,6 +23,9 @@ export default defineConfig({
 		//      typescript: true,
 		//}),
 		builderDevTools(),
+        svgr(),
+        tsconfigPaths(),
+
 	],
 	resolve: {
 		alias: [
@@ -30,6 +33,10 @@ export default defineConfig({
 				find: "./runtimeConfig",
 				replacement: "./runtimeConfig.browser",
 			},
+			{
+                find: '@',
+                replacement: resolve(__dirname, 'src'),
+        	},
 		],
 	},
 	define: {

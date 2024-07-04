@@ -60,6 +60,8 @@
         "src/**/*/*.tsx",
         "src/pages/home/*.tsx",
         "src/aws-exports.js",
+        "src/vite-env.d.ts",
+        "src/custom.d.ts",
         ".eslintrc.json"
     ],
     "exclude": [

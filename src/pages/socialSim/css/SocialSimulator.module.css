@@ -126,3 +126,21 @@ button {
 /* .tableWrapper {
     overflow-x: auto;
 } */
+
+@font-face {
+    font-family: 'Noto Sans Hebrew';
+    src: url('/fonts/NotoSans/static/NotoSansHebrew-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Hebrew';
+    src: url('/fonts/NotoSans/static/NotoSansHebrew-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Noto Sans Hebrew', sans-serif;
+}

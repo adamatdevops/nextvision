@@ -4,9 +4,9 @@ import { Card, Typography, Form, InputNumber ,Tooltip, Button } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
-import { childrenData, useFutureExpensesState } from '../../context/FutureExpensesGSP'; // Import the hook
-//import { childrenData, useGlobalState } from '../../GlobalStateProvider'; // Import the hook
-// import type { ChildData } from '../../GlobalStateProvider';
+// import { childrenData, useFutureExpensesState } from '../../context/FutureExpensesGSP'; // Import the hook
+import { childrenData, useGlobalState } from '../../GlobalStateProvider'; // Import the hook
+import type { ChildData } from '../../GlobalStateProvider';
 
 import styles from './css/AccountBalance.module.css';
 
@@ -79,7 +79,7 @@ const calculateFamilyMemberCount = (familyStatus, partnerCommunityStatus, childr
 const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
     /* Use the useCurrentExpenses hook to get context values and setters */
     // const { state } = useGlobalState();
-    const { state } = useFutureExpensesState();
+    const { state } = useGlobalState();
 
     const [drawerOpen, setDrawerOpen] = useState(false);
     // const [drawerContent, setDrawerContent] = useState('');
@@ -135,7 +135,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         setFutureCleaningExpenses,
         // setFutureDecorationsExpenses,
         setFutureOtherExpenses,
-    } = useFutureExpensesState();
+    } = useGlobalState();
 
     const handleFutureTeenageClassExpenseChange = (childIndex: number, classIndex: number, value: number) => {
         const updatedFutureTeenageClassFees = [...state.futureTeenageClassExpenses];

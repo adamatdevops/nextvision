@@ -1,65 +1,19 @@
 // src/pages/home/GettingStarted.tsx
 import React, { useEffect, useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
-import { Layout, Flex, Button, Card, Modal } from 'antd';
+import { Layout, Input, Flex, Button, Card, Modal } from 'antd';
 import DynamicLayout from '../../components/ui/layouts/DynamicBackgroundLayout';
 import { Link } from 'react-router-dom';
+import { useGlobalState } from '../../GlobalStateProvider';
 import styles from './css/GettingStarted.module.css';
 
 const { Header, Content } = Layout;
 // const { Title, Paragraph } = Typography;
 
-// interface LayoutComponentProps {
-//     children: React.ReactNode;
-// }
-
-// function handleResize(this: Window, ev: UIEvent) {
-//     throw new Error("Function not implemented.");
-// }
-
 const GettingStarted: React.FC = () => {
-
-    // const [backgroundImage, setBackgroundImage] = useState('./assets/img/vibrant/background-01-2560x1770.jpeg');
-
     const [isModalVisible, setIsModalVisible] = useState(false)
-
-    // useEffect(() => {
-    //     const handleResize = () => {
-    //         const width = window.innerWidth;
-    //         let bgImage = '';
-
-    //         if (width >= 3840) {
-    //             bgImage = './assets/img/vibrant/background-01-3840x2560.jpeg';
-    //         } else if (width >= 2560) {
-    //             bgImage = './assets/img/vibrant/background-01-2560x1770.jpeg';
-    //         } else if (width >= 1920) {
-    //             bgImage = './assets/img/vibrant/background-01-1920x1280.jpeg';
-    //         } else if (width >= 1440) {
-    //             bgImage = './assets/img/vibrant/background-01-1440x960.jpeg';
-    //         } else if (width >= 1366) {
-    //             bgImage = './assets/img/vibrant/background-01-1366x900.jpeg';
-    //         } else if (width >= 1024) {
-    //             bgImage = './assets/img/vibrant/background-01-1024.jpeg';
-    //         } else if (width >= 768) {
-    //             bgImage = './assets/img/vibrant/background-01-768.jpeg';
-    //         } else if (width >= 576) {
-    //             bgImage = './assets/img/vibrant/background-01-576.jpeg';
-    //         } else if (width >= 414) {
-    //             bgImage = './assets/img/vibrant/background-01-414.jpeg';
-    //         } else if (width >= 390) {
-    //             bgImage = './assets/img/vibrant/background-01-390.jpeg';
-    //         } else {
-    //             bgImage = './assets/img/vibrant/background-01-1440x960.jpeg';
-    //         }
-
-    //         setBackgroundImage(bgImage);
-    //         console.log('backgroundImage:', backgroundImage);
-    //     };
-
-    //     handleResize(); // Set initial background image
-    //     window.addEventListener('resize', handleResize);
-    //     return () => window.removeEventListener('resize', handleResize);
-    // }, []);
+    const { state, setLoginName } = useGlobalState();
+    const [localLoginName, setLocalLoginName] = useState(state.loginName);
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -73,17 +27,28 @@ const GettingStarted: React.FC = () => {
         setIsModalVisible(false);
     };
 
+    const handleLoginNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLocalLoginName(e.target.value);
+        setLoginName(e.target.value);
+    };
+
     return (
         <DynamicLayout>
             {/* <Header className={styles.header}>ברוכים הבאים לאפליקציה שלנו</Header> */}
             <Content className={styles.content}>
                 <Card className={styles.card}>
-                    <Flex gap="small" vertical>
+                    <Flex gap="small">
                         <Flex wrap gap="small">
                             {/* Your content goes here */}
                             <div className={styles.buttonContainer}>
+                                <Input
+                                    placeholder="הכנס שם משתמש"
+                                    value={localLoginName}
+                                    onChange={handleLoginNameChange}
+                                    className={styles.input}
+                                />
                                 <Link to="/social-data">
-                                    <Button type="primary" size="large" className={styles.button}>
+                                    <Button type="primary" size="large" className={styles.button} disabled={!localLoginName}>
                                         כניסה
                                     </Button>
                                 </Link>
