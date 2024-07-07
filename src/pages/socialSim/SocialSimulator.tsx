@@ -1,6 +1,6 @@
 /* ./src/pages/socialSim/SocialSimulator.tsx */
 import React, { useState } from 'react';
-import { Layout, Card, Typography, Form, Input, Select, InputNumber } from 'antd';
+import { Layout, Card, Typography, Form, Input, Select, InputNumber, Row } from 'antd';
 import MemberStatus from '../../components/ui/select/MemberStatus'; // Add this import statement
 import PartnerCommunityStatus from '../../components/ui/select/PartnerCommunityStatus';
 import ChildrenSelect from '../../components/ui/select/ChildrenSelect';
@@ -26,7 +26,9 @@ import styles from './css/SocialSimulator.module.css';
 
 import { useGlobalState } from '../../GlobalStateProvider';
 
-// interface SocialSimulatorProps {}
+// const baseStyle: React.CSSProperties = {
+//     padding: '0px 4px',
+// };
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -102,13 +104,14 @@ const SocialSimulator: React.FC = () => {
         <DynamicLayout>
             <FamilyAvatar />
             <Header className={styles.header}>
-                סימולטור מודל ההתחדשות
+                        סימולטור מודל ההתחדשות
             </Header>
             {/* <h1>מידע אישי</h1> */}
             <Content className={styles.content}>
                 <div className={styles.cardsContainer}>
-                    <Card className={styles.card} title="מידע אישי">
-                        <Form layout="horizontal" className={styles.form}>
+                    <Card className={styles.card} title="מידע אישי - חבר/ה">
+                        {/* NOTE:We Had className={styles.form} here */}
+                        <Form layout="horizontal">
                             <div className={styles.formRow}>
                                 <MemberStatus status={state.familyStatus} onStatusChange={handleFamilyStatusChange} />
                                 <MemberAge age={state.memberAge} onAgeChange={setMemberAge} />
@@ -122,6 +125,18 @@ const SocialSimulator: React.FC = () => {
                                 <MemberGoldenAge/>
                             </div>
                         </Form>
+                        {/* <Card className={styles.card} title="מידע נוסף" style={{ ...baseStyle }}> */}
+                        <Card className={styles.card} title="מידע נוסף">
+                            <div className={styles.formRow}>
+                                {/* <ApartmentSquareFootage onApartmentSquareFootageChange={handleApartmentSquareFootageChange}/> */}
+                                <ApartmentSquareFootage />
+                                <FamilyNationalInsurance />
+                            </div>
+                        </Card>
+                    </Card>
+                    </div>
+                    <div className={styles.cardsContainer}>
+                    <Card className={styles.card} title="מידע אישי - בן/ת זוג">
                         <Form layout="horizontal" className={styles.form}>
                             <div className={styles.formRow}>
                                 <PartnerCommunityStatus status={state.partnerCommunityStatus} onStatusChange={handlePartnerCommunityStatusChange} />
@@ -139,14 +154,6 @@ const SocialSimulator: React.FC = () => {
                                 <MemberPartnerRetired onMemberPartnerRetiredChange={handleMemberPartnerRetiredChange} />
                                 <MemberPartnerGoldenAge />
                             </div>
-                            <div className={styles.formRow}>
-                                <Form.Item>
-                                    <ApartmentSquareFootage onApartmentSquareFootageChange={handleApartmentSquareFootageChange}/>
-                                </Form.Item>
-                                <Form.Item  label="מספר בני משפחה המוכרים בביטוח לאומי">
-                                    <FamilyNationalInsurance />
-                                </Form.Item>
-                            </div>
                             {state.familyStatus === 'widower' && (
                                 <div className={styles.formRow}>
                                     <DeceasedSeniority
@@ -159,6 +166,8 @@ const SocialSimulator: React.FC = () => {
                             )}
                         </Form>
                     </Card>
+                    </div>
+                    <div className={styles.cardsContainer}>
                     <Card className={styles.card} title="נתוני משפחה">
                         <Form layout="horizontal">
                             <div>

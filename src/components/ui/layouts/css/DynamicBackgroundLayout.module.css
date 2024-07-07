@@ -1,7 +1,72 @@
 /* DynamicBackgroundLayout.module.css */
 .layout {
     min-height: 100vh; /* Cover the full viewport height */
-    background-image: url('../assets/img/vibrant/background-01-3840x4000.jpeg');
+    /* background-image: url('../assets/img/vibrant/background-01-3840x4000.jpeg'); */;
+    background-size: cover;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    /* position: absolute; or relative */
+    direction: rtl;
+    padding: 4px 0px 2px;
+    padding-bottom: 2px;
+}
+
+.content {
+    flex: 1;
+    /* Allow content to take up available space */
+    height: 30em;
+    min-height: calc(30vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    padding: 8px;
+    line-height: 4px;
+    margin: 10px;
+    /* Optional: add a semi-transparent background */
+}
+
+/* Header Needs To Be Included In Each Component CSS */
+/* .header { 
+    background: transparent;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px; */
+
+.footer {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    padding: 1px;
+    background: #001529;
+    color: #fff;
+    position: static;
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-origin: border-box;
+    line-height: 25px;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (min-width: 375px) {
+    .layout {
+        background-image: url('../assets/img/vibrant/background-01-375.jpeg') !important;
+        /* background-size: contain; */
+        /* Small background */
+            min-height: 100vh; /* Cover the full viewport height */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -12,50 +77,6 @@
     /* position: absolute; or relative */
     direction: rtl;
     padding: 8px 0px 8px;
-}
-
-.content {
-    flex: 1;
-    /* Allow content to take up available space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    /* Optional: add a semi-transparent background */
-    padding: 40px;
-}
-
-.header {
-    background: transparent;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 1rem;
-}
-
-.footer {
-    height: 40px;
-    text-align: center;
-    padding: 8px;
-    background: #001529;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Noto Sans Hebrew', sans-serif;
-    font-size: 14px;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-}
-
-
-/* Media Queries for Responsiveness */
-@media (min-width: 375px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-375.jpeg') !important;
-        /* background-size: contain; */
-        /* Small background */
     }
 }
 
@@ -64,6 +85,17 @@
         background-image: url('../assets/img/vibrant/background-01-390.jpeg') !important;
         /* background-size: contain; */
         /* Small background */
+                    min-height: 100vh; /* Cover the full viewport height */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* overflow: hidden; */
+    /* position: absolute; or relative */
+    direction: rtl;
+    padding: 8px 0px 8px;
     }
 }
 
@@ -72,6 +104,17 @@
         background-image: url('../assets/img/vibrant/background-01-414.jpeg') !important;
         /* background-size: contain; */
         /* Small background */
+                    min-height: 100vh; /* Cover the full viewport height */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* overflow: hidden; */
+    /* position: absolute; or relative */
+    direction: rtl;
+    padding: 8px 0px 8px;
     }
 }
 
@@ -80,6 +123,17 @@
         background-image: url('../assets/img/vibrant/background-01-576.jpeg') !important;
         /* background-size: contain; */
         /* Medium background */
+                    min-height: 100vh; /* Cover the full viewport height */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* overflow: hidden; */
+    /* position: absolute; or relative */
+    direction: rtl;
+    padding: 8px 0px 8px;
     }
 }
 
@@ -88,6 +142,17 @@
         background-image: url('../assets/img/vibrant/background-01-768.jpeg') !important;
         /* background-size: cover; */
         /* Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
     }
 }
 
@@ -96,6 +161,36 @@
         background-image: url('../assets/img/vibrant/background-01-1024.jpeg') !important;
         /* background-size: cover; */
         /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1366px) {
+    .layout {
+        background-image: url('../assets/img/vibrant/background-01-1024.jpeg') !important;
+        /* background-size: cover; */
+        /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
     }
 }
 
@@ -104,30 +199,112 @@
         background-image: url('../assets/img/vibrant/background-01-1366x900.jpeg') !important;
         /* background-size: cover; */
         /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
     }
 }
 
-@media (min-width: 1440px) and (max-width: 1800px) {
+@media (min-width: 1367px) and (max-width: 1440px) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-1440x960.jpeg') !important;
         /* background-size: cover; */
         /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1441px) and (max-width: 1600px) {
+    .layout {
+        background-image: url('../assets/img/vibrant/background-01-1440x960.jpeg') !important;
+        /* background-size: cover; */
+        /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
+    }
+}
+
+@media (min-width: 1601px) and (max-width: 1920px) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-1920x1280.jpeg') !important;
         /* background-size: cover; */
         /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
     }
 }
 
-@media (min-width: 2560px) {
+@media (min-width: 1921px) and (max-width: 2560px) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-2560x1770.jpeg') !important;
         /* background-size: cover; */
         /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
+    }
+}
+
+@media (min-width: 2561px) and (max-width: 3840px) {
+    .layout {
+        background-image: url('../assets/img/vibrant/background-01-2560x1770.jpeg') !important;
+        /* background-size: cover; */
+        /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
     }
 }
 
@@ -136,6 +313,17 @@
         background-image: url('../assets/img/vibrant/background-01-3840x2560.jpeg') !important;
         /* background-size: cover; */
         /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
     }
 }
 

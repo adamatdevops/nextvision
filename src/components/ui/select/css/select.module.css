@@ -1,11 +1,19 @@
 .option {
     width: 100%;
-    background-color: #4794d7;
+    background-color: #61b8ea;
     /* border: outline; */
     border-radius: 20px;
     /* padding: 40px; */
     font-family: 'Noto Sans Hebrew', sans-serif;
     text-align: center;
+    color: white; 
+} 
+
+.select {
+    width: 100%;
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    text-align: center;
+    color: white;
 }
 
 @font-face {

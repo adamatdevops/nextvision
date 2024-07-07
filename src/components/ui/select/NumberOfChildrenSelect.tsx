@@ -27,9 +27,13 @@ const NumberOfChildrenSelect: React.FC<NumberOfChildrenSelectProps> = () => {
                 placeholder="בחר מספר ילדים"
                 onChange={handleNumberChange}
                 value={numberOfChildren}
+                className={styles.select}
                 >
                 {options.map((option) => (
-                    <Option key={option} value={option}>
+                    <Option 
+                        className={styles.option}
+                        key={option}
+                        value={option}>
                         {option}
                     </Option>
                 ))}

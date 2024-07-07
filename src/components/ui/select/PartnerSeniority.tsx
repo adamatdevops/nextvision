@@ -15,9 +15,18 @@ const PartnerSeniority: React.FC<PartnerSeniorityProps> = ({ onPartnerSeniorityC
 
     return (
         <Form.Item label={label}>
-            <Select placeholder="בחר ותק" onChange={onPartnerSeniorityChange} disabled={disabled}>
+            <Select
+                placeholder="בחר ותק"
+                onChange={onPartnerSeniorityChange}
+                disabled={disabled}
+                className={styles.select}
+                >
                 {options.map((option) => (
-                    <Option key={option} value={option}>
+                    <Option
+                        key={option}
+                        value={option}
+                        className={styles.option}
+                        >
                         {option}
                     </Option>
                 ))}

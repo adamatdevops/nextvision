@@ -11,9 +11,16 @@ interface ChildrenSelectProps {
 const ChildrenSelect: React.FC<ChildrenSelectProps> = ({ onChildrenChange }) => {
     return (
         <Form.Item label="ילדים">
-            <Select placeholder="ילדים" onChange={onChildrenChange}>
-                <Option value="yes">כן</Option>
-                <Option value="no">לא</Option>
+            <Select
+                className={styles.select}
+                placeholder="ילדים"
+                onChange={onChildrenChange}>
+                <Option
+                    className={styles.option}
+                    value="yes">כן</Option>
+                <Option
+                    className={styles.option}
+                    value="no">לא</Option>
             </Select>
         </Form.Item>
     );

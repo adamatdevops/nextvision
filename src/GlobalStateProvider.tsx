@@ -15,31 +15,15 @@ export interface ChildData {
     futureKindergartenExpenses: number, // Initialize with 0
     futureSchoolExpenses: number, // Initialize with 0
     futureHighSchoolExpenses: number, // Initialize with 0
-    educationTuitionFees: number | null;
+    // educationTuitionFees: number[];
     class: string | null;
     educationTransportation: string | null;
     educationPersonalCare: string | null;
     educationDayCare: string | null;
-    futureEducationPersonalCareExpenses: number;
-    futureEducationDayCareExpenses: number;
+    // futureEducationPersonalCareExpenses: number;
+    // futureEducationDayCareExpenses: number;
     customTuition: number;
 }
-
-/* SocialData */
-// interface MemberSocialData {
-//     familyStatus: string;
-//     partnerCommunityStatus: string;
-//     numberOfChildren: number;
-//     educationDetails: { [key: string]: string };
-// }
-
-/* FinancialData */
-// export interface MemberFinancialData {
-//     currentIncomes: number[];
-//     currentExpenses: number[];
-//     futureIncomes: number[];
-//     futureExpenses: number[];
-// }
 
 export interface State {
     /* SocialData */
@@ -60,10 +44,14 @@ export interface State {
     memberPartnerRetired: string | null;
     memberGoldenAge: string | null;
     memberPartnerGoldenAge: string | null;
+    educationLevel: string[];
     educationSystem: string[];
     educationSystemBudgets: number[];
+    educationAdditionalCare: number[],
     educationSystemFees: number[];
     educationTuitionFees: number[];
+    educationPersonalCare: string[];
+    educationDayCare: string[];
     memberPositionScope: string | null;
     memberPartnerPositionScope: string | null;
     familyNationalInsurance: number | null;
@@ -212,9 +200,13 @@ type ActionType =
     | 'SET_MEMBER_GOLDEN_AGE'
     | 'SET_MEMBER_PARTNER_GOLDEN_AGE'
     | 'SET_MEMBER_PARTNER_RETIRED'
+    | 'SET_EDUCATION_LEVEL'
     | 'SET_EDUCATION_SYSTEM'
     | 'SET_EDUCATION_SYSTEM_BUDGETS'
+    | 'SET_EDUCATION_ADDITIONAL_CARE'
     | 'SET_EDUCATION_SYSTEM_FEES'
+    | 'SET_EDUCATION_PERSONAL_CARE'
+    | 'SET_EDUCATION_DAY_CARE'
     | 'SET_EDUCATION_TUITION_FEES'
     | 'SET_PRIVATE_LESSON_FEES'
     | 'SET_TEENAGE_CLASS_FEES'
@@ -383,13 +375,13 @@ const initialState: State = {
             futureKindergartenExpenses: 0 , // Initialize with 0
             futureSchoolExpenses: 0, // Initialize with 0
             futureHighSchoolExpenses: 0, // Initialize with 0
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
-            futureEducationPersonalCareExpenses: 0,
-            futureEducationDayCareExpenses: 0,
+            // futureEducationPersonalCareExpenses: 0,
+            // futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -406,13 +398,13 @@ const initialState: State = {
             futureKindergartenExpenses: 0, // Initialize with 0
             futureSchoolExpenses: 0, // Initialize with 0
             futureHighSchoolExpenses: 0, // Initialize with 0
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
-            futureEducationPersonalCareExpenses: 0,
-            futureEducationDayCareExpenses: 0,
+            // futureEducationPersonalCareExpenses: 0,
+            // futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -429,13 +421,13 @@ const initialState: State = {
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
-            futureEducationPersonalCareExpenses: 0,
-            futureEducationDayCareExpenses: 0,
+            // futureEducationPersonalCareExpenses: 0,
+            // futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -452,13 +444,13 @@ const initialState: State = {
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
-            futureEducationPersonalCareExpenses: 0,
-            futureEducationDayCareExpenses: 0,
+            // futureEducationPersonalCareExpenses: 0,
+            // futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
         {
@@ -475,13 +467,13 @@ const initialState: State = {
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             class: null,
             educationTransportation: null,
             educationPersonalCare: null,
             educationDayCare: null,
-            futureEducationPersonalCareExpenses: 0,
-            futureEducationDayCareExpenses: 0,
+            // futureEducationPersonalCareExpenses: 0,
+            // futureEducationDayCareExpenses: 0,
             customTuition: 0,
         },
     ],
@@ -491,9 +483,13 @@ const initialState: State = {
     memberPartnerRetired: null,
     memberGoldenAge: null,
     memberPartnerGoldenAge: null,
+    educationLevel: [],
     educationSystem: [],
+    educationAdditionalCare: [],
     educationSystemBudgets: [],
     educationSystemFees: [],
+    educationPersonalCare: [],
+    educationDayCare: [],
     memberPositionScope: null,
     memberPartnerPositionScope: null,
     familyNationalInsurance: null,
@@ -700,15 +696,36 @@ export const memberPartnerGoldenAge = (newMemberPartnerGoldenAge: string | null)
     payload: newMemberPartnerGoldenAge,
 });
 
+export const educationLevel = (newEducationLevel: string[]): Action => ({
+    type: 'SET_EDUCATION_LEVEL',
+    payload: newEducationLevel,
+})
+
 export const educationSystem = (newEducationSystem: string[]): Action => ({
     type: 'SET_EDUCATION_SYSTEM',
     payload: newEducationSystem,
+});
+
+export const educationPersonalCare = (newEducationPersonalCare: string[]): Action => ({
+    type: 'SET_EDUCATION_PERSONAL_CARE',
+    payload: newEducationPersonalCare,
+});
+
+export const educationDayCare = (newEducationDayCare: string[]): Action => ({
+    type: 'SET_EDUCATION_DAY_CARE',
+    payload: newEducationDayCare,
 });
 
 export const educationSystemBudgets = (newEducationSystemBudgets: number[]): Action => ({
     type: 'SET_EDUCATION_SYSTEM_BUDGETS',
     payload: newEducationSystemBudgets,
 });
+
+export const educationAdditionalCare = (newEducationAdditionalCare: number[]): Action => ({
+    type: 'SET_EDUCATION_ADDITIONAL_CARE',
+    payload: newEducationAdditionalCare,
+});
+
 
 export const educationSystemFees = (newEducationSystemFees: number[]): Action => ({
     type: 'SET_EDUCATION_SYSTEM_FEES',
@@ -918,16 +935,6 @@ export const setTeenageClassExpenses = (newTeenageClassExpenses: number[]): Acti
     type: 'SET_TEENAGE_CLASS_EXPENSES',
     payload: newTeenageClassExpenses,
 });
-
-// export const updatedTeenageClassExpenses = (index: number, value: number): Action => ({
-//     type: 'UPDATED_TEENAGE_CLASS_EXPENSES',
-//     payload: { index, value },
-// });
-
-// const setTuitionsExpenses = (newTuitionsExpenses: number): Action => ({
-//     type: 'SET_TUITIONS_EXPENSES',
-//     payload: newTuitionsExpenses,
-// });
 
 export const setOtherEducationExpenses = (newOtherEducationExpenses: number): Action => ({
     type: 'SET_OTHER_EDUCATION_EXPENSES',
@@ -1418,10 +1425,14 @@ const reducer = (state: State, action: Action): State => {
             return { ...state, memberGoldenAge: action.payload };
         case 'SET_MEMBER_PARTNER_GOLDEN_AGE':
             return { ...state, memberPartnerGoldenAge: action.payload };
+        case 'SET_EDUCATION_LEVEL':
+            return { ...state, educationSystem: action.payload }
         case 'SET_EDUCATION_SYSTEM':
             return { ...state, educationSystem: action.payload };
         case 'SET_EDUCATION_SYSTEM_BUDGETS':
             return { ...state, educationSystemBudgets: action.payload };
+        case 'SET_EDUCATION_ADDITIONAL_CARE':
+            return { ...state, educationAdditionalCare: action.payload };
         case 'SET_EDUCATION_SYSTEM_FEES':
             return { ...state, educationSystemFees: action.payload };
         /* Current Incomes */
@@ -1657,6 +1668,10 @@ const reducer = (state: State, action: Action): State => {
             return { ...state, futureTeenageClassExpenses: action.payload };
         case 'SET_FUTURE_EDUCATION_TRANSPORTATION_EXPENSES':
             return { ...state, futureEducationTransportationExpenses: action.payload };
+        case 'SET_EDUCATION_PERSONAL_CARE': 
+            return { ...state, educationPersonalCare: action.payload };
+        case 'SET_EDUCATION_DAY_CARE':
+            return { ...state, educationDayCare: action.payload };
         case 'SET_FUTURE_EDUCATION_PERSONAL_CARE_EXPENSES': {
             const updatedChildrenDataFuturePersonalCareExpenses = state.childrenData.map((child, index) =>
                 index === action.payload.index
@@ -1734,8 +1749,12 @@ const GlobalStateContext = createContext<{
     setMemberPartnerRetired: (newMemberPartnerRetired: string | null) => void;
     setMemberGoldenAge: (newMemberGoldenAge: string | null) => void;
     setMemberPartnerGoldenAge: (newMemberPartnerGoldenAge: string | null) => void;
+    setEducationLevel: (newEducationLevel: string[]) => void;
     setEducationSystem: (newEducationSystem: string[]) => void;
+    setEducationPersonalCare: (newEducationPersonalCare: string[]) => void;
+    setEducationDayCare: (newEducationDayCare: string[]) => void;
     setEducationSystemBudgets: (newEducationSystemBudgets: number[]) => void;
+    setEducationAdditionalCare: (newEducationAdditionalCare: number[]) => void;
     setEducationSystemFees: (newEducationSystemFees: number[]) => void;
     setMemberPositionScope: (newMemberPositionScope: string | null) => void;
     setMemberPartnerPositionScope: (newMemberPartnerPositionScope: string | null) => void;
@@ -1883,8 +1902,12 @@ const GlobalStateContext = createContext<{
     setMemberPartnerRetired: () => null,
     setMemberGoldenAge: () => null,
     setMemberPartnerGoldenAge: () => null,
+    setEducationLevel: () => null,
     setEducationSystem: () => null,
+    setEducationPersonalCare: () => null,
+    setEducationDayCare: () => null,
     setEducationSystemBudgets: () => null,
+    setEducationAdditionalCare: () => null,
     setEducationSystemFees: () => null,
     setMemberPositionScope: () => null,
     setMemberPartnerPositionScope: () => null,
@@ -2054,8 +2077,12 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
                 setMemberPartnerRetired: (newMemberPartnerRetired) => dispatch({ type: 'SET_MEMBER_PARTNER_RETIRED', payload: newMemberPartnerRetired }),
                 setMemberGoldenAge: (newMemberGoldenAge) => dispatch({ type: 'SET_MEMBER_GOLDEN_AGE', payload: newMemberGoldenAge }),
                 setMemberPartnerGoldenAge: (newMemberPartnerGoldenAge) => dispatch({ type: 'SET_MEMBER_PARTNER_GOLDEN_AGE', payload: newMemberPartnerGoldenAge }),
+                setEducationLevel: (newEducationLevel) => dispatch({ type: 'SET_EDUCATION_LEVEL', payload: newEducationLevel }),
                 setEducationSystem: (newEducationSystem) => dispatch({ type: 'SET_EDUCATION_SYSTEM', payload: newEducationSystem }),
+                setEducationPersonalCare: (newEducationPersonalCare) => dispatch({ type: 'SET_EDUCATION_PERSONAL_CARE', payload: newEducationPersonalCare }),
+                setEducationDayCare: (newEducationDayCare) => dispatch({ type: 'SET_EDUCATION_DAY_CARE', payload: newEducationDayCare }),
                 setEducationSystemBudgets: (newEducationSystemBudgets) => dispatch({ type: 'SET_EDUCATION_SYSTEM_BUDGETS', payload: newEducationSystemBudgets }),
+                setEducationAdditionalCare: (newEducationAdditionalCare) => dispatch({ type: 'SET_EDUCATION_ADDITIONAL_CARE', payload: newEducationAdditionalCare }),
                 setEducationSystemFees: (newEducationSystemFees) => dispatch({ type: 'SET_EDUCATION_SYSTEM_FEES', payload: newEducationSystemFees }),
                 setMemberPositionScope: (newMemberPositionScope) => dispatch({ type: 'SET_MEMBER_POSITION_SCOPE', payload: newMemberPositionScope }),
                 setMemberPartnerPositionScope: (newMemberPartnerPositionScope) => dispatch({ type: 'SET_MEMBER_PARTNER_POSITION_SCOPE', payload: newMemberPartnerPositionScope }),

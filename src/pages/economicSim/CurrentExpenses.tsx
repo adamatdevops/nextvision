@@ -495,7 +495,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                         onChange={(value) => setPartnerDentistExpenses(value || 0)}
                     />
                 </Form.Item> */}
-                {state.communityMemberPartner !== 'no-partner' && (
+                {state.partnerCommunityStatus !== 'no-partner' && (
                     <Form.Item
                         label="טיפולי שיניים בן/ת זוג"
                         labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
@@ -634,7 +634,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                 </Form.Item>
                 {drawerContentKey && (
                 <InfoDrawer
-                    title="מידע"
+                    // title="מידע"
                     //content={drawerContent}
                     open={drawerOpen}
                     onClose={closeDrawer}

@@ -1,6 +1,6 @@
 /* src/components/ui/select/MemberGoldenAge.tsx */
 import React from 'react';
-import { Select } from 'antd';
+import { Select, Form } from 'antd';
 import { useGlobalState } from '../../../GlobalStateProvider';
 import styles from './css/select.module.css';
 
@@ -14,14 +14,21 @@ const MemberGoldenAge: React.FC = () => {
     };
 
     return (
-        <Select
-            placeholder="האם זכאי לקרן גיל הזהב?"
-            value={state.memberGoldenAge}
-            onChange={handleGoldenAgeChange}
-        >
-            <Option value="yes">כן</Option>
-            <Option value="no">לא</Option>
-        </Select>
+        <Form.Item label="קרן גיל הזהב">
+            <Select
+                placeholder="האם זכאי לקרן גיל הזהב"
+                value={state.memberGoldenAge}
+                onChange={handleGoldenAgeChange}
+                className={styles.select}
+            >
+                <Option
+                    className={styles.option}
+                    value="yes">כן</Option>
+                <Option
+                    className={styles.option}
+                    value="no">לא</Option>
+            </Select>
+        </Form.Item>
     );
 };
 

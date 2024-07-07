@@ -13,18 +13,18 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
     const themeConfig = {
         token: {
             borderRadius: 6,
-            colorBgBase: '#052b68', // Base background color
+            colorBgBase: '#4893d9df', // Base background color
             colorError: '#ef3131',
-            colorInfo: '#1677ff',
-            colorLink: '#1677ff',
+            colorInfo: '#29ff16',
+            colorLink: '#237af3',
             colorPrimary: '#1890ff', // Primary color
-            colorSuccess: '#52c41a',
-            colorTextBase: '#f6f1f1',
-            colorWarning: '#faad14',
-            controlHeight: 32,
+            colorSuccess: '#29ff16',
+            colorTextBase: '#201f1f',
+            colorWarning: '#fa6114',
+            controlHeight: 24,
             fontFamily: 'Noto Sans Hebrew', // Font family
             // fontFamilyCode: 'monospace', // Font family for code blocks
-            fontSize: 14, // Base font size
+            fontSize: 16, // Base font size
             lineType: 'solid', // Base line type
             lineWidth: 1, // Base line width
             motion: true,
@@ -47,6 +47,12 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
         components: {
             Button: {
                 colorPrimary: '#1890ff',
+            },
+            // Input: {
+            //     colorPrimary: '#f3edf0',
+            // }
+            Select: {
+                color: '#ffffff', /* White text color */
             },
         },
     };

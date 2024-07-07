@@ -1,9 +1,8 @@
 /* src/components/ui/tables/ChildrenStatusTable.tsx */
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Select, InputNumber, Card } from 'antd';
-import { setFutureChildrenSafetyNet, useGlobalState } from '../../../GlobalStateProvider';
-// import { childrenData, useFutureExpensesState } from '../../../context/FutureExpensesGSP'; // Import the hook
-import type { ChildData } from '../../../GlobalStateProvider';
+import { useGlobalState } from '../../../GlobalStateProvider';
+// import type { ChildData } from '../../../GlobalStateProvider';
 import styles from './css/ChildrenStatusTable.module.css';
 
 const { Option } = Select;
@@ -26,13 +25,13 @@ export interface ChildData {
     futureKindergartenExpenses: number; // Added
     futureSchoolExpenses: number; // Added
     futureHighSchoolExpenses: number; // Added
-    educationTuitionFees: number | null;
+    // educationTuitionFees: number | null;
     class: string | null;
     educationTransportation: string | null;
     educationPersonalCare: string | null;
     educationDayCare: string | null;
-    futureEducationPersonalCareExpenses: number;
-    futureEducationDayCareExpenses: number;
+    // futureEducationPersonalCareExpenses: number;
+    // futureEducationDayCareExpenses: number;
     customTuition: number;
 }
 
@@ -82,8 +81,13 @@ export const educationTuitionFeesMap: { [key: string]: number } = {
     'תיכון': 0,
 };
 
+export const educationAdditionalCareMap: { [key: string]: number } = {
+    'צהרון': 0,
+    'טיפול פרטני': 0,
+}
+
 const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChildren }) => {
-    const { state, dispatch, setEducationSystemBudgets, setEducationSystem, setEducationSystemFees, setFutureKindergartenExpenses, setFutureSchoolExpenses, setFutureHighSchoolExpenses, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setPrivateLessonExpenses, setFutureEducationPersonalCareExpenses, setFutureEducationDayCareExpenses } = useGlobalState();
+    const { state, dispatch, setEducationLevel, setEducationSystemBudgets, setEducationPersonalCare, setEducationDayCare, setEducationAdditionalCare, setEducationSystem, setEducationSystemFees, setEducationTuitionFees, setFutureKindergartenExpenses, setFutureSchoolExpenses, setFutureHighSchoolExpenses, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setPrivateLessonExpenses, setFutureEducationPersonalCareExpenses, setFutureEducationDayCareExpenses } = useGlobalState();
 
     const ageOptions = Array.from({ length: 18 }, (_, i) => i + 0);
     const educationLevelOptions = ['גיל הרך', 'יסודי', 'תיכון'];
@@ -111,7 +115,7 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             futureKindergartenExpenses: 0,
             futureSchoolExpenses: 0,
             futureHighSchoolExpenses: 0,
-            educationTuitionFees: null,
+            // educationTuitionFees: null,
             privateLessonFees: [],
             class: '',
             educationTransportation: null,
@@ -141,14 +145,14 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                 futureKindergartenExpenses: state.childrenData[i]?.futureKindergartenExpenses || 0,
                 futureSchoolExpenses: state.childrenData[i]?.futureSchoolExpenses || 0,
                 futureHighSchoolExpenses: state.childrenData[i]?.futureHighSchoolExpenses || 0,
-                educationTuitionFees: state.childrenData[i]?.educationTuitionFees || null,
+                // educationTuitionFees: state.childrenData[i]?.educationTuitionFees || null,
                 privateLessonFees: state.childrenData[i]?.privateLessonFees || [],
                 class: '',
                 educationTransportation: state.childrenData[i]?.educationTransportation || null,
                 educationPersonalCare: state.childrenData[i]?.educationPersonalCare || null,
                 educationDayCare: state.childrenData[i]?.educationDayCare || null,
-                futureEducationPersonalCareExpenses: state.childrenData[i]?.futureEducationPersonalCareExpenses || 0,
-                futureEducationDayCareExpenses: state.childrenData[i]?.futureEducationDayCareExpenses || 0,
+                // futureEducationPersonalCareExpenses: state.childrenData[i]?.futureEducationPersonalCareExpenses || 0,
+                // futureEducationDayCareExpenses: state.childrenData[i]?.futureEducationDayCareExpenses || 0,
                 customTuition: state.childrenData[i]?.customTuition || 0,
             }))
         );
@@ -218,57 +222,71 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             // console.log(`Setting future expenses for ${value}`); // Turn for logging
 
             if (value === 'גיל הרך') {
-                // const updatedEducationLevel = childrenData[index].educationLevel;
-                // updatedEducationLevel === 'גיל הרך';
-                setFutureKindergartenExpenses(index, 0); // Initialize with 0
+                const updatedTuitionFees = [...state.educationTuitionFees];
+                if (value !== null) {
+                    updatedTuitionFees[index] = educationTuitionFeesMap[value];
+                }
+                setEducationTuitionFees(updatedTuitionFees);
+                
+                const updatedLevel = [...state.educationLevel];
+                if (value !== null) {
+                    updatedLevel[index] = value;
+                }
+                setEducationSystem(updatedLevel);
             } else if (value === 'יסודי') {
-                // const updatedEducationLevel = childrenData[index].educationLevel;
-                // updatedEducationLevel === 'גיל הרך';
-                setFutureSchoolExpenses(index, 0); // Initialize with 0
-            } else if (value === 'תיכון') {
-                // const updatedEducationLevel = childrenData[index].educationLevel;
-                // updatedEducationLevel === 'גיל הרך';
-                setFutureHighSchoolExpenses(index, 0); // Initialize with 0
-            }
+                const updatedTuitionFees = [...state.educationTuitionFees];
+                if (value !== null) {
+                    updatedTuitionFees[index] = educationTuitionFeesMap[value];
+                }
+                setEducationTuitionFees(updatedTuitionFees);
 
-            // Ensure the global state is updated
-            // Here we ensure that the global state is updated accordingly
-            if (field === 'educationLevel') {
-                const updatedChildrenData = state.childrenData.map((child, i) =>
-                    i === index ? { ...child, educationLevel: value } : child
-                );
-                dispatch({ type: 'SET_CHILDREN_DATA', payload: updatedChildrenData });
+                const updatedLevel = [...state.educationLevel];
+                if (value !== null) {
+                    updatedLevel[index] = value;
+                }
+                setEducationSystem(updatedLevel);
+            } else if (value === 'תיכון') {
+                const updatedTuitionFees = [...state.educationTuitionFees];
+                if (value !== null) {
+                    updatedTuitionFees[index] = educationTuitionFeesMap[value];
+                } 
+                setEducationTuitionFees(updatedTuitionFees);
+
+                const updatedLevel = [...state.educationLevel];
+                if (value !== null) {
+                    updatedLevel[index] = value;
+                }
+                setEducationSystem(updatedLevel);
             }
         }
 
-        if (field === 'educationPersonalCare') {
-            if (value === 'כן') {
-                setFutureEducationPersonalCareExpenses(index, 0); // Initialize with 0
-            }
 
-            // Ensure the global state is updated
-            // Here we ensure that the global state is updated accordingly
-            if (field === 'educationPersonalCare') {
-                const updatedChildrenData = state.childrenData.map((child, i) =>
-                    i === index ? { ...child, educationPersonalCare: value } : child
-                );
-                dispatch({ type: 'SET_CHILDREN_DATA', payload: updatedChildrenData });
+        if (field === 'educationPersonalCare') {
+            const updatedAdditionalCare = [...state.educationAdditionalCare];
+            if (value !== null) {
+                updatedAdditionalCare[index] = value;
             }
+            setEducationAdditionalCare(updatedAdditionalCare)
+
+            const updatedPersonalCare = [...state.educationPersonalCare];
+            if (value !== null ) {
+                updatedPersonalCare[index] = value;
+            }
+            setEducationPersonalCare(updatedPersonalCare)
         }
 
         if (field === 'educationDayCare') {
-            if (value === 'כן') {
-                setFutureEducationDayCareExpenses(index, 0); // Initialize with 0
+            const updatedAdditionalCare = [...state.educationAdditionalCare];
+            if (value !== null) {
+                updatedAdditionalCare[index] = value;
             }
+            setEducationAdditionalCare(updatedAdditionalCare)
 
-            // Ensure the global state is updated
-            // Here we ensure that the global state is updated accordingly
-            if (field === 'educationDayCare') {
-                const updatedChildrenData = state.childrenData.map((child, i) =>
-                    i === index ? { ...child, educationDayCare: value } : child
-                );
-                dispatch({ type: 'SET_CHILDREN_DATA', payload: updatedChildrenData });
+            const updatedDayCare = [...state.educationDayCare];
+            if (value !== null ) {
+                updatedDayCare[index] = value;
             }
+            setEducationDayCare(updatedDayCare)
         }
     };
 
@@ -309,8 +327,8 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                             value={child.educationLevel}
                             onChange={(value) => handleInputChange(index, 'educationLevel', value)}
                         >
-                            {educationLevelOptions.map((option) => (
-                                <Option key={option} value={option}>
+                            {educationLevelOptions.map((option, index) => (
+                                <Option key={index} value={option}>
                                     {option}
                                 </Option>
                             ))}
@@ -410,15 +428,15 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                             ))}
                         </Select>
                     </Form.Item>
-                    <Form.Item label="טיפול אישי" className={styles.childField}>
+                    <Form.Item label="טיפול פרטני" className={styles.childField}>
                         <Select
                             placeholder="בחר"
                             className={styles.select}
                             value={child.educationPersonalCare}
                             onChange={(value) => handleInputChange(index, 'educationPersonalCare', value)}
                         >
-                        {educationPersonalCareOptions.map((option) => (
-                                <Option key={option} value={option}>
+                            {educationPersonalCareOptions.map((option, index) => (
+                                <Option key={index} value={option}>
                                     {option}
                                 </Option>
                             ))}
@@ -431,8 +449,8 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                                 value={child.educationDayCare}
                                 onChange={(value) => handleInputChange(index, 'educationDayCare', value)}
                             >
-                            {educationDayCareOptions.map((option) => (
-                                <Option key={option} value={option}>
+                            {educationDayCareOptions.map((option, index) => (
+                                <Option key={index} value={option}>
                                     {option}
                                 </Option>
                             ))}

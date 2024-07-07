@@ -31,32 +31,19 @@ const ApartmentSquareFootage: React.FC = () => {
                 placeholder="בחר שטח דירה"
                 onChange={handleChange}
                 value={apartmentSquareFootage}
+                className={styles.select}
             >
                 {options.map((option) => (
-                    <Option key={option} value={option}>
+                    <Option
+                        className={styles.option}
+                        key={option}
+                        value={option}>
                         {option} מ"ר
                     </Option>
                 ))}
             </Select>
         </Form.Item>
     );
-
-    // return (
-    //     <Form.Item label="שטח הדירה (מטרים)">
-    //         <Select
-    //             placeholder="בחר שטח דירה"
-    //             value={status}
-    //             onChange={onSquareFootageChange}
-    //         >
-    //             <Option value="40">40 מ״ר</Option>
-    //             <Option value="50">50 מ״ר</Option>
-    //             <Option value="60">60 מ״ר</Option>
-    //             <Option value="70">70 מ״ר</Option>
-    //             <Option value="100">100 מ״ר</Option>
-    //             <Option value="110">126 מ״ר</Option>
-    //         </Select>
-    //     </Form.Item>
-    // );
 };
 
 export default ApartmentSquareFootage;

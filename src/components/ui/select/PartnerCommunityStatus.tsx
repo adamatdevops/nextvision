@@ -14,12 +14,6 @@ interface PartnerCommunityStatusProps {
 }
 
 const PartnerCommunityStatus: React.FC<PartnerCommunityStatusProps> = ({ status, onStatusChange }) => {
-    // const [selectedCommunityStatus, setCommunityStatus] = useState<string | null>(null);
-
-    // const handleStatusChange = (value: string) => {
-    //     setCommunityStatus(value);
-    //     props.onStatusChange(value);
-    // };
 
     return (
         <Form.Item label="סטטוס של בן/בת הזוג">
@@ -27,10 +21,20 @@ const PartnerCommunityStatus: React.FC<PartnerCommunityStatusProps> = ({ status,
                 placeholder="בחר סטטוס של בן/בת הזוג"
                 value={status}
                 onChange={onStatusChange}
+                className={styles.select}
             >
-                <Option value="community-member">חבר/ת קהילה</Option>
-                <Option value="not-community-member">לא חבר/ת קהילה</Option>
-                <Option value="no-partner">ללא בן/בת זוג</Option>
+                <Option
+                    className={styles.option}
+                    value="community-member"
+                    >חבר/ת קהילה</Option>
+                <Option
+                    className={styles.option}
+                    value="not-community-member"
+                    >לא חבר/ת קהילה</Option>
+                <Option
+                    className={styles.option}
+                    value="no-partner"
+                    >ללא בן/בת זוג</Option>
             </Select>
         </Form.Item>
     );

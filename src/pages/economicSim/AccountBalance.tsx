@@ -9,6 +9,7 @@ import FutureExpenses from './FutureExpenses';
 import CurrentBalance from './CurrentBalance';
 import FutureBalance from './FutureBalance';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer'; // Import InfoDrawer
+import { drawerContent } from '../../components/ui/drawer/drawerContent';
 import FamilyAvatar from '../../components/ui/avatars/FamilyAvatar';
 import DynamicLayout from '../../components/ui/layouts/DynamicBackgroundLayout';
 import { useGlobalState } from '../../GlobalStateProvider';
@@ -24,18 +25,24 @@ const AccountBalance: React.FC = () => {
     const [futureExpenses, setFutureExpenses] = useState<number[]>([]);
     const [balanceDifference, setBalanceDifference] = useState<number>(0);
 
-    const [drawerVisible, setDrawerVisible] = useState(false);
-    const [drawerContent, setDrawerContent] = useState('');
+    //const [drawerVisible, setDrawerVisible] = useState(false);
+    //const [drawerContent, setDrawerContent] = useState('');
+
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    // const [drawerContent, setDrawerContent] = useState('');
+    const [drawerContentKey, setDrawerContentKey] = useState<keyof typeof drawerContent | null>(null);
 
     const { state } = useGlobalState();
 
-    const showDrawer = (content: string) => {
-        setDrawerContent(content);
-        setDrawerVisible(true);
+    const showDrawer = (key: keyof typeof drawerContent) => {
+        //setDrawerContent(content);
+        setDrawerContentKey(key);
+        setDrawerOpen(true);
     };
 
     const closeDrawer = () => {
-        setDrawerVisible(false);
+        setDrawerOpen(false);
+        setDrawerContentKey(null);
     };
 
     useEffect(() => {
@@ -130,11 +137,15 @@ const AccountBalance: React.FC = () => {
                 </Row>
             </Content>
             <StepsBar />
-            <InfoDrawer
-                content={drawerContent}
-                isOpen={drawerVisible}
-                onClose={closeDrawer}
-            />
+            {drawerContentKey && (
+                <InfoDrawer
+                    // title="מידע"
+                    //content={drawerContent}
+                    open={drawerOpen}
+                    onClose={closeDrawer}
+                    contentKey={drawerContentKey}
+                />
+            )}
         </DynamicLayout>
     );
 };

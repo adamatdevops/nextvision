@@ -12,25 +12,25 @@
 
 .header {
     width: calc(35% - 60px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background: rgba(255, 255, 255, 0.2);
     color: rgb(245, 245, 245);
     text-align: center;
-    align-items: center;
-    justify-content: space-between;
+    padding: 4px;
     font-family: 'Noto Sans Hebrew', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    /* position: center; */
-    display: flex;
-    flex-direction: row;
+    overflow: hidden;
+    margin: 2px 0;
+    margin-top: 1em;
     border-radius: 28px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
-    padding: 20px;
-    overflow: hidden;    
-    margin: 2px 0;
     box-sizing: border-box;
 }
 
@@ -60,6 +60,7 @@
     width: 100%;
     font-family: 'Noto Sans Hebrew', sans-serif;
     font-size: 14px;
+    margin-bottom: 0;
 }
 
 .content {

@@ -15,9 +15,16 @@ const DeceasedSeniority: React.FC<DeceasedSeniorityProps> = ({ onDeceasedSeniori
 
     return (
         <Form.Item label={label}>
-            <Select placeholder="בחר ותק" onChange={onDeceasedSeniorityChange} disabled={disabled}>
+            <Select
+                className={styles.select}
+                placeholder="בחר ותק"
+                onChange={onDeceasedSeniorityChange}
+                disabled={disabled}>
                 {options.map((option) => (
-                    <Option key={option} value={option}>
+                    <Option
+                        className={styles.select}
+                        key={option}
+                        value={option}>
                         {option}
                     </Option>
                 ))}

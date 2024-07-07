@@ -148,6 +148,10 @@ export const drawerContent = {
 מעבודה.`,
         budgetingMethod: `6783 ש״ח לגמלאי/ת`,
     },
+    futureNationalInsuranceAllowance: {
+        description: `קצבת נכות`,
+        budgetingMethod: `קצבת נכות כללית היא קצבה חודשית המשולמת על-ידי המוסד לביטוח לאומי לבוגרים/ילדים שליקוי גופני, שכלי או נפשי פוגע ב-50% לפחות מכושרם להשתכר למחייתם (או בכושר לתפקד במשק הבית לעקרות בית). הזכאות לקצבת נכות עשויה להקנות הטבות נוספות בתחומים שונים, כגון דיור, תחבורה ובריאות. בפורטל זה תמצאו את השלבים בתהליך התביעה לקבלת קצבת נכות וכן את הזכויות וההטבות הניתנות למקבלי הקצבה.`,
+    },
     futureNationalInsuranceAllowanceCommunity: {
         description: `קצבת ילדים - קצבה מהמוסד לביטוח לאומי הניתנת בגין ילדים עד גיל .18`,
         budgetingMethod: `
@@ -168,6 +172,14 @@ export const drawerContent = {
         description: `קצבת זקנה - קצבה מהמוסד לביטוח לאומי הניתנת למי שהגיע לגיל פרישה בהתאם לכללי
 הביטוח הלאומי.`,
         budgetingMethod: `2234 ש״ח לחבר/ה`,
+    },
+    futureRecoveryFee: {
+        description: `דמי הבראה`,
+        budgetingMethod: `דמי הבראה הם תשלום שעל מעביד בישראל לשלם לעובד, מכוח צו הרחבה בעניין זה, או מכוח הסכם קיבוצי.`,
+    },
+    futurePartnerRecoveryFee: {
+        description: `דמי הבראה`,
+        budgetingMethod: `דמי הבראה הם תשלום שעל מעביד בישראל לשלם לעובד, מכוח צו הרחבה בעניין זה, או מכוח הסכם קיבוצי.`,
     },
     futureEducationFund: {
         description: `קרן השתלמות`,
@@ -204,6 +216,14 @@ export const drawerContent = {
 מעת לעת
 בסימולטור זה הוצאות רשת הביטחון של הילדים הינן נפרדות מרשת הביטחון המשפחתית.
 `,
+    },
+    futureChildrenAddition: {
+        description: `השלמה בגין הוצאות ילדים`,
+        budgetingMethod: `השלמה או זכאות להשתתפות חודשית אשר נפרדת מרשת הביטחון החינוכית`, 
+    },
+    futureAdaptationGrant: {
+        description: `מענק הסתגלות`,
+        budgetingMethod: `1000 ש״ח על בסיס חודשי לעוברים למודל המתחדש`,
     },
     futureChildrenSafetyNet: {
         description: `רשת ביטחון עבור הוצאות חינוך`,
@@ -340,4 +360,13 @@ export const drawerContent = {
 אש"ל או ארוחות, טלפון, זקיפת הכנסה בגין רכב צמוד, שי לחג וכד'.`,
         budgetingMethod: `0.6% מגובה שכר הברוטו הכולל`,
     },
+    futureOtherIncome: {
+        description: `אחר`,
+        budgetingMethod: `הכנסה אחרת אשר אינה נכללת בסימולטור`,
+
+    },
+    futureOtherExpenses: {
+        description: `אחר`,
+        budgetingMethod: `הוצאה אחרת אשר אינה נכללת בסימולטור`,
+    }
 };

@@ -1,47 +1,62 @@
 /* GettingStarted.module.css */
 .layout {
-    min-height: 100vh; /* Cover the full viewport height */
-    background-image: url('../assets/img/vibrant/background-01-3840x4000.jpeg');
+    min-height: 100vh;
+    /* Cover the full viewport height */
+    /* background-image: url('../assets/img/vibrant/background-01-3840x4000.jpeg'); */
     background-size: cover;
+    background-origin: border-box;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
+    flex-flow: column wrap;
+    flex-wrap: wrap;
+    position: relative;
     /* overflow: hidden; */
     /* position: absolute; or relative */
     direction: rtl;
-    padding: 8px 0px 26px;
+    padding: 4px 0px 2px;
+    padding-bottom: 2px;
 }
 
 .header {
-    flex: 1;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     background: transparent;
-    color: rgb(255, 255, 255);
+    color: white;
     text-align: center;
-    font-size: 32px;
-    padding: 1rem;
+    padding: 4px;
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    overflow: hidden;
+    margin: 2px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .footer {
     background: transparent;
     color: rgb(255, 255, 255);
     text-align: center;
-    padding: 3rem;
-    margin-bottom: 0px;
+    padding: 1rem;
+    margin-bottom: 0;
 }
 
 .content {
-    flex: 1; /* Allow content to take up available space */
+    flex: 1;
+    flex-grow: 1;
+    min-height: calc(40vh - 70px);
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 30rem;
-    height: 100vh; 
-    /* Optional: add a semi-transparent background */
-    /* padding: 50px; */
+    padding: 12px;
+    line-height: 4px;
+    margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 .h1 {
@@ -125,7 +140,7 @@
     /* font-family: 'Noto Sans Hebrew bold', sans-serif; */ /* Change Back */
     font-size: 18px;
     box-sizing: border-box;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    color: #ffffff;
 }
 
 .fullWidth {

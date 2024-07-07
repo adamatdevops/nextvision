@@ -15,9 +15,18 @@ const Seniority: React.FC<SeniorityProps> = ({ onSeniorityChange, label, disable
 
     return (
         <Form.Item label={label}>
-            <Select placeholder="בחר ותק" onChange={onSeniorityChange} disabled={disabled}>
+            <Select
+                className={styles.select} 
+                placeholder="בחר ותק"
+                onChange={onSeniorityChange}
+                disabled={disabled}
+                >
                 {options.map((option) => (
-                    <Option key={option} value={option}>
+                    <Option
+                        className={styles.option}
+                        key={option}
+                        value={option}
+                        >
                         {option}
                     </Option>
                 ))}

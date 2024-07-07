@@ -534,7 +534,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureNetIncome')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -553,7 +553,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureGrossIncome')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -573,7 +573,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futurePartnerNetIncome')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -594,7 +594,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futurePartnerGrossIncome')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -615,7 +615,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futurePensionAllowance')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -636,7 +636,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futurePartnerPensionAllowance')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -657,7 +657,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futureElderlyPension')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -678,7 +678,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futurePartnerElderlyPension')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -700,7 +700,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                                 <Button
                                     type="link"
                                     icon={<InfoCircleOutlined />}
-                                    onClick={() => showDrawer('personalBudget')}
+                                    onClick={() => showDrawer('futureNationalInsuranceAllowance')}
                                 />
                             </Tooltip>
                         </Form.Item>
@@ -720,7 +720,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureNationalInsuranceAllowanceCommunity')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -739,7 +739,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureRecoveryFee')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -758,7 +758,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futurePartnerRecoveryFee')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -777,7 +777,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureEducationFund')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -796,7 +796,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futurePartnerEducationFund')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -815,7 +815,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureWelfareIncomes')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -834,11 +834,11 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureDentistIncomes')}
                         />
                     </Tooltip>
                 </Form.Item>
-                {state.communityMemberPartner !== 'no-partner' && state.partnerCommunityStatus === 'community-member' && (
+                {state.partnerCommunityStatus !== 'no-partner' && state.partnerCommunityStatus === 'community-member' && (
                     <Form.Item
                         label="בן/ת זוג - זיכוי בגין טיפולי שניים"
                         labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
@@ -854,7 +854,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futurePartnerDentistIncomes')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -874,7 +874,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureChildrenDentistIncomes')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -893,7 +893,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureChildrenAddition')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -912,7 +912,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureFamilySafetyNet')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -932,7 +932,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Button
                                 type="link"
                                 icon={<InfoCircleOutlined />}
-                                onClick={() => showDrawer('personalBudget')}
+                                onClick={() => showDrawer('futureFamilySafetyNet')}
                             />
                         </Tooltip>
                     </Form.Item>
@@ -952,7 +952,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureAdaptationGrant')}
                         />
                     </Tooltip>
                 </Form.Item>
@@ -971,13 +971,13 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('personalBudget')}
+                            onClick={() => showDrawer('futureOtherIncome')}
                         />
                     </Tooltip>
                 </Form.Item>
                 {drawerContentKey && (
                     <InfoDrawer
-                        title="מידע"
+                        // title="מידע"
                         //content={drawerContent}
                         open={drawerOpen}
                         onClose={closeDrawer}
