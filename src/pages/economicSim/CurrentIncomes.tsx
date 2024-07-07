@@ -201,6 +201,8 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
             welfare,
             // partnerSeniorityAddition,
             // deceasedSeniorityAddition,
+            benefitForWork,
+            outsourcedFood,
             goldenAgeAmount,
             otherIncome,
         ]);
@@ -222,6 +224,8 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
         welfare,
         // partnerSeniorityAddition,
         // deceasedSeniorityAddition,
+        benefitForWork,
+        outsourcedFood,
         goldenAgeAmount,
         otherIncome,
     ]);
@@ -237,11 +241,12 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     label="תקציב אישי"
                     labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
                     wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
+
                 >
                     <InputNumber
                         value={state.personalBudget}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px'}}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed'}}
                     />
                     {/* <InfoCircleOutlined className={styles.infoIcon} onClick={() => showDrawer('Details about salary')} /> */}
                     <Tooltip title="מידע על תקציב אישי">
@@ -260,7 +265,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={state.childrenAddition || 0}
                         disabled // Fixed value
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב ילדים">
                         <Button
@@ -278,7 +283,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={state.provisions}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב כלכלה">
                         <Button
@@ -296,7 +301,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={laundry}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב כביסה">
                         <Button
@@ -314,7 +319,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={gas}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב גז">
                         <Button
@@ -332,7 +337,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={hygiene}
                         disabled
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב היגיינה">
                         <Button
@@ -350,7 +355,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={maintenance}
                         disabled
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב אחזקה">
                         <Button
@@ -368,7 +373,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={vehicle}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב רכב">
                         <Button
@@ -386,7 +391,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <InputNumber
                         value={energy}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על תקציב חשמל">
                         <Button

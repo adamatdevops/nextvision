@@ -119,6 +119,7 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             privateLessonFees: [],
             class: '',
             educationTransportation: null,
+            educationTransportationExpenses: 0,
             educationPersonalCare: null,
             educationDayCare: null,
             futureEducationPersonalCareExpenses: 0,
@@ -288,6 +289,20 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             }
             setEducationDayCare(updatedDayCare)
         }
+
+        if (field === 'educationTransportation') {
+            const updatedTransportationExpenses = [...state.educationTransportationExpenses];
+            if (value !== null) {
+                updatedTransportationExpenses[index] = value;
+            }
+            setEducationTransportationExpenses(updatedTransportationExpenses)
+
+            const updatedTransportation = [...state.educationTransportation];
+            if (value !== null ) {
+                updatedTransportation[index] = value;
+            }
+            setEducationTransportation(updatedTransportation)
+        }
     };
 
     // useEffect(() => { // Turn for logging
@@ -421,8 +436,8 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                             value={child.educationTransportation}
                             onChange={(value) => handleInputChange(index, 'educationTransportation', value)}
                         >
-                            {educationTransportationOptions.map((option) => (
-                                <Option key={option} value={option}>
+                            {educationTransportationOptions.map((option, index) => (
+                                <Option key={index} value={option}>
                                     {option}
                                 </Option>
                             ))}

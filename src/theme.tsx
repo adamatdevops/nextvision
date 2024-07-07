@@ -19,7 +19,7 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
             colorLink: '#237af3',
             colorPrimary: '#1890ff', // Primary color
             colorSuccess: '#29ff16',
-            colorTextBase: '#201f1f',
+            colorTextBase: '#f9f5f5',
             colorWarning: '#fa6114',
             controlHeight: 24,
             fontFamily: 'Noto Sans Hebrew', // Font family

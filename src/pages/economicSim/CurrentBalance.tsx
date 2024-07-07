@@ -1,12 +1,20 @@
 /* ./src/pages/economicSim/CurrentBalance.tsx */
 import React, { useState, useEffect } from 'react';
 import { Card, Typography, Row, Col } from 'antd';
+import { useGlobalState } from '../../GlobalStateProvider';
 import styles from './css/AccountBalance.module.css';
-
 
 const { Title } = Typography;
 
+interface CurrentBalanceProps {
+    incomes: number[];
+    expenses: number[];
+}
+
 const CurrentBalance: React.FC<{ incomes: number[], expenses: number[] }> = ({ incomes, expenses }) => {
+    // Dev
+    const { state } = useGlobalState();
+
     const [incomeTotal, setIncomeTotal] = useState(0);
     const [expenseTotal, setExpenseTotal] = useState(0);
     const [balanceTotal, setBalanceTotal] = useState(0);

@@ -1,7 +1,7 @@
 {
     "name": "nextvision",
     "private": true,
-    "version": "2.8.35",
+    "version": "2.8.372",
     "description": "Modern React - Typescript - Vite Amplify Web application that utilizes AWS Amplify",
     "type": "module",
     "scripts": {

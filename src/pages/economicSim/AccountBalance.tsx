@@ -50,12 +50,14 @@ const AccountBalance: React.FC = () => {
         const currentExpenseTotal = expenses.reduce((total, expense) => total + expense, 0);
         const currentBalanceTotal = currentIncomeTotal - currentExpenseTotal;
 
-        const futureIncomeTotal = futureIncomes.reduce((total, income) => total + income, 0);
+        const futureIncomeTotal = futureIncomes.reduce((total, income) => total + income, 0) - state.futureGrossIncome - state.futurePartnerGrossIncome;
         const futureExpenseTotal = futureExpenses.reduce((total, expense) => total + expense, 0);
         const futureBalanceTotal = futureIncomeTotal - futureExpenseTotal;
 
+        // const setBalanceDifference = futureBalanceTotal - currentBalanceTotal;
+        // setBalanceDifference(balanceDifference);
         const balanceDifference = (futureIncomeTotal - futureExpenseTotal) - (currentIncomeTotal - currentExpenseTotal);
-    }, [incomes, expenses, futureIncomes, futureExpenses]);
+    }, [incomes, expenses, futureIncomes, futureExpenses, state.futureGrossIncome, state.futurePartnerGrossIncome]);
 
 
     const handleCalculate = () => {
@@ -63,12 +65,12 @@ const AccountBalance: React.FC = () => {
         const currentExpenseTotal = expenses.reduce((total, expense) => total + expense, 0);
         const currentBalanceTotal = currentIncomeTotal - currentExpenseTotal;
 
-        const futureIncomeTotal = futureIncomes.reduce((total, income) => total + income, 0);
+        const futureIncomeTotal = futureIncomes.reduce((total, income) => total + income, 0) - state.futureGrossIncome - state.futurePartnerGrossIncome;
         const futureExpenseTotal = futureExpenses.reduce((total, expense) => total + expense, 0);
         const futureBalanceTotal = futureIncomeTotal - futureExpenseTotal;
 
         const balanceDifference = (futureIncomeTotal - futureExpenseTotal) - (currentIncomeTotal - currentExpenseTotal);
-
+        //const balanceDifference = futureBalanceTotal - currentBalanceTotal;
         setBalanceDifference(balanceDifference);
     };
 

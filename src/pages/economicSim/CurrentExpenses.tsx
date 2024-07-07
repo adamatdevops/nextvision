@@ -13,13 +13,7 @@ const { Title } = Typography;
 
 interface CurrentExpensesProps {
     setExpenses: (expenses: number[]) => void;
-    // apartmentSquareFootage: number | null;
 }
-
-// export const educationTuitionFeesMap: { [key: string]: number } = {
-//     'יסודי': 300,
-//     'תיכון': 500,
-// };
 
 const calculateFamilyMemberCount = (familyStatus, partnerCommunityStatus, childrenCount) => {
     let familyMemberCount = 1 + childrenCount; // Single parent + children

@@ -714,7 +714,8 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         value={futureNationalInsuranceAllowanceCommunity}
                         onChange={(value) => setFutureNationalInsuranceAllowanceCommunity(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        disabled
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על קצבת ביטוח לאומי">
                         <Button
@@ -809,7 +810,8 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         value={futureWelfareIncomes}
                         onChange={(value) => setFutureWelfareIncomes(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        disabled
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על זיכוי בגין רווחה">
                         <Button
@@ -906,7 +908,8 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         value={futureFamilySafetyNet}
                         onChange={(value) => setFutureFamilySafetyNet(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        disabled
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על רשת ביטחון">
                         <Button
@@ -926,7 +929,8 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             value={futureChildrenSafetyNet}
                             onChange={(value) => setFutureChildrenSafetyNet(value || 0)}
                             min={0}
-                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                            disabled
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                         />
                         <Tooltip title="מידע על רשת ביטחון חינוך">
                             <Button
@@ -946,7 +950,8 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         value={futureAdaptationGrant}
                         onChange={(value) => setFutureAdaptationGrant(value || 0)}
                         min={1000}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        disabled
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על מענק הסתגלות">
                         <Button

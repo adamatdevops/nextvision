@@ -34,47 +34,19 @@ const calculateFamilyMemberCount = (familyStatus, partnerCommunityStatus, childr
     return familyMemberCount;
 };
 
-// const calculateGrossTax = (futureGrossIncome): number => {
-//     let futureGrossTax = 0 + futureGrossIncome;
+const calculateApartmentSquareFootageTax = (apartmentSquareFootage): number => {
+    let apartmentSquareFootageTax = 0;
 
-//     if (futureGrossIncome => 0) {
-//         futureGrossTax = futureGrossIncome ;
+    if (apartmentSquareFootage !== null) {
+    apartmentSquareFootageTax = apartmentSquareFootage * 43;
+    } else {
+    // Handle the case where apartmentSquareFootage is null
+        apartmentSquareFootageTax = 0; // or any default/fallback value
+    }
 
-//     }
-// }
+    return apartmentSquareFootageTax
+}
 
-// const calculatekidEducationExpensess = (childrenCount, educationSystemOptions): number => {
-//     let kidEducationExpenses = 0;
-
-//     if (educationSystemOptions === '8') {
-//         kidEducationExpenses = 0; // 2 for the parents + children
-//     } else if (educationSystemOptions === 1) {
-//         kidEducationExpenses = childrenCount * 200; // 1 parent + children
-//     } else if (educationSystemOptions === 2) {
-//         kidEducationExpenses = childrenCount * 400; // 1 parent + children
-//     }
-//     return kidEducationExpenses;
-// };
-
-// const calculateApartmentSquareFootageTax = (apartmentSquareFootage):number => {
-//     let apartmentSquareFootageTax = 43 * apartmentSquareFootage;
-
-//     if (apartmentSquareFootage === "40") {
-//         apartmentSquareFootageTax = 43 * 40;
-//     } else if (apartmentSquareFootage === "50") {
-//         apartmentSquareFootageTax = 43 * 50;
-//     } else if (apartmentSquareFootage === "60") {
-//         apartmentSquareFootageTax = 43 * 60;
-//     } else if (apartmentSquareFootage === "70") {
-//         apartmentSquareFootageTax = 43 * 70;
-//     } else if (apartmentSquareFootage === "100") {
-//         apartmentSquareFootageTax = 43 * 100;
-//     } else if (apartmentSquareFootage === "126") {
-//         apartmentSquareFootageTax = 43 * 126;
-//     }
-
-//     return apartmentSquareFootageTax;
-// }
 
 const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
     /* Use the useCurrentExpenses hook to get context values and setters */
@@ -170,6 +142,9 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         setFutureEducationDayCareExpenses(index, value ?? 0);
     };
 
+    const handleFutureEducationTransportationExpenseChange = (index: number, value: number | null) => {
+        setFutureEducationTransportationExpenses(index, value ?? 0);
+    }
 
     const {
         // childrenData, // Added
@@ -218,7 +193,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         // Calculate the total education fees
         const totalEducationSystemFees = state.educationSystemFees.reduce((acc, fee) => acc + fee, 0);
         /* IMPORTANT: For now you can ignore the error*/
-        const apartmentSquareFootageTax = state.apartmentSquareFootage * 43; // Calculate with the number value
+        const apartmentSquareFootageTax = calculateApartmentSquareFootageTax(state.apartmentSquareFootage);
+        // const apartmentSquareFootageTax = state.apartmentSquareFootage * 43; // Calculate with the number value
         // Calculate healthcare expenses ( member = 226 NIS per month, child = 75 NIS per month)
         const futureChildrenHealthInsuranceExpenses = state.numberOfChildren ? state.numberOfChildren * 75 : 0;
 
@@ -273,7 +249,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             setFutureInternetExpenses(futureInternetExpenses || 0);
             setFutureVehicleExpenses(futureVehicleExpenses || 0);
             setFutureEducationSystemExpenses(totalEducationSystemFees || 0);
-            setFutureEducationTransportationExpenses(futureEducationTransportationExpenses || 0);
+            // setFutureEducationTransportationExpenses(futureEducationTransportationExpenses || 0);
             // setFutureTuitionsExpenses( futureTuitionsExpenses || 0);
             //setFutureSafetyNetExpenses(futureSafetyNetExpenses || 0);
             setFutureHealthInsuranceExpenses(futureChildrenHealthInsuranceExpenses + 226 || 0);
@@ -306,7 +282,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             setFutureEducationSystemExpenses(totalEducationSystemFees);
             //setFuturePrivateLessonExpenses(futurePrivateLessonExpenses);
             //setFutureTeenageClassExpenses(futureTeenageClassExpenses);
-            setFutureEducationTransportationExpenses(futureEducationTransportationExpenses || 0);
+            // setFutureEducationTransportationExpenses(futureEducationTransportationExpenses || 0);
             // setFutureTuitionsExpenses(futureTuitionsExpenses || 0);
             //setFutureSafetyNetExpenses(futureSafetyNetExpenses || 0);
             setFutureHealthInsuranceExpenses(futureChildrenHealthInsuranceExpenses + 226 || 0);
@@ -346,7 +322,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             //futureHighSchoolExpenses,
             //state.futurePrivateLessonExpenses,
             //state.futureTeenageClassExpenses, // IMPORTANT: Adding this might trigger an error
-            futureEducationTransportationExpenses,
+            // futureEducationTransportationExpenses,
             //futureEducationPersonalCareExpenses,
             //futureEducationDayCareExpenses,
             // futureTuitionsExpenses,
@@ -421,7 +397,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futurePropertyTaxExpenses}
                         // onChange={(value) => setFuturePropertyTaxExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                         disabled
                     />
                     <Tooltip title="מידע על חיובי ארנונה">
@@ -515,10 +491,9 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                 >
                     <InputNumber
                         value={futureNetworkingExpenses}
-                        // onChange={(value) => setFutureNetworkingExpenses(value || 0)}
                         min={0}
                         disabled
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על חיובי תקשורת">
                         <Button
@@ -575,7 +550,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futureEducationSystemExpenses}
                         onChange={(value) => setFutureEducationSystemExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        disabled
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על הוצאות חינוך">
                         <Button
@@ -699,49 +675,36 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         ))}
                     </div>
                 ))}
-                <Form.Item
-                    label="הסעות"
-                    labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                    wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                >
-                    <InputNumber
-                        value={futureEducationTransportationExpenses}
-                        onChange={(value) => setFutureEducationTransportationExpenses(value || 0)}
-                        min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
-                    />
-                    <Tooltip title="מידע על חיובי הסעות">
-                        <Button
-                            type="link"
-                            icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('futureEducationTransportationExpenses')}
-                        />
-                    </Tooltip>
-                </Form.Item>
-                <Form.Item
-                    label="הסעות"
-                    labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                    wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                >
-                    <InputNumber
-                        value={futureEducationTransportationExpenses}
-                        onChange={(value) => setFutureEducationTransportationExpenses(value || 0)}
-                        min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
-                    />
-                    <Tooltip title="מידע על חיובי הסעות">
-                        <Button
-                            type="link"
-                            icon={<InfoCircleOutlined />}
-                            onClick={() => showDrawer('futureEducationTransportationExpenses')}
-                        />
-                    </Tooltip>
-                </Form.Item>
+                {state.childrenData.map((child, childIndex) => (
+                    <div key={child.id}>
+                        {child.educationTransportation && (
+                        <Form.Item
+                            label={`הסעות - ${child.name} ${childIndex + 1}`}
+                            labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
+                            wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
+                        >
+                            <InputNumber
+                                value={state.futureEducationTransportationExpenses[childIndex] || 0}
+                                onChange={(value) => handleFutureEducationTransportationExpenseChange(childIndex, value)}
+                                min={0}
+                                style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                            />
+                            <Tooltip title="מידע על חיובי הסעות">
+                                <Button
+                                    type="link"
+                                    icon={<InfoCircleOutlined />}
+                                    onClick={() => showDrawer('futureEducationTransportationExpenses')}
+                                />
+                            </Tooltip>
+                        </Form.Item>
+                        )}
+                    </div>
+                ))}
                 {state.childrenData.map((child, childIndex) => (
                 <div key={child.id}>
                     {child.educationPersonalCare === 'כן' && (
                         <Form.Item
-                            label={`טיפול מיוחד לילד ${childIndex + 1}`}
+                            label={`טיפול פרטני לילד ${childIndex + 1}`}
                             labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
                             wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
                         >
@@ -751,7 +714,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                             min={0}
                             style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
                         />
-                            <Tooltip title="מידע על הוצאות טיפול מיוחד ילדים">
+                            <Tooltip title="מידע על הוצאות טיפול פרטני ילדים">
                                 <Button
                                     type="link"
                                     icon={<InfoCircleOutlined />}
@@ -768,7 +731,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         >
                             <InputNumber
                                 value={state.futureEducationDayCareExpenses[childIndex] || 0}
-                                    onChange={(value) => handleFutureEducationDayCareExpenseChange(childIndex, value)}
+                                onChange={(value) => handleFutureEducationDayCareExpenseChange(childIndex, value)}
                                 min={0}
                                 style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
                             />
@@ -947,7 +910,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         onChange={(value) => setFutureFlatTaxExpenses(value || 0)}
                         min={750}
                         max={1500}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        disabled
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על חיובי מס אחיד">
                         <Button
@@ -967,7 +931,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         onChange={(value) => setFutureGrossTaxExpenses(value || 0)}
                         min={0}
                         max={2500}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        disabled
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
                     />
                     <Tooltip title="מידע על חיובי מס ברוטו">
                         <Button
