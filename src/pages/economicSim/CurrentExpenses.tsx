@@ -167,7 +167,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
         if (state.familyStatus === 'married' && state.partnerCommunityStatus === 'community-member') { /* Change this condition. This is just a mockup */
             // setGasExpenses(0); /* 63 per family member */
             state.childrenData,
-                setElectricityExpenses(177 * familyMemberCount);
+            setElectricityExpenses(177 * familyMemberCount);
             setMaintenanceServiceExpenses(63);
             setHouseMaintenanceExpenses(houseMaintenanceExpenses || 0);
             setGardeningExpenses(gardeningExpenses || 0);
@@ -182,8 +182,8 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
             setOtherEducationExpenses(otherEducationExpenses || 0);
             //setDentistExpenses(dentistExpenses || 0); /* 70 for kid /110 Adults in 70% */
             setPartnerDentistExpenses(partnerDentistExpenses || 0),
-                setChildrenDentistExpenses(childrenDentistExpenses || 0),
-                setWelfareExpenses(welfareExpenses || 0);
+            setChildrenDentistExpenses(childrenDentistExpenses || 0),
+            setWelfareExpenses(welfareExpenses || 0);
             setFoodExpenses(foodExpenses || 0);
             setDiningRoomExpenses(diningRoomExpenses || 0);
             setLaundryExpenses(laundryExpenses || 0);

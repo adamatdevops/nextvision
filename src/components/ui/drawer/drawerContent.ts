@@ -273,12 +273,20 @@ export const drawerContent = {
         description: `חיוב אחזקה`,
         budgetingMethod: `250 ש״ח`,
     },
+    futureGardeningExpenses: {
+        description: `הוצאות נוית שיפוץ ודקורציה`,
+        budgetingMethod: `למילוי עצמי`,
+    },
     futureNetworkingExpenses: {
         description: `תקשורת`,
         budgetingMethod: `100 ש״ח`,
     },
     futureInternetExpenses: {
         description: `כבלים, אינטרנט ושירותי רשת נוספים`,
+        budgetingMethod: `למילוי עצמי`,
+    },
+    futureVehicleExpenses: {
+        description: `הוצאות תחבורה`,
         budgetingMethod: `למילוי עצמי`,
     },
     futureEducationSystemExpenses: {
@@ -336,6 +344,30 @@ export const drawerContent = {
         ביטוח בריאות למבוגר: 226 ש״ח,
         ביטוח בריאות לילד: 75 ש״ח
         `,
+    },
+    futureDentistExpenses: {
+        description: `הוצאות טיפולי שיניים לחבר/ה`,
+        budgetingMethod: `השתתפות של 50% מטעם הקהילה`,
+    },
+    futurePartnerDentistExpenses: {
+        description: `הוצאות טיפולי שיניים לחבר/ה`,
+        budgetingMethod: `השתתפות של 50% מטעם הקהילה`,
+    },
+    futureChildrenDentistExpenses: {
+        description: `הוצאות טיפולי שיניים לילד`,
+        budgetingMethod: `השתתפות של 50% מטעם הקהילה`,
+    },
+    futureWelfareExpenses: {
+        description: `הוצאות רווחה`,
+        budgetingMethod: `השתתפות של 50% מטעם הקהילה`,
+    },
+    futureAlimonyExpenses: {
+        description: `דמי מזונות`,
+        budgetingMethod: `למילוי עצמי`,
+    },
+    futureCleaningExpenses: {
+        description: `הוצאות ניקיון`,
+        budgetingMethod: `למילוי עצמי`,
     },
     futureFoodExpenses: {
         description: `הוצאות מזון לא כולל חד״א`,
