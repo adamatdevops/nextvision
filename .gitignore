@@ -139,11 +139,9 @@ out
 
 # temp and cache directory
 tmp
-tmp/*
-**/*/tmp
+tmp/
 .temp
 .tmp
-**/tmp/**/*
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
