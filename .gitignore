@@ -473,3 +473,12 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+# Compressed files
+*.zip
+*.rar
+*.gz
+*.7z
+*.tgz
+*.bzip
+*.bzip2
