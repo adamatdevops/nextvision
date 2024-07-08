@@ -138,7 +138,7 @@ web_modules/
 out
 
 # temp and cache directory
-tmp/
+tmp
 tmp/*
 **/*/tmp
 .temp
