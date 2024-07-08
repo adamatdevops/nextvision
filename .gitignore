@@ -139,13 +139,11 @@ out
 
 # temp and cache directory
 tmp/
-tmp/**/**/*
-tmp/**/*
+tmp/*
 **/*/tmp
 .temp
 .tmp
-tmp/**/*.*
-
+**/tmp/**/*
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
@@ -477,5 +475,3 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
-
-tmp/**/*
