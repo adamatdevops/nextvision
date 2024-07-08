@@ -138,10 +138,10 @@ web_modules/
 out
 
 # temp and cache directory
+.temp
+temp
 tmp
 tmp/
-.temp
-.tmp
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
