@@ -1,4 +1,5 @@
-/* DynamicBackgroundLayout.module.css */
+/* src/components/ui/layouts/css/DynamicBackgroundLayout.module.css */
+/* VERY IMPORTANT: Some style properties can only be edited on App.css or Main.css*/
 .layout {
     min-height: 100vh; /* Cover the full viewport height */
     /* background-image: url('../assets/img/vibrant/background-01-3840x4000.jpeg'); */;
@@ -58,7 +59,6 @@
     background-origin: border-box;
     line-height: 25px;
 }
-
 
 /* Media Queries for Responsiveness */
 @media (min-width: 375px) {
@@ -192,54 +192,14 @@
         direction: rtl;
         padding: 8px 0px 8px;
     }
-
-        .content {
-            flex: 1;
-            /* Allow content to take up available space */
-            height: 30em;
-            min-height: calc(30vh - 80px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: space-between;
-            padding: 8px;
-            line-height: 4px;
-            margin: 10px;
-            /* Optional: add a semi-transparent background */
-        }
-
-        .header { 
-            background: transparent;
-            color: rgb(255, 255, 255);
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2px;
-        }
-
-        .footer {
-            height: 30px;
-            width: 100%;
-            text-align: center;
-            padding: 1px;
-            background: #001529;
-            color: #fff;
-            position: static;
-            font-family: 'Noto Sans Hebrew', sans-serif;
-            font-size: 14px;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            background-origin: border-box;
-            line-height: 25px;
-        }
 }
 
 @media (min-width: 1366px) and (max-width: 1420px) {
     .layout {
+        min-height: 100vh;
+        width: 100vw;
         background-image: url('../assets/img/vibrant/background-01-1366x900.jpeg') !important;
+        background-color: #f0f2f5;
         /* background-size: cover; */
         /* Extra Large background */
         min-height: 100vh; /* Cover the full viewport height */
@@ -252,40 +212,7 @@
         /* overflow: hidden; */
         /* position: absolute; or relative */
         direction: rtl;
-        padding: 8px 0px 8px;
-    }
-
-    .content {
-        flex: 1;
-        /* Allow content to take up available space */
-        height: 20em;
-        min-height: calc(20vh - 80px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: space-between;
-        padding: 4px;
-        line-height: 4px;
-        margin: 8px;
-        /* Optional: add a semi-transparent background */
-    }
-
-    .footer {
-        height: 16px;
-        width: 100%;
-        text-align: center;
-        padding: 1px;
-        background: #001529;
-        color: #fff;
-        position: static;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 10px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        line-height: 15px;
+        padding: 8px 0px 18px;
     }
 }
 
@@ -306,42 +233,9 @@
         direction: rtl;
         padding: 8px 0px 8px;
     }
-
-        .content {
-            flex: 1;
-            /* Allow content to take up available space */
-            height: 30em;
-            min-height: calc(30vh - 80px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: space-between;
-            padding: 8px;
-            line-height: 4px;
-            margin: 10px;
-            /* Optional: add a semi-transparent background */
-        }
-
-                .footer {
-                    height: 30px;
-                    width: 100%;
-                    text-align: center;
-                    padding: 1px;
-                    background: #001529;
-                    color: #fff;
-                    position: static;
-                    font-family: 'Noto Sans Hebrew', sans-serif;
-                    font-size: 14px;
-                    justify-content: center;
-                    flex-direction: column;
-                    align-items: center;
-                    background-origin: border-box;
-                    line-height: 25px;
-                }
 }
 
-@media (min-width: 1441px) and (max-width: 1600px) {
+@media (min-width: 1441px) and (max-width: 1536) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-1440x960.jpeg') !important;
         /* background-size: cover; */
@@ -358,42 +252,9 @@
         direction: rtl;
         padding: 8px 0px 8px;
     }
-
-        .content {
-            flex: 1;
-            /* Allow content to take up available space */
-            height: 30em;
-            min-height: calc(30vh - 80px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: space-between;
-            padding: 8px;
-            line-height: 4px;
-            margin: 10px;
-            /* Optional: add a semi-transparent background */
-        }
-
-                .footer {
-                    height: 30px;
-                    width: 100%;
-                    text-align: center;
-                    padding: 1px;
-                    background: #001529;
-                    color: #fff;
-                    position: static;
-                    font-family: 'Noto Sans Hebrew', sans-serif;
-                    font-size: 14px;
-                    justify-content: center;
-                    flex-direction: column;
-                    align-items: center;
-                    background-origin: border-box;
-                    line-height: 25px;
-                }
 }
 
-@media (min-width: 1601px) and (max-width: 1920px) {
+@media (min-width: 1537px) and (max-width: 1920px) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-1920x1280.jpeg') !important;
         /* background-size: cover; */
@@ -410,39 +271,6 @@
         direction: rtl;
         padding: 8px 0px 8px;
     }
-
-        .content {
-            flex: 1;
-            /* Allow content to take up available space */
-            height: 30em;
-            min-height: calc(30vh - 80px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-content: space-between;
-            padding: 8px;
-            line-height: 4px;
-            margin: 10px;
-            /* Optional: add a semi-transparent background */
-        }
-
-                .footer {
-                    height: 30px;
-                    width: 100%;
-                    text-align: center;
-                    padding: 1px;
-                    background: #001529;
-                    color: #fff;
-                    position: static;
-                    font-family: 'Noto Sans Hebrew', sans-serif;
-                    font-size: 14px;
-                    justify-content: center;
-                    flex-direction: column;
-                    align-items: center;
-                    background-origin: border-box;
-                    line-height: 25px;
-                }
 }
 
 @media (min-width: 1921px) and (max-width: 2560px) {

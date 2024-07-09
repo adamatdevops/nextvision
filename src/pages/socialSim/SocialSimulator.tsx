@@ -102,14 +102,17 @@ const SocialSimulator: React.FC = () => {
 
     return (
         <DynamicLayout>
-            <FamilyAvatar />
             <Header className={styles.header}>
-                        סימולטור מודל ההתחדשות
+                סימולטור מודל ההתחדשות
+                <FamilyAvatar />
             </Header>
             {/* <h1>מידע אישי</h1> */}
             <Content className={styles.content}>
                 <div className={styles.cardsContainer}>
-                    <Card className={styles.card} title="מידע אישי - חבר/ה">
+                    <Card 
+                        className={styles.card}
+                        title="מידע אישי - חבר/ה"
+                        >
                         {/* NOTE:We Had className={styles.form} here */}
                         <Form layout="horizontal">
                             <div className={styles.formRow}>
