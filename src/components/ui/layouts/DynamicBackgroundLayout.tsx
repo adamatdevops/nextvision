@@ -26,6 +26,8 @@ const DynamicLayout: React.FC<LayoutComponentProps> = ({ children }) => {
                 bgImage = './assets/img/vibrant/background-01-2560x1770.jpeg';
             } else if (width >= 1920) {
                 bgImage = './assets/img/vibrant/background-01-1920x1280.jpeg';
+            } else if (width >= 1536) {
+                bgImage = './assets/img/vibrant/background-01-1536x960.jpeg';
             } else if (width >= 1440) {
                 bgImage = './assets/img/vibrant/background-01-1440x960.jpeg';
             } else if (width >= 1366) {
@@ -41,7 +43,7 @@ const DynamicLayout: React.FC<LayoutComponentProps> = ({ children }) => {
             } else if (width >= 390) {
                 bgImage = './assets/img/vibrant/background-01-390.jpeg';
             } else {
-                bgImage = './assets/img/vibrant/background-01-1440x960.jpeg';
+                bgImage = './assets/img/vibrant/background-01-1920x1280.jpeg';
             }
 
             setBackgroundImage(bgImage);

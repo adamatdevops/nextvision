@@ -33,33 +33,60 @@ body {
 
 body {
     font-family: 'Noto Sans Hebrew', sans-serif;
-    padding: 1rem;
 }
 
 .ant-card .ant-card-body {
-    padding: 8px;
-}
-
-.ant-card .ant-card-head {
-    padding: 8px;
+    padding: 4px;
 }
 
 .ant-form-item {
-    margin: 2px;
+    margin: 10px;
 }
 
 @media (min-width: 1024px) and (max-width: 1600px) {
+    .ant-card .ant-card-head {
+        padding: 4px;
+        height: 25px;
+        min-height: 20px;
+    }
+
     .ant-card-head-title {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .ant-form-item {
+        margin: 4px;
     }
 }
 
-@media (min-width: 1920px) and (max-width: 4800px) {
+@media (min-width: 1620px) and (max-width: 2560px) {
     .ant-card .ant-card-head {
-        padding: 12px;
+        padding: 6px;
+        height: 38px;
+        min-height: 25px;
     }
-    
+
+    .ant-card-head-title {
+        font-size: 16px;
+    }
+
     .ant-form-item {
-        margin: 4px;
+        margin: 12px;
+    }
+}
+
+@media (min-width: 2561px) and (max-width: 4800px) {
+    .ant-card .ant-card-head {
+        padding: 6px;
+        height: 40px;
+        min-height: 30px;
+    }
+
+    .ant-card-head-title {
+        font-size: 20px;
+    }
+
+    .ant-form-item {
+        margin: 12px;
     }
 }

@@ -19,22 +19,20 @@
 
 .content {
     flex: 1;
-    /* Allow content to take up available space */
     height: 30em;
-    min-height: calc(30vh - 80px);
+    min-height: calc(30vh - 90px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: space-between;
-    padding: 8px;
+    padding: 4px;
     line-height: 4px;
-    margin: 10px;
-    /* Optional: add a semi-transparent background */
+    margin: 8px;
 }
 
 /* Header Needs To Be Included In Each Component CSS */
-/* .header { 
+/* .header {
     background: transparent;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -43,21 +41,24 @@
     align-items: center;
     padding: 2px; */
 
+/* Footer Needs To Be Included In Each Component CSS */
 .footer {
-    height: 30px;
+    /* display: flex; */
+    height: 25px;
     width: 100%;
     text-align: center;
-    padding: 1px;
+    padding: 2px;
     background: #001529;
     color: #fff;
-    position: static;
+    position: fixed;
     font-family: 'Noto Sans Hebrew', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-origin: border-box;
-    line-height: 25px;
+    line-height: 15px;
+    bottom: 0;
 }
 
 /* Media Queries for Responsiveness */
@@ -77,6 +78,25 @@
         /* position: absolute; or relative */
         direction: rtl;
         padding: 8px 0px 8px;
+    }
+
+    .footer {
+        display: flex;
+        height: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 1px;
+        background: #001529;
+        color: #fff;
+        position: static;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 10px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-origin: border-box;
+        line-height: 20px;
+        bottom: 0;
     }
 }
 
@@ -177,7 +197,7 @@
 
 @media (min-width: 1281px) and (max-width: 1366px) {
     .layout {
-        background-image: url('../assets/img/vibrant/background-01-1024.jpeg') !important;
+        background-image: url('../assets/img/vibrant/background-01-1366x900.jpeg') !important;
         /* background-size: cover; */
         /* Extra Large background */
         min-height: 100vh; /* Cover the full viewport height */
@@ -192,13 +212,31 @@
         direction: rtl;
         padding: 8px 0px 8px;
     }
+
+    .footer {
+        /* display: flex; */
+        height: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 12px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
+    }
 }
 
-@media (min-width: 1366px) and (max-width: 1420px) {
+@media (min-width: 1367px) and (max-width: 1420px) {
     .layout {
         min-height: 100vh;
         width: 100vw;
-        background-image: url('../assets/img/vibrant/background-01-1366x900.jpeg') !important;
+        background-image: url('../assets/img/vibrant/background-01-1366x960.jpeg') !important;
         background-color: #f0f2f5;
         /* background-size: cover; */
         /* Extra Large background */
@@ -214,28 +252,27 @@
         direction: rtl;
         padding: 8px 0px 18px;
     }
-}
 
-@media (min-width: 1367px) and (max-width: 1440px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-1366x900.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
+    .footer {
+        /* display: flex; */
+        height: 25px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 14px;
+        justify-content: center;
         flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
     }
 }
 
-@media (min-width: 1441px) and (max-width: 1536) {
+@media (min-width: 1420px) and (max-width: 1440px) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-1440x960.jpeg') !important;
         /* background-size: cover; */
@@ -251,6 +288,61 @@
         /* position: absolute; or relative */
         direction: rtl;
         padding: 8px 0px 8px;
+    }
+
+    .footer {
+        /* display: flex; */
+        height: 24px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 12px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
+    }
+}
+
+@media (min-width: 1441px) and (max-width: 1536) {
+    .layout {
+        background-image: url('../assets/img/vibrant/background-01-1536x960.jpeg') !important;
+        /* background-size: cover; */
+        /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
+    }
+
+    .footer {
+        /* display: flex; */
+        height: 10px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 14px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
     }
 }
 
@@ -271,6 +363,24 @@
         direction: rtl;
         padding: 8px 0px 8px;
     }
+
+    .footer {
+        /* display: flex; */
+        height: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 14px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
+    }
 }
 
 @media (min-width: 1921px) and (max-width: 2560px) {
@@ -290,28 +400,27 @@
         direction: rtl;
         padding: 8px 0px 8px;
     }
-}
 
-@media (min-width: 2561px) and (max-width: 3840px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-2560x1770.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
+    .footer {
+        /* display: flex; */
+        height: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 14px;
+        justify-content: center;
         flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
     }
 }
 
-@media (min-width: 3840px) {
+@media (min-width: 2561px) and (max-width: 3840px) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-3840x2560.jpeg') !important;
         /* background-size: cover; */
@@ -327,6 +436,61 @@
         /* position: absolute; or relative */
         direction: rtl;
         padding: 8px 0px 8px;
+    }
+
+    .footer {
+        /* display: flex; */
+        height: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 14px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
+    }
+}
+
+@media (min-width: 3841px) {
+    .layout {
+        background-image: url('../assets/img/vibrant/background-01-6000x4000.jpeg') !important;
+        /* background-size: cover; */
+        /* Extra Large background */
+        min-height: 100vh; /* Cover the full viewport height */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        /* overflow: hidden; */
+        /* position: absolute; or relative */
+        direction: rtl;
+        padding: 8px 0px 8px;
+    }
+
+    .footer {
+        /* display: flex; */
+        height: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: #001529;
+        color: #fff;
+        position: fixed;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 14px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-origin: border-box;
+        bottom: 0;
     }
 }
 

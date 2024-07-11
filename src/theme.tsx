@@ -24,7 +24,8 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
             controlHeight: 24,
             fontFamily: 'Noto Sans Hebrew', // Font family
             // fontFamilyCode: 'monospace', // Font family for code blocks
-            fontSize: 16, // Base font size
+            fontSize: 14, // Base font size
+            fontSizeIcon: 14, // Base icon size
             lineType: 'solid', // Base line type
             lineWidth: 1, // Base line width
             motion: true,

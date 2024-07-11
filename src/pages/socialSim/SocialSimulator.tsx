@@ -1,6 +1,6 @@
 /* ./src/pages/socialSim/SocialSimulator.tsx */
 import React, { useState } from 'react';
-import { Layout, Card, Typography, Form, Input, Select, InputNumber, Row } from 'antd';
+import { Layout, Card, Typography, Form, Input, Select, InputNumber, Row, Col, Flex } from 'antd';
 import MemberStatus from '../../components/ui/select/MemberStatus'; // Add this import statement
 import PartnerCommunityStatus from '../../components/ui/select/PartnerCommunityStatus';
 import ChildrenSelect from '../../components/ui/select/ChildrenSelect';
@@ -108,70 +108,79 @@ const SocialSimulator: React.FC = () => {
             </Header>
             {/* <h1>מידע אישי</h1> */}
             <Content className={styles.content}>
-                <div className={styles.cardsContainer}>
-                    <Card 
-                        className={styles.card}
-                        title="מידע אישי - חבר/ה"
-                        >
-                        {/* NOTE:We Had className={styles.form} here */}
-                        <Form layout="horizontal">
-                            <div className={styles.formRow}>
-                                <MemberStatus status={state.familyStatus} onStatusChange={handleFamilyStatusChange} />
-                                <MemberAge age={state.memberAge} onAgeChange={setMemberAge} />
-                            </div>
-                            <div className={styles.formRow}>
-                                <Seniority onSeniorityChange={handleSeniorityChange} label="ותק" />
-                                <MemberPositionScope />
-                            </div>
-                            <div className={styles.formRow}>
-                                <MemberRetired onMemberRetiredChange={handleMemberRetiredChange} />
-                                <MemberGoldenAge/>
-                            </div>
-                        </Form>
-                        {/* <Card className={styles.card} title="מידע נוסף" style={{ ...baseStyle }}> */}
-                        <Card className={styles.card} title="מידע נוסף">
-                            <div className={styles.formRow}>
-                                {/* <ApartmentSquareFootage onApartmentSquareFootageChange={handleApartmentSquareFootageChange}/> */}
-                                <ApartmentSquareFootage />
-                                <FamilyNationalInsurance />
-                            </div>
-                        </Card>
-                    </Card>
-                    </div>
-                    <div className={styles.cardsContainer}>
-                    <Card className={styles.card} title="מידע אישי - בן/ת זוג">
-                        <Form layout="horizontal" className={styles.form}>
-                            <div className={styles.formRow}>
-                                <PartnerCommunityStatus status={state.partnerCommunityStatus} onStatusChange={handlePartnerCommunityStatusChange} />
-                                <MemberPartnerAge age={state.memberPartnerAge} onAgeChange={setMemberPartnerAge} />
-                            </div>
-                            <div className={styles.formRow}>
-                                <PartnerSeniority
-                                    onPartnerSeniorityChange={handlePartnerSeniorityChange}
-                                    label="ותק של בן/ת הזוג"
-                                    disabled={state.partnerCommunityStatus !== 'community-member'}
-                                />
-                                <MemberPartnerPositionScope />
-                            </div>
-                            <div className={styles.formRow}>
-                                <MemberPartnerRetired onMemberPartnerRetiredChange={handleMemberPartnerRetiredChange} />
-                                <MemberPartnerGoldenAge />
-                            </div>
-                            {state.familyStatus === 'widower' && (
+                <Flex gap={12} vertical className={styles.flex}>
+                    <Row justify="center" gutter={8} className={styles.row}>
+                    <Col span={8}>
+                        <Card
+                            className={styles.card}
+                            title="מידע אישי - חבר/ה"
+                            >
+                            {/* NOTE:We Had className={styles.form} here */}
+                                <Form layout="horizontal" className={styles.form}>
                                 <div className={styles.formRow}>
-                                    <DeceasedSeniority
-                                        onDeceasedSeniorityChange={handleDeceasedSeniorityChange}
-                                        label="ותק של הנפטר/ת"
-                                        // disabled={state.partnerCommunityStatus !== 'community-member'}
-                                    />
-                                    {/* TODO: Need to make this row wider */}
+                                    <MemberStatus status={state.familyStatus} onStatusChange={handleFamilyStatusChange} />
+                                    <MemberAge age={state.memberAge} onAgeChange={setMemberAge} />
                                 </div>
-                            )}
+                                <div className={styles.formRow}>
+                                    <Seniority onSeniorityChange={handleSeniorityChange} label="ותק" />
+                                    <MemberPositionScope />
+                                </div>
+                                <div className={styles.formRow}>
+                                    <MemberRetired onMemberRetiredChange={handleMemberRetiredChange} />
+                                    <MemberGoldenAge/>
+                                </div>
+                            </Form>
+                            {/* <Card className={styles.card} title="מידע נוסף" style={{ ...baseStyle }}> */}
+                        </Card>
+                    </Col>
+                    <Col span={8}>
+                        <Card className={styles.card} title="מידע אישי - בן/ת זוג">
+                            <Form layout="horizontal" className={styles.form}>
+                                <div className={styles.formRow}>
+                                    <PartnerCommunityStatus status={state.partnerCommunityStatus} onStatusChange={handlePartnerCommunityStatusChange} />
+                                    <MemberPartnerAge age={state.memberPartnerAge} onAgeChange={setMemberPartnerAge} />
+                                </div>
+                                <div className={styles.formRow}>
+                                    <PartnerSeniority
+                                        onPartnerSeniorityChange={handlePartnerSeniorityChange}
+                                        label="ותק של בן/ת הזוג"
+                                        disabled={state.partnerCommunityStatus !== 'community-member'}
+                                    />
+                                    <MemberPartnerPositionScope />
+                                </div>
+                                <div className={styles.formRow}>
+                                    <MemberPartnerRetired onMemberPartnerRetiredChange={handleMemberPartnerRetiredChange} />
+                                    <MemberPartnerGoldenAge />
+                                </div>
+                                {state.familyStatus === 'widower' && (
+                                    <div className={styles.formRow}>
+                                        <DeceasedSeniority
+                                            onDeceasedSeniorityChange={handleDeceasedSeniorityChange}
+                                            label="ותק של הנפטר/ת"
+                                            // disabled={state.partnerCommunityStatus !== 'community-member'}
+                                        />
+                                        {/* TODO: Need to make this row wider */}
+                                    </div>
+                                )}
+                            </Form>
+                        </Card>
+                    </Col>
+                    <Col span={8}>
+                        <Form layout="horizontal" className={styles.form}>
+                            <Card className={styles.card} title="מידע נוסף">
+                                <div className={styles.formRow}>
+                                {/* <ApartmentSquareFootage onApartmentSquareFootageChange={handleApartmentSquareFootageChange}/> */}
+                                    <ApartmentSquareFootage />
+                                </div> 
+                                <div className={styles.formRow}>
+                                    <FamilyNationalInsurance />
+                                </div>
+                            </Card>
                         </Form>
-                    </Card>
-                    </div>
-                    <div className={styles.cardsContainer}>
-                    <Card className={styles.card} title="נתוני משפחה">
+                    </Col>
+                </Row>
+                <Row justify="center" gutter={8} className={styles.row}>
+                        <Card className={styles.familyInfoCard} title="נתוני משפחה">
                         <Form layout="horizontal">
                             <div>
                                 <ChildrenSelect onChildrenChange={handleChildrenChange} />
@@ -185,7 +194,8 @@ const SocialSimulator: React.FC = () => {
                             </div>
                         </Form>
                     </Card>
-                </div>
+                </Row>
+                </Flex>
             </Content>
             <StepsBar />
         </DynamicLayout>

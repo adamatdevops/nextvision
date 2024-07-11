@@ -30,16 +30,6 @@
     line-height: 20px;
 }
 
-.footer {
-    text-align: center;
-    padding: 1rem;
-    background: #001529;
-    color: transparent;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
 .content {
     display: flex;
     flex: 1;
@@ -64,7 +54,7 @@
     background: rgba(255, 255, 255, 0.2);
     /* margin-bottom: 1rem; */
     border-radius: 28px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
@@ -75,39 +65,18 @@
     color: #ffffff; /* White text color */
     box-sizing: border-box;
 }
-                        
+
 .personalInfoCard {
     max-width: 90%;
     max-height: 90%;
     /* Allow cards to take up full width */
     margin-bottom: 1rem;
     border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
     padding: 20px;
     flex-grow: 1;
     /* Allow cards to grow and take up space */
     /* overflow-x: auto; */
-}
-
-.cardsContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    min-height: calc(60vh - 80px);
-    max-height: calc(75vh - 80px);
-    height: 80vh;
-    max-width: 100%;
-    margin: 1% 0;
-    margin-top: 8%;
-    margin-bottom: 8%;
-    /* max-width: 1800px; */
-    /* Allow cards to grow and take up space */
-    flex-grow: 1;
-    box-sizing: border-box;
-    line-height: 4px;
-    row-gap: 4px;
 }
 
 h1 {
@@ -146,6 +115,12 @@ button {
     padding: 12px;
 }
 
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
 .partnerSeniorityWrapper {
     display: flex;
     flex-direction: column;
@@ -158,6 +133,11 @@ button {
 /* .tableWrapper {
     overflow-x: auto;
 } */
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
 
 @font-face {
     font-family: 'Noto Sans Hebrew';
@@ -204,16 +184,6 @@ button {
         z-index: 1000; /* Ensure the header stays on top of other content */
     }
 
-    .footer {
-        text-align: center;
-        padding: 1rem;
-        background: #001529;
-        color: transparent;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
     .content {
         display: flex;
         flex: 1;
@@ -252,16 +222,6 @@ button {
         top: 0; /* Position the header at the top */
         width: 100%; /* Ensure the header spans the full width */
         z-index: 1000; /* Ensure the header stays on top of other content */
-    }
-
-    .footer {
-        text-align: center;
-        padding: 1rem;
-        background: #001529;
-        color: transparent;
-        position: relative;
-        bottom: 0;
-        width: 100%;
     }
 
     .content {
@@ -305,16 +265,6 @@ button {
         z-index: 1000; /* Ensure the header stays on top of other content */
     }
 
-    .footer {
-        text-align: center;
-        padding: 1rem;
-        background: #001529;
-        color: transparent;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
     .content {
         display: flex;
         flex: 1;
@@ -356,16 +306,6 @@ button {
         z-index: 1000; /* Ensure the header stays on top of other content */
     }
 
-    .footer {
-        text-align: center;
-        padding: 0.5rem;
-        background: #001529;
-        color: transparent;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
     .content {
         display: flex;
         flex: 1;
@@ -395,7 +335,7 @@ button {
         background: rgba(255, 255, 255, 0.2);
         /* margin-bottom: 1rem; */
         border-radius: 28px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         /* Subtle shadow for depth */
         backdrop-filter: blur(10px);
         /* Blur effect */
@@ -420,32 +360,11 @@ button {
         /* Allow cards to take up full width */
         margin-bottom: 1rem;
         border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         padding: 20px;
         flex-grow: 1;
         /* Allow cards to grow and take up space */
         /* overflow-x: auto; */
-    }
-
-    .cardsContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
-        min-height: calc(20vh - 80px);
-        max-height: calc(65vh - 80px);
-        height: 80vh;
-        max-width: 100%;
-        margin: 1% 0;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        /* max-width: 1800px; */
-        /* Allow cards to grow and take up space */
-        flex-grow: 1;
-        box-sizing: border-box;
-        line-height: 4px;
-        row-gap: 4px;
     }
 
     h1 {
@@ -514,33 +433,21 @@ button {
         z-index: 1000; /* Ensure the header stays on top of other content */
     }
 
-    .footer {
-        text-align: center;
-        padding: 8px;
-        background: #001529;
-        color: transparent;
-        margin-bottom: 0;
-        margin-top: 4px;
-        line-height: 10px;
-        position: absolute; /* Position the header absolutely */
-        bottom: 0;
-        width: 100%;
-    }
-
     .content {
         display: flex;
         flex: 1;
-        min-height: calc(65vh - 75px);
-        max-height: calc(70vh - 100px);
-        height: 75vh;
-        width: calc(100vw - 10px);
+        min-height: calc(85vh - 20px);
+        max-height: calc(88vh - 30px);
+        height: 88vh;
+        width: 1340px;
+        left: 2.3%;
         flex-direction: row;
-        align-items: center;
-        align-content: space-between;
-        justify-content: space-between;
+        align-items: flex-start;
+        align-content: center;
+        justify-content: space-evenly;
         justify-items: center;
-        padding: 0 6px;
-        margin: 1% auto;
+        padding: 8px;
+        margin: 0 auto;
         margin-bottom: 8px;
         margin-top: 8px;
     }
@@ -552,13 +459,14 @@ button {
         max-width: -moz-fit-content;
         max-width: fit-content;
         /* Allow cards to take up full width */
+        height: 22vh;
         max-height: -moz-fit-content;
         max-height: -webkit-fit-content;
         max-height: fit-content;
         background: rgba(255, 255, 255, 0.2);
         /* margin-bottom: 1rem; */
         border-radius: 28px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         /* Subtle shadow for depth */
         backdrop-filter: blur(10px);
         /* Blur effect */
@@ -566,7 +474,7 @@ button {
         /* Blur effect for Safari */
         border: 2px solid rgba(255, 255, 255, 0.3);
         /* Semi-transparent border */
-        padding: 6px;
+        padding: 8px;
         margin: 0 auto;
         /* Margin around the card */
         flex-grow: 1;
@@ -577,36 +485,27 @@ button {
         box-sizing: border-box;
     }
 
-    .personalInfoCard {
-        max-width: 90%;
-        min-height: calc(70vh - 60px);
-        max-height: calc(80vh - 90px);
-        /* Allow cards to take up full width */
-        margin-bottom: 1rem;
-        border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
-        padding: 20px;
-        flex-grow: 1;
-        /* Allow cards to grow and take up space */
-        /* overflow-x: auto; */
-    }
-
-    .cardsContainer {
+    .familyInfoCard {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
-        min-height: calc(60vh - 85px);
-        max-height: calc(65vh - 100px);
-        height: 70vh;
-        width: calc(100vw - 30px);
-        margin: 1% auto;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        margin: 0 auto;
         flex-grow: 1;
+        /* overflow-x: auto; */
+        color: #ffffff;
         box-sizing: border-box;
-        line-height: 2px;
-        row-gap: 6px;
-        padding: 0 4px;
     }
 
     h1 {
@@ -625,27 +524,24 @@ button {
     }
 
     .form {
-        max-width: 400px;
-        max-height: 400px;
+        max-width: 31vw;
+        max-height: 31vw;
         margin: 0 auto;
     }
 
     .formRow {
         display: flex;
         flex-direction: row;
-        /* position: relative; */
-        /* NO AFFECT AFTER ADDING*/
         justify-content: space-between;
         justify-items: flex-start;
         justify-self: stretch;
         gap: 4px;
         text-align: flex-start;
         overflow: hidden;
-        /* NO AFFECT AFTER ADDING*/
-        -moz-column-gap: 10px;
-        column-gap: 10px;
+        -moz-column-gap: 6px;
+        column-gap: 6px;
         line-height: 4px;
-        padding: 8px;
+        padding: 6px;
     }
 }
 
@@ -675,28 +571,20 @@ button {
         z-index: 1000; /* Ensure the header stays on top of other content */
     }
 
-    .footer {
-        text-align: center;
-        padding: 1rem;
-        background: #001529;
-        color: transparent;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
     .content {
         display: flex;
         flex: 1;
-        min-height: calc(70vh - 100px);
-        max-height: calc(75vh - 140px);
-        height: 80vh;
-        width: calc(100vw - 24px);
+        min-height: calc(85vh - 30px);
+        max-height: calc(88vh - 40px);
+        height: 88vh;
+        width: calc(100vw - 20px);
+        left: 1%;
         flex-direction: row;
         align-items: center;
         align-content: space-between;
-        justify-content: center;
-        padding: 0 12px;
+        justify-content: space-evenly;
+        justify-items: center;
+        padding: 8px;
         margin: 0 auto;
         margin-bottom: 8px;
         margin-top:8px;
@@ -709,13 +597,14 @@ button {
         max-width: -moz-fit-content;
         max-width: fit-content;
         /* Allow cards to take up full width */
+        height: 22vh;
         max-height: -moz-fit-content;
         max-height: -webkit-fit-content;
         max-height: fit-content;
         background: rgba(255, 255, 255, 0.2);
         /* margin-bottom: 1rem; */
         border-radius: 28px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         /* Subtle shadow for depth */
         backdrop-filter: blur(10px);
         /* Blur effect */
@@ -734,37 +623,27 @@ button {
         box-sizing: border-box;
     }
 
-    .personalInfoCard {
-        max-width: 90%;
-        max-height: 90%;
-        /* Allow cards to take up full width */
-        margin-bottom: 1rem;
-        border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
-        padding: 20px;
-        flex-grow: 1;
-        /* Allow cards to grow and take up space */
-        /* overflow-x: auto; */
-    }
-
-    .cardsContainer {
+    .familyInfoCard {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
-        min-height: calc(65vh - 120px);
-        max-height: calc(70vh - 160px);
-        height: 75vh;
-        max-width: 100%;
-        margin: 1% auto;
-        /* max-width: 1800px; */
-        /* Allow cards to grow and take up space */
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        margin: 0 auto;
         flex-grow: 1;
+        /* overflow-x: auto; */
+        color: #ffffff;
         box-sizing: border-box;
-        line-height: 4px;
-        row-gap: 4px;
-        padding: 0 4px;
     }
 
     h1 {
@@ -783,26 +662,24 @@ button {
     }
 
     .form {
-        max-width: 680px;
+        max-width: 31vw;
+        max-height: 31vw;
         margin: 0 auto;
     }
 
     .formRow {
         display: flex;
         flex-direction: row;
-        /* position: relative; */
-        /* NO AFFECT AFTER ADDING*/
         justify-content: space-between;
         justify-items: flex-start;
         justify-self: stretch;
-        gap: 1rem;
+        gap: 4px;
         text-align: flex-start;
         overflow: hidden;
-        /* NO AFFECT AFTER ADDING*/
-        -moz-column-gap: 20px;
-        column-gap: 20px;
+        -moz-column-gap: 8px;
+        column-gap: 8px;
         line-height: 4px;
-        padding: 12px;
+        padding: 6px;
     }
 }
 
@@ -836,28 +713,19 @@ button {
         /* Ensure the header stays on top of other content */
     }
 
-    .footer {
-        text-align: center;
-        padding: 1rem;
-        background: #001529;
-        color: transparent;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
     .content {
         display: flex;
         flex: 1;
-        min-height: calc(75vh - 100px);
-        max-height: calc(80vh - 180px);
+        min-height: calc(80vh - 30px);
+        max-height: calc(85vh - 40px);
         height: 85vh;
         width: calc(100vw - 28px);
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         align-content: space-between;
-        justify-content: center;
-        padding: 0 12px;
+        justify-content: space-evenly;
+        justify-items: center;
+        padding: 8px;
         margin: 0 auto;
         margin-bottom: 8px;
         margin-top: 8px;
@@ -870,13 +738,14 @@ button {
         max-width: -moz-fit-content;
         max-width: fit-content;
         /* Allow cards to take up full width */
+        height: 22vh;
         max-height: -moz-fit-content;
         max-height: -webkit-fit-content;
         max-height: fit-content;
         background: rgba(255, 255, 255, 0.2);
         /* margin-bottom: 1rem; */
         border-radius: 28px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         /* Subtle shadow for depth */
         backdrop-filter: blur(10px);
         /* Blur effect */
@@ -895,37 +764,40 @@ button {
         box-sizing: border-box;
     }
 
+    .familyInfoCard {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        margin: 0 auto;
+        flex-grow: 1;
+        /* overflow-x: auto; */
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
     .personalInfoCard {
         max-width: 90%;
         max-height: 90%;
         /* Allow cards to take up full width */
         margin-bottom: 1rem;
         border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         padding: 20px;
         flex-grow: 1;
         /* Allow cards to grow and take up space */
         /* overflow-x: auto; */
-    }
-
-    .cardsContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
-        min-height: calc(65vh - 140px);
-        max-height: calc(70vh - 200px);
-        height: 75vh;
-        max-width: 100%;
-        margin: 1% auto;
-        /* max-width: 1800px; */
-        /* Allow cards to grow and take up space */
-        flex-grow: 1;
-        box-sizing: border-box;
-        line-height: 4px;
-        row-gap: 4px;
-        padding: 0 6px;
     }
 
     h1 {
@@ -944,26 +816,24 @@ button {
     }
 
     .form {
-        max-width: 680px;
+        max-width: 31vw;
+        max-height: 31vw;
         margin: 0 auto;
     }
 
     .formRow {
         display: flex;
         flex-direction: row;
-        /* position: relative; */
-        /* NO AFFECT AFTER ADDING*/
         justify-content: space-between;
         justify-items: flex-start;
         justify-self: stretch;
-        gap: 1rem;
+        gap: 4px;
         text-align: flex-start;
         overflow: hidden;
-        /* NO AFFECT AFTER ADDING*/
-        -moz-column-gap: 20px;
-        column-gap: 20px;
+        -moz-column-gap: 8px;
+        column-gap: 8px;
         line-height: 4px;
-        padding: 12px;
+        padding: 6px;
     }
 }
 
@@ -997,28 +867,313 @@ button {
         /* Ensure the header stays on top of other content */
     }
 
-    .footer {
+    .content {
+        display: flex;
+        flex: 1;
+        min-height: calc(80vh - 120px);
+        max-height: calc(85vh - 140px);
+        height: 85vh;
+        width: 95vw;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-between;
+        justify-content: space-evenly;
+        justify-items: center;
+        padding: 14px;
+        margin: 0 auto;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        /* Allow cards to take up full width */
+        height: 22vh;
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        /* margin-bottom: 1rem; */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        /* Subtle shadow for depth */
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        /* Semi-transparent border */
+        padding: 12px;
+        margin: 8px;
+        /* Margin around the card */
+        flex-grow: 1;
+        /* Allow cards to grow and take up space */
+        /* overflow-x: auto; */
+        color: #ffffff;
+        /* White text color */
+        box-sizing: border-box;
+    }
+
+    .familyInfoCard {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 10px;
+        margin: 0 auto;
+        flex-grow: 1;
+        /* overflow-x: auto; */
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    .personalInfoCard {
+        max-width: 90%;
+        max-height: 90%;
+        /* Allow cards to take up full width */
+        margin-bottom: 1rem;
+        border-radius: 20px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        flex-grow: 1;
+        /* Allow cards to grow and take up space */
+        /* overflow-x: auto; */
+    }
+
+    h1 {
+        color: #001529;
+        font-size: 32px;
+    }
+
+    p {
+        color: rgba(255, 255, 255);
+        font-size: 18px;
+    }
+
+    button {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .form {
+        max-width: 30vw;
+        max-height: 30vw;
+        margin: 0 auto;
+    }
+
+    .formRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        justify-items: flex-start;
+        justify-self: stretch;
+        gap: 6px;
+        text-align: flex-start;
+        overflow: hidden;
+        -moz-column-gap: 10px;
+        column-gap: 10px;
+        line-height: 4px;
+        padding: 6px;
+    }
+}
+
+@media (min-width: 1921px) and (max-width: 2560px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        color: white;
         text-align: center;
-        padding: 1rem;
-        background: #001529;
-        color: transparent;
-        position: relative;
-        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 28px;
+        font-weight: 500;
+        overflow: hidden;
+        margin: 2px 0;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        line-height: 10px;
+        gap: 1%;
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Position the header at the top */
         width: 100%;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
     }
 
     .content {
         display: flex;
         flex: 1;
-        min-height: calc(70vh - 120px);
-        max-height: calc(100vh - 120px);
-        width: calc(100vw - 48px);
+        min-height: calc(80vh - 140px);
+        max-height: calc(85vh - 160px);
+        height: 85vh;
+        width: 95vw;
         flex-direction: row;
         align-items: center;
         align-content: space-between;
-        justify-content: center;
-        padding: 0 8px;
+        justify-content: space-evenly;
+        justify-items: center;
+        padding: 14px;
         margin: 0 auto;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        /* Allow cards to take up full width */
+        height: 22vh;
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        /* margin-bottom: 1rem; */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        /* Subtle shadow for depth */
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        /* Semi-transparent border */
+        padding: 14px;
+        margin: 8px;
+        /* Margin around the card */
+        flex-grow: 1;
+        /* Allow cards to grow and take up space */
+        /* overflow-x: auto; */
+        color: #ffffff;
+        /* White text color */
+        box-sizing: border-box;
+    }
+
+    .familyInfoCard {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 10px;
+        margin: 0 auto;
+        flex-grow: 1;
+        /* overflow-x: auto; */
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        color: #001529;
+        font-size: 32px;
+    }
+
+    p {
+        color: rgba(255, 255, 255);
+        font-size: 18px;
+    }
+
+    button {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .form {
+        max-width: 30vw;
+        max-height: 30vw;
+        margin: 0 auto;
+    }
+
+    .formRow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        justify-items: flex-start;
+        justify-self: stretch;
+        gap: 6px;
+        text-align: flex-start;
+        overflow: hidden;
+        -moz-column-gap: 10px;
+        column-gap: 10px;
+        line-height: 4px;
+        padding: 6px;
+    }
+}
+
+@media (min-width: 2561px) and (max-width: 3840px) {
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 28px;
+        font-weight: 500;
+        overflow: hidden;
+        margin: 2px 0;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        line-height: 10px;
+        gap: 1%;
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Position the header at the top */
+        width: 100%;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+    }
+
+    .content {
+        display: flex;
+        flex: 1;
+        min-height: calc(80vh - 120px);
+        max-height: calc(85vh - 120px);
+        height: 85vh;
+        width: 95vw;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        justify-content: center;
+        padding: 18px;
+        margin: 1%;
         margin-bottom: 12px;
         margin-top: 12px;
     }
@@ -1036,7 +1191,7 @@ button {
         background: rgba(255, 255, 255, 0.2);
         /* margin-bottom: 1rem; */
         border-radius: 28px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         /* Subtle shadow for depth */
         backdrop-filter: blur(10px);
         /* Blur effect */
@@ -1055,35 +1210,40 @@ button {
         box-sizing: border-box;
     }
 
+    .familyInfoCard {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        margin: 0 auto;
+        flex-grow: 1;
+        /* overflow-x: auto; */
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
     .personalInfoCard {
         max-width: 90%;
         max-height: 90%;
         /* Allow cards to take up full width */
         margin-bottom: 1rem;
         border-radius: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         padding: 20px;
         flex-grow: 1;
         /* Allow cards to grow and take up space */
         /* overflow-x: auto; */
-    }
-
-    .cardsContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
-        min-height: calc(70vh - 90px);
-        max-height: calc(75vh - 140px);
-        height: 80vh;
-        max-width: 100%;
-        margin: 1% auto;
-        flex-grow: 1;
-        box-sizing: border-box;
-        line-height: 4px;
-        row-gap: 4px;
-        padding: 0 4px;
     }
 
     h1 {
@@ -1125,7 +1285,8 @@ button {
     }
 }
 
-@media (min-width: 1921px) and (max-width: 2560px) {
+@media (min-width: 3840px) {
+
     .header {
         display: flex;
         flex-direction: row;
@@ -1153,8 +1314,127 @@ button {
         z-index: 1000;
         /* Ensure the header stays on top of other content */
     }
+
+    .content {
+        display: flex;
+        flex: 1;
+        min-height: calc(80vh - 120px);
+        max-height: calc(85vh - 120px);
+        height: 85vh;
+        width: 95vw;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        justify-content: center;
+        padding: 18px;
+        margin: 1%;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        /* Allow cards to take up full width */
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        /* margin-bottom: 1rem; */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        /* Subtle shadow for depth */
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        /* Semi-transparent border */
+        padding: 12px;
+        margin: 6px;
+        /* Margin around the card */
+        flex-grow: 1;
+        /* Allow cards to grow and take up space */
+        /* overflow-x: auto; */
+        color: #ffffff;
+        /* White text color */
+        box-sizing: border-box;
+    }
+
+    .familyInfoCard {
+        display: flex;
+        flex-direction: column;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        margin: 0 auto;
+        flex-grow: 1;
+        /* overflow-x: auto; */
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    .personalInfoCard {
+        max-width: 90%;
+        max-height: 90%;
+        /* Allow cards to take up full width */
+        margin-bottom: 1rem;
+        border-radius: 20px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        flex-grow: 1;
+        /* Allow cards to grow and take up space */
+        /* overflow-x: auto; */
+    }
+
+    h1 {
+        color: #001529;
+        font-size: 32px;
+    }
+
+    p {
+        color: rgba(255, 255, 255);
+        font-size: 18px;
+    }
+
+    button {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .form {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .formRow {
+        display: flex;
+        flex-direction: row;
+        /* position: relative; */
+        /* NO AFFECT AFTER ADDING*/
+        justify-content: space-between;
+        justify-items: flex-start;
+        justify-self: stretch;
+        gap: 1rem;
+        text-align: flex-start;
+        overflow: hidden;
+        /* NO AFFECT AFTER ADDING*/
+        -moz-column-gap: 20px;
+        column-gap: 20px;
+        line-height: 4px;
+        padding: 12px;
+    }
 }
-
-@media (min-width: 2561px) and (max-width: 3840px) {}
-
-@media (min-width: 3840px) {}
