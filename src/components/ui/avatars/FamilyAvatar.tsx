@@ -8,7 +8,7 @@ const FamilyAvatar: React.FC = () => (
     <Avatar
         shape="circle"
         src="/src/assets/family-avatar.svg"
-        size={50}
+        // size={32}
         className={styles.avatar}
         icon={<UserOutlined />}>
     </Avatar>

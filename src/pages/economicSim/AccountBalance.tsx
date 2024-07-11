@@ -1,6 +1,6 @@
 /* ./src/pages/economicSim/AccountBalance.tsx */
 import React, { useEffect, useState } from 'react';
-import { Layout, Row, Col, Typography, Card, Button } from 'antd';
+import { Layout, Row, Col, Typography, Card, Button, Flex } from 'antd';
 import StepsBar from '../../components/ui/stepper/StepsBar';
 import CurrentIncomes from './CurrentIncomes';
 import CurrentExpenses from './CurrentExpenses';
@@ -77,31 +77,43 @@ const AccountBalance: React.FC = () => {
     return (
         <DynamicLayout>
             <Header className={styles.header}>
-                {/* <TotalBalance currentBalance={currentBalanceTotal} futureBalance={futureBalanceTotal}  /> */}
-                <Row gutter={24} align="middle" justify="space-between" className={styles.headerRow}>
-                    <Col span={12}>
-                        <span className={styles.financialNumber}> {balanceDifference} </span>
-                        <span className={styles.financialNumber} style={{ direction: 'rtl' }}> הפרש כולל:</span>
-                    </Col>
-                    <Col span={6}>
-                        <Button className={styles.buttonCalculate} type="primary" size="large" onClick={handleCalculate}>
-                            חישוב
-                        </Button>
-                    </Col>
-                    <Col span={6}>
-                        <span className={styles.loginName}>{state.loginName}</span>
-                        <FamilyAvatar />
-                    </Col>
+                <Col span={8}>
+                    <Row gutter={8}>
+                        <Card className={styles.cardAccountBalance} style={{ background: "rgba(195, 27, 83, 0.292)" }}>
+                            <p>מודל שיתופי</p>
+                        </Card>
+                    </Row>
+                </Col>
+                <Col span={8}>
+                    <Card className={styles.cardAccountBalance}>
+                        <Flex align="center" justify="space-between" gap={70}>
+                            <Row>
+                                <span className={styles.financialNumber} style={{ direction: 'rtl' }}> הפרש כולל:</span>
+                                <span className={styles.financialNumber}> {balanceDifference} </span>
+                            </Row>
+                            <Row>
+                                <Button className={styles.buttonCalculate} type="primary" size="large" onClick={handleCalculate}>
+                                    חישוב
+                                </Button>
+                            </Row>
+                            <Row>
+                                <span className={styles.loginName}>{state.loginName}</span>
+                                <FamilyAvatar />
+                            </Row>
+                        </Flex>
+                    </Card>
+                </Col>
+            <Col span={8}>
+                <Row gutter={8}>
+                        <Card className={styles.cardAccountBalance} style={{ background: "rgba(195, 27, 83, 0.292)" }}>
+                        <p>מודל מתחדש</p>
+                    </Card>
                 </Row>
+            </Col>
             </Header>
             <Content className={styles.content}>
                 <Row gutter={16}>
                     <Col span={12}>
-                        <Row>
-                            <Card className={styles.cardAccountBalance}>
-                                <p>מודל שיתופי</p>
-                            </Card>
-                        </Row>
                         <Row>
                             <Col span={12} className={styles.columnGeneral}>
                                 <CurrentIncomes setIncomes={setIncomes} />
@@ -111,17 +123,12 @@ const AccountBalance: React.FC = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col span={24}>
+                            <Col span={24} className={styles.columnBottom}>
                                 <CurrentBalance incomes={incomes} expenses={expenses} />
                             </Col>
                         </Row>
                     </Col>
                     <Col span={12}>
-                        <Row>
-                            <Card className={styles.cardAccountBalance}>
-                                <p>מודל מתחדש</p>
-                            </Card>
-                        </Row>
                         <Row>
                             <Col span={12} className={styles.columnGeneral}>
                                 <FutureIncomes setIncomes={setFutureIncomes}/>
@@ -131,7 +138,7 @@ const AccountBalance: React.FC = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col span={24}>
+                            <Col span={24} className={styles.columnBottom}>
                                 <FutureBalance incomes={futureIncomes} expenses={futureExpenses} />
                             </Col>
                         </Row>

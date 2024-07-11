@@ -231,8 +231,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
     ]);
 
     return (
-        <Card className={styles.card}>
-            <Title level={4}>הכנסות</Title>
+        <Card title="הכנסות" className={styles.card}>
             <Form
                 layout="horizontal"
                 labelAlign="right"

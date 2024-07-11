@@ -10,32 +10,12 @@
     padding: 8px 0px 8px;
 }
 
-.header {
-    width: calc(35% - 60px);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    color: rgb(245, 245, 245);
-    text-align: center;
-    padding: 4px;
-    font-family: 'Noto Sans Hebrew', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    overflow: hidden;
-    margin: 2px 0;
-    margin-top: 1em;
-    border-radius: 28px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    backdrop-filter: blur(10px); /* Blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
-    box-sizing: border-box;
-}
-
 .headerRow {
     width: 100%;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-items: stretch;
 }
 
 .headerCol {
@@ -132,7 +112,7 @@
     position: relative;
     text-align: center;
     border-radius: 28px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);/* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
@@ -155,11 +135,10 @@
     position: relative;
     text-align: center;
     border-radius: 28px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
     font-family: 'Noto Sans Hebrew', sans-serif;
     font-weight: 400;
     font-size: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
@@ -179,7 +158,7 @@
     position: relative;
     text-align: center;
     border-radius: 28px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
@@ -259,7 +238,7 @@
     background-color: #f52f6e2a;
     margin: 8px;
     border-radius: 28px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
@@ -281,7 +260,7 @@
     margin-top: 2px;
     margin-bottom: 2px;
     border-radius: 28px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
@@ -317,7 +296,7 @@
     margin-top: 4px;
     margin-bottom: 4px;
     border-radius: 28px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
     justify-content: space-between;
     flex-grow: 1;
     font-size: 20px;
@@ -357,13 +336,14 @@
 }
 
 .rowGutter {
-    /* height: 100px; */
+    height: 10px;
     margin: 2px 0;
     padding: 0;
     /* align-items: center; */
     /* justify-content: center; */
     display: flex;
     position: relative;
+    margin-bottom: 14px;
 }
 
 .columnGeneral {
@@ -380,15 +360,12 @@
     /* justify-content: center; */
 
 
-.columnGeneral {
-    min-height: calc(20vh - 40px);
-    max-height: calc(80vh - 120px);
-    margin-bottom: 12px;
+.columnBottom {
+    min-height: 35px;
+    max-height: 40px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
     position: relative;
-    overflow-x: hidden;
     font-family: 'Noto Sans Hebrew', sans-serif !important;
 }
 
@@ -407,7 +384,7 @@
     /* position: relative; */
     text-align: center;
     border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
     /* Blur effect */
     -webkit-backdrop-filter: blur(10px);
@@ -435,3 +412,1172 @@
 body {
     font-family: 'Noto Sans Hebrew', sans-serif;
 }
+
+/* Media Queries for Responsiveness */
+@media (min-width: 375px) {}
+
+@media (min-width: 390px) {}
+
+@media (min-width: 414px) {}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        overflow: hidden;
+        margin: 2px 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 20px;
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Position the header at the top */
+        width: 100%;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+    }
+
+    .content {
+        display: flex;
+        flex: 1;
+        min-height: calc(30vh - 80px);
+        max-height: calc(75vh - 90px);
+        width: 40vw;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-between;
+        padding: 12px;
+        margin: 10px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        overflow: hidden;
+        margin: 2px 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 20px;
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Position the header at the top */
+        width: 100%;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+    }
+
+    .content {
+        display: flex;
+        flex: 1;
+        min-height: calc(30vh - 80px);
+        max-height: calc(75vh - 90px);
+        width: 40vw;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-between;
+        padding: 12px;
+        margin: 10px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        overflow: hidden;
+        margin: 2px 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 20px;
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Position the header at the top */
+        width: 100%;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+    }
+
+    .content {
+        display: flex;
+        flex: 1;
+        min-height: calc(30vh - 80px);
+        max-height: calc(75vh - 90px);
+        width: 40vw;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-between;
+        padding: 12px;
+        margin: 10px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1365px) {
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        overflow: hidden;
+        margin: 2px 0;
+        margin-top: 14px;
+        margin-bottom: 10px;
+        line-height: 20px;
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Position the header at the top */
+        width: 100%;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+    }
+
+    .content {
+        display: flex;
+        flex: 1;
+        min-height: calc(30vh - 80px);
+        max-height: calc(75vh - 90px);
+        width: 40vw;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-between;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .card {
+        /* max-width: 20px; */
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        /* Allow cards to take up full width */
+        min-height: 50vh;
+        max-height: -moz-fit-content;
+        max-height: -webkit-fit-content;
+        max-height: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        /* margin-bottom: 1rem; */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        /* Subtle shadow for depth */
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        /* Semi-transparent border */
+        padding: 8px;
+        margin: 6px;
+        /* Margin around the card */
+        flex-grow: 1;
+        /* Allow cards to grow and take up space */
+        /* overflow-x: auto; */
+        color: #ffffff;
+        /* White text color */
+        box-sizing: border-box;
+    }
+
+    p {
+        color: rgba(255, 255, 255);
+        font-size: 14px;
+    }
+
+    button {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .form {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .formRow {
+        display: flex;
+        flex-direction: row;
+        /* position: relative; */
+        /* NO AFFECT AFTER ADDING*/
+        justify-content: space-between;
+        justify-items: flex-start;
+        justify-self: stretch;
+        gap: 0.5rem;
+        text-align: flex-start;
+        overflow: hidden;
+        /* NO AFFECT AFTER ADDING*/
+        -moz-column-gap: 10px;
+        column-gap: 10px;
+        line-height: 4px;
+        padding: 8px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1366px) and (max-width: 1420px) {
+    .header {
+        display: flex;
+        width: 95vw;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        align-items: center;
+        /* align-content: center; */
+        justify-items: center;
+        justify-content: space-evenly;
+        padding: 8px;
+        overflow: hidden;
+        margin: 4px 0;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        /* line-height: 10px; */
+        /* gap: 1%; */
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-sizing: border-box;
+    }
+    
+    .loginName {
+        margin-left: 8px;
+        font-size: 14px;
+        color: #fff;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+    
+    .content {
+        display: flex;
+        padding: 4px;
+        background: transparent;
+        min-height: calc(80vh - 5px);
+        max-height: calc(85vh - 5px);
+        height: 85vh;
+        width: 95vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+    
+    .balanceInfo,
+    .summaryInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .totalCurrentBalance {
+        height: 10vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+        /* margin-top: 2px;
+        margin-bottom: 2px; */
+        text-align: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 200;
+        font-size: 10px;
+        margin: 2px 0 2px;
+    }
+    
+    .totalBalance, .incomeAmount, .expensesAmount {
+        min-height: 30px;
+        max-height: 35px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.2);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        font-weight: 400;
+        padding: 8px;
+        margin: 0 auto;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    .incomeAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        justify-content: space-between;
+        color: rgb(24, 124, 224);
+    }
+
+    .totalBalance p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(39, 174, 89);
+    }
+
+    .expensesAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(224, 54, 28);
+    }
+
+    .financialNumber {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+        color: rgb(248, 245, 245);
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 8px;
+        width: 22vw;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: start;
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
+
+    .cardAccountBalance {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        background: rgba(230, 13, 118, 0.2);
+        margin: 4px;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        overflow: hidden;
+        justify-content: center;
+        flex-grow: 1;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .cardAccountBalance p {
+        display: flex;
+        height: 4vh;
+        height: 5vh;
+        height: 5vh;
+        align-items: center;
+        font-size: 14px;
+        display: flex-center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+
+    .columnGeneral {
+        display: flex;
+        min-height: calc(70vh - 30px);
+        max-height: calc(75vh - 40px);
+        height: 75vh;
+        margin-bottom: 8px;
+        flex-direction: column;
+        position: relative;
+        overflow-x: hidden;
+        font-family: 'Noto Sans Hebrew', sans-serif !important;
+    }
+
+    .buttonCalculate {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        /* margin: 0 10px; */
+        background: rgba(26, 138, 208, 0.88);
+        /* position: relative; */
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(245, 242, 242, 0.3);
+        font-weight: 400;
+        /* padding: 10px; */
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1367px) and (max-width: 1599px) {
+    .header {
+        display: flex;
+        width: 90vw;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        align-items: center;
+        /* align-content: center; */
+        justify-items: center;
+        justify-content: space-between;
+        padding: 28px;
+        overflow: hidden;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        /* line-height: 10px; */
+        /* gap: 1%; */
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-sizing: border-box;
+    }
+        
+    .loginName {
+        margin-left: 8px;
+        font-size: 14px;
+        color: #fff;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .content {
+        display: flex;
+        padding: 4px;
+        background: transparent;
+        min-height: calc(80vh - 5px);
+        max-height: calc(85vh - 5px);
+        height: 85vh;
+        width: 95vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+        
+    .balanceInfo,
+    .summaryInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        
+    .totalCurrentBalance {
+        height: 10vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+        /* margin-top: 2px;
+        margin-bottom: 2px; */
+        text-align: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 200;
+        font-size: 10px;
+        margin: 2px 0 2px;
+    }
+        
+    .totalBalance,
+    .incomeAmount,
+    .expensesAmount {
+        min-height: 30px;
+        max-height: 35px;
+        height: 35px;
+        background: rgba(255, 255, 255, 0.2);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        font-weight: 400;
+        padding: 8px;
+        margin: 0 auto;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+        
+    .incomeAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        justify-content: space-between;
+        color: rgb(24, 124, 224);
+    }
+        
+    .totalBalance p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(39, 174, 89);
+    }
+        
+    .expensesAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(224, 54, 28);
+    }
+        
+    .financialNumber {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+        color: rgb(248, 245, 245);
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .card {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        position: relative;
+        margin: 8px;
+        width: 22vw;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: start;
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
+        
+    .cardAccountBalance {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        background: rgba(230, 13, 118, 0.2);
+        margin: 8px;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        overflow: hidden;
+        justify-content: center;
+        flex-grow: 1;
+        align-items: center;
+        box-sizing: border-box;
+    }
+        
+    .cardAccountBalance p {
+        display: flex;
+        height: 4vh;
+        height: 5vh;
+        height: 5vh;
+        align-items: center;
+        font-size: 14px;
+        display: flex-center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .columnGeneral {
+        display: flex;
+        min-height: calc(70vh - 30px);
+        max-height: calc(75vh - 40px);
+        height: 75vh;
+        margin-bottom: 8px;
+        flex-direction: column;
+        position: relative;
+        overflow-x: hidden;
+        font-family: 'Noto Sans Hebrew', sans-serif !important;
+    }
+        
+    .buttonCalculate {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        /* margin: 0 10px; */
+        background: rgba(26, 138, 208, 0.88);
+        /* position: relative; */
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(245, 242, 242, 0.3);
+        font-weight: 400;
+        /* padding: 10px; */
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1920px) {
+    .header {
+        display: flex;
+        width: 95vw;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        align-items: center;
+        /* align-content: center; */
+        justify-items: center;
+        justify-content: space-between;
+        padding: 32px;
+        overflow: hidden;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        /* line-height: 10px; */
+        /* gap: 1%; */
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-sizing: border-box;
+    }
+        
+    .loginName {
+        margin-left: 8px;
+        font-size: 14px;
+        color: #fff;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .content {
+        display: flex;
+        padding: 4px;
+        background: transparent;
+        min-height: calc(80vh - 5px);
+        max-height: calc(85vh - 5px);
+        height: 85vh;
+        width: 95vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+        
+    .balanceInfo,
+    .summaryInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        
+    .totalCurrentBalance {
+        height: 10vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+        /* margin-top: 2px;
+        margin-bottom: 2px; */
+        text-align: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 200;
+        font-size: 10px;
+        margin: 2px 0 2px;
+    }
+        
+    .totalBalance,
+    .incomeAmount,
+    .expensesAmount {
+        min-height: 40px;
+        max-height: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.2);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        font-weight: 400;
+        padding: 8px;
+        margin: 0 auto;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+        
+    .incomeAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        justify-content: space-between;
+        color: rgb(24, 124, 224);
+    }
+        
+    .totalBalance p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(39, 174, 89);
+    }
+        
+    .expensesAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(224, 54, 28);
+    }
+        
+    .financialNumber {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+        color: rgb(248, 245, 245);
+        font-size: 18px;
+        font-weight: 400;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .card {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        position: relative;
+        /* background: rgba(13, 118, 230, 0.367); */
+        margin: 8px;
+        width: 22vw;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: start;
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
+        
+    .cardAccountBalance {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        background: rgba(230, 13, 118, 0.2);
+        margin: 8px;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        overflow: hidden;
+        justify-content: center;
+        flex-grow: 1;
+        align-items: center;
+        box-sizing: border-box;
+    }
+        
+    .cardAccountBalance p {
+        display: flex;
+        height: 4vh;
+        height: 5vh;
+        height: 5vh;
+        align-items: center;
+        font-size: 14px;
+        display: flex-center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .columnGeneral {
+        display: flex;
+        min-height: calc(70vh - 30px);
+        max-height: calc(75vh - 40px);
+        height: 75vh;
+        margin-bottom: 8px;
+        flex-direction: column;
+        position: relative;
+        overflow-x: hidden;
+        font-family: 'Noto Sans Hebrew', sans-serif !important;
+    }
+        
+    .buttonCalculate {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        /* margin: 0 10px; */
+        background: rgba(26, 138, 208, 0.88);
+        /* position: relative; */
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(245, 242, 242, 0.3);
+        font-weight: 400;
+        /* padding: 10px; */
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1921px) and (max-width: 2560px) {
+    .header {
+        display: flex;
+        width: 95vw;
+        flex-direction: row;
+        background: transparent;
+        color: white;
+        align-items: center;
+        /* align-content: center; */
+        justify-items: center;
+        justify-content: space-between;
+        padding: 44px;
+        overflow: hidden;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        /* line-height: 10px; */
+        /* gap: 1%; */
+        position: absolute;
+        /* Position the header absolutely */
+        top: 0;
+        /* Ensure the header spans the full width */
+        z-index: 1000;
+        /* Ensure the header stays on top of other content */
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-sizing: border-box;
+    }
+        
+    .loginName {
+        margin-left: 14px;
+        font-size: 18px;
+        color: #fff;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .content {
+        display: flex;
+        padding: 4px;
+        background: transparent;
+        min-height: calc(80vh - 45px);
+        max-height: calc(85vh - 45px);
+        height: 85vh;
+        width: 95vw;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 12px;
+        margin-top: 12x;
+    }
+        
+    .balanceInfo,
+    .summaryInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        
+    .totalCurrentBalance {
+        height: 10vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+        /* margin-top: 2px;
+        margin-bottom: 2px; */
+        text-align: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 200;
+        font-size: 10px;
+        margin: 2px 0 2px;
+    }
+        
+    .totalBalance,
+    .incomeAmount,
+    .expensesAmount {
+        min-height: 60px;
+        max-height: 65px;
+        height: 65px;
+        background: rgba(255, 255, 255, 0.2);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        font-weight: 400;
+        padding: 8px;
+        margin: 0 auto;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
+        
+    .incomeAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        justify-content: space-between;
+        color: rgb(24, 124, 224);
+    }
+        
+    .totalBalance p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(39, 174, 89);
+    }
+        
+    .expensesAmount p {
+        align-items: center;
+        justify-content: center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        justify-content: space-between;
+        /* Adjust font size */
+        color: rgb(224, 54, 28);
+    }
+        
+    .financialNumber {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+        color: rgb(248, 245, 245);
+        font-size: 20px;
+        font-weight: 400;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .card {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        position: relative;
+        /* background: rgba(13, 118, 230, 0.367); */
+        margin: 40px;
+        width: 20vw;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: start;
+        flex-grow: 1;
+        box-sizing: border-box;
+    }
+        
+    .cardAccountBalance {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        background: rgba(230, 13, 118, 0.2);
+        margin: 8px;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 8px;
+        overflow: hidden;
+        justify-content: center;
+        flex-grow: 1;
+        align-items: center;
+        box-sizing: border-box;
+    }
+        
+    .cardAccountBalance p {
+        display: flex;
+        height: 4vh;
+        height: 5vh;
+        height: 5vh;
+        align-items: center;
+        font-size: 20px;
+        display: flex-center;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+    }
+        
+    .columnGeneral {
+        display: flex;
+        min-height: calc(70vh - 45px);
+        max-height: calc(75vh - 55px);
+        height: 75vh;
+        margin-bottom: 8px;
+        flex-direction: column;
+        position: relative;
+        overflow-x: hidden;
+        font-family: 'Noto Sans Hebrew', sans-serif !important;
+    }
+        
+    .buttonCalculate {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-family: 'Noto Sans Hebrew', sans-serif;
+        /* margin: 0 10px; */
+        background: rgba(26, 138, 208, 0.88);
+        /* position: relative; */
+        text-align: center;
+        border-radius: 28px;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+        /* Blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        /* Blur effect for Safari */
+        border: 2px solid rgba(245, 242, 242, 0.3);
+        font-weight: 400;
+        /* padding: 10px; */
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 2561px) and (max-width: 3840px) {}
+
+@media (min-width: 3840px) {}

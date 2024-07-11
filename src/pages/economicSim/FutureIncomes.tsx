@@ -513,8 +513,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
     ]);
 
     return (
-        <Card className={styles.card}>
-            <Title level={4}>הכנסות</Title>
+        <Card title="הכנסות" className={styles.card}>
             <Form
                 layout="horizontal"
                 labelAlign="right"

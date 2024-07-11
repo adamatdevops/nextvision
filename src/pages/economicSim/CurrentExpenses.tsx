@@ -263,8 +263,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
     ]);
 
     return (
-        <Card className={styles.card}>
-            <Title level={4}>הוצאות</Title>
+        <Card title="הוצאות" className={styles.card}>
             <Form
                 layout="horizontal"
                 labelAlign="right"
