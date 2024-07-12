@@ -3,7 +3,7 @@ import React from 'react';
 import { Steps, Button } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './css/StepsBar.module.css';
-import { UserOutlined, BankOutlined, SmileOutlined, RiseOutlined } from '@ant-design/icons';
+import { UserOutlined, BankOutlined, SmileOutlined, FileDoneOutlined } from '@ant-design/icons';
 
 const { Step } = Steps;
 
@@ -12,11 +12,11 @@ const StepsBar: React.FC = () => {
     const navigate = useNavigate();
 
     const steps = [
-        { title: 'כניסה', path: '/', description: 'עמוד הבית', icon: <UserOutlined /> },
-        { title: 'מידע כללי', path: '/social-data', description: 'הזנת נתונים סוציאלים', icon: <UserOutlined /> },
-        { title: 'מאזן', path: '/account-balance', description: 'תקציב נוכחי', icon: <BankOutlined /> },
+        { title: 'כניסה', percent: '25', path: '/', description: 'עמוד הבית', icon: <UserOutlined /> },
+        { title: 'מידע כללי', percent: '50', path: '/social-data', description: 'הזנת נתונים סוציאלים', icon: <FileDoneOutlined /> },
+        { title: 'מאזן', percent: '75', path: '/account-balance', description: 'סימולצית נתונים', icon: <BankOutlined /> },
         // { title: 'תחזית', path: '/forecast', description: 'מודל התחדשות', icon: <RiseOutlined /> },
-        { title: 'סיום', path: '/review-and-logout', description: 'סקירת נתונים ', icon: <SmileOutlined /> }
+        { title: 'סיום', percent: '100', path: '/review-and-logout', description: 'סקירת נתונים ', icon: <SmileOutlined /> }
     ];
 
     const currentStep = steps.findIndex(step => step.path === location.pathname);
@@ -35,7 +35,7 @@ const StepsBar: React.FC = () => {
 
     return (
         <div className={styles.stepsBar}>
-            <Steps current={currentStep}>
+            <Steps current={currentStep} size={"default"}>
                 {steps.map(step => (
                     <Step key={step.title} title={step.title} description={step.description} icon={step.icon} />
                 ))}

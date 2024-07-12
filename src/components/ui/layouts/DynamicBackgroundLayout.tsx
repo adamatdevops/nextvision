@@ -26,7 +26,7 @@ const DynamicLayout: React.FC<LayoutComponentProps> = ({ children }) => {
                 bgImage = './assets/img/vibrant/background-01-2560x1770.jpeg';
             } else if (width >= 1920) {
                 bgImage = './assets/img/vibrant/background-01-1920x1280.jpeg';
-            } else if (width >= 1536) {
+            } else if (width >= 1530) {
                 bgImage = './assets/img/vibrant/background-01-1536x960.jpeg';
             } else if (width >= 1440) {
                 bgImage = './assets/img/vibrant/background-01-1440x960.jpeg';
@@ -60,7 +60,7 @@ const DynamicLayout: React.FC<LayoutComponentProps> = ({ children }) => {
                 {children}
             </Content>
             <Footer className={styles.footer}>
-                ©2024 NextVision
+                NextVision@2024 v2.8.456
             </Footer>
         </Layout>
     );

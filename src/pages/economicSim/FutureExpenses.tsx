@@ -121,7 +121,6 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         setFuturePrivateLessonExpenses(updatedFuturePrivateLessonFees);
     };
 
-
     const handleFutureKindergartenExpensesChange = (index: number, value: number | null) => {
         setFutureKindergartenExpenses(index, value ?? 0);
     };

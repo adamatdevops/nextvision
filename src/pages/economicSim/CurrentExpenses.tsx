@@ -33,24 +33,6 @@ const calculateFamilyMemberCount = (familyStatus, partnerCommunityStatus, childr
     return familyMemberCount;
 };
 
-// const calculateTuitionExpenses = (schoolExpenses, highSchoolExpenses) => {
-//     let schoolCoverage = 300;
-//     let highSchoolCoverage = 500;
-//     let tuitionExpenses = 0;
-
-//     if (schoolExpenses >= schoolCoverage) {
-//         tuitionExpenses += schoolExpenses - schoolCoverage;
-//     } else if (schoolExpenses < schoolCoverage) {
-//         tuitionExpenses += 0;
-//     } else if (highSchoolExpenses >= highSchoolCoverage) {
-//         tuitionExpenses += highSchoolExpenses - highSchoolCoverage;
-//     } else if (highSchoolExpenses < highSchoolCoverage) {
-//         tuitionExpenses += 0;
-//     }
-
-//     return tuitionExpenses
-// }
-
 const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
     /* Use the useCurrentExpenses hook to get context values and setters */
     const { state } = useGlobalState();
@@ -136,26 +118,6 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
     useEffect(() => {
         let childrenCount = state.numberOfChildren || 0;
         let familyMemberCount = calculateFamilyMemberCount(state.familyStatus, state.partnerCommunityStatus, childrenCount);
-
-        // const totalSchoolExpenses = state.childrenData.reduce((total, child) => {
-        //     const tuition = child.educationTuition || 0; // Default to 0 if not provided
-        //     const level = child.educationLevel;
-        //     const coverage = (level === 'יסודי' || level === 'תיכון') ? 300 : 0;
-        //     return total + Math.max(0, tuition - coverage); // Only add the difference if tuition exceeds coverage
-        // }, 0);
-
-        // const totalSchoolFees = state.educationTuitionFees.reduce((acc, fee) => acc + fee, 0);
-        // const totalEducationSchoolExpenses = state.educationSchoolExpenses - totalSchoolFees > 0 ? state.educationSchoolExpenses - totalSchoolFees : 0;
-        // const totalEducationHighSchoolExpenses = state.educationHighSchoolExpenses - totalSchoolFees > 0 ? state.educationHighSchoolExpenses - totalSchoolFees : 0;
-
-        // const totalCustomTuition = state.childrenData.reduce((sum, child) => {
-        //     if (child.educationLevel === 'יסודי' || child.educationLevel === 'תיכון') {
-        //         const tuitionCoverage = educationTuitionFeesMap[child.educationLevel || ''];
-        //         const customTuition = child.customTuition || 0;
-        //         return sum + Math.max(0, customTuition - tuitionCoverage);
-        //     }
-        //     return sum;
-        // }, 0);
 
 
         if (state.familyStatus === 'married' && state.partnerCommunityStatus === 'community-member') { /* Change this condition. This is just a mockup */
@@ -334,7 +296,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     </Tooltip>
                 </Form.Item>
                 <Form.Item
-                    label="נוית שיפוץ ודקורציה"
+                    label="נוי, שיפוץ ודקורציה"
                     labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
                     wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
                 >
@@ -638,33 +600,5 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
         </Card>
     );
 };
-
-// interface SectionProps {
-//     title: string;
-//     value: number;
-
-// /*     onChange: (value: number) => void; */
-// }
-
-// const ExpenseSection: React.FC<SectionProps> = ({ title, value,
-//     /* onChange }) => { */
-//     return (
-//         <Card className={styles.sectionCard}>
-//             <Title level={5}>{title}</Title>
-//             <Form layout="vertical">
-//                 <Form.Item label = "סכום">
-//                     <InputNumber
-//                         value={value}
-//                     /*     onChange= */
-//                     /* onChange} */
-//                         min={0}
-//                         style={{ width: '100%' }}
-//                         placeholder="הכנס סכום"
-//                     />
-//                 </Form.Item>
-//             </Form>
-//         </Card>
-//     );
-// };
 
 export default CurrentExpenses;

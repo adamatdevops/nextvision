@@ -1386,6 +1386,7 @@ body {
 
     .loginName {
         margin-left: 14px;
+        margin-top: 12px;
         font-size: 18px;
         color: #fff;
         font-family: 'Noto Sans Hebrew', sans-serif;
