@@ -676,7 +676,7 @@ body {
         align-items: center;
         /* align-content: center; */
         justify-items: center;
-        justify-content: space-evenly;
+        align-content: space-between;
         padding: 8px;
         overflow: hidden;
         margin: 4px 0;
@@ -697,14 +697,16 @@ body {
         border: 2px solid rgba(255, 255, 255, 0.3);
         box-sizing: border-box;
     }
-    
+
     .loginName {
-        margin-left: 8px;
+        align-items: center;
+        margin-left: 4px;
+        margin-top: 6px;
         font-size: 14px;
         color: #fff;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-    
+
     .content {
         display: flex;
         padding: 4px;
@@ -718,14 +720,14 @@ body {
         margin-bottom: 8px;
         margin-top: 8px;
     }
-    
+
     .balanceInfo,
     .summaryInfo {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-    
+
     .totalCurrentBalance {
         height: 10vh;
         align-items: center;
@@ -740,7 +742,7 @@ body {
         font-size: 10px;
         margin: 2px 0 2px;
     }
-    
+
     .totalBalance, .incomeAmount, .expensesAmount {
         min-height: 30px;
         max-height: 35px;
@@ -798,7 +800,7 @@ body {
         direction: ltr;
         unicode-bidi: bidi-override;
         color: rgb(248, 245, 245);
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
@@ -895,7 +897,7 @@ body {
 @media (min-width: 1367px) and (max-width: 1599px) {
     .header {
         display: flex;
-        width: 90vw;
+        width: 95vw;
         flex-direction: row;
         background: transparent;
         color: white;
@@ -922,14 +924,15 @@ body {
         border: 2px solid rgba(255, 255, 255, 0.3);
         box-sizing: border-box;
     }
-        
+
     .loginName {
-        margin-left: 8px;
+        margin-left: 4px;
+        margin-top: 6px;
         font-size: 14px;
         color: #fff;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .content {
         display: flex;
         padding: 4px;
@@ -943,14 +946,14 @@ body {
         margin-bottom: 8px;
         margin-top: 8px;
     }
-        
+
     .balanceInfo,
     .summaryInfo {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-        
+
     .totalCurrentBalance {
         height: 10vh;
         align-items: center;
@@ -965,7 +968,7 @@ body {
         font-size: 10px;
         margin: 2px 0 2px;
     }
-        
+
     .totalBalance,
     .incomeAmount,
     .expensesAmount {
@@ -988,7 +991,7 @@ body {
         color: #ffffff;
         box-sizing: border-box;
     }
-        
+
     .incomeAmount p {
         align-items: center;
         justify-content: center;
@@ -998,7 +1001,7 @@ body {
         justify-content: space-between;
         color: rgb(24, 124, 224);
     }
-        
+
     .totalBalance p {
         align-items: center;
         justify-content: center;
@@ -1009,7 +1012,7 @@ body {
         /* Adjust font size */
         color: rgb(39, 174, 89);
     }
-        
+
     .expensesAmount p {
         align-items: center;
         justify-content: center;
@@ -1020,16 +1023,16 @@ body {
         /* Adjust font size */
         color: rgb(224, 54, 28);
     }
-        
+
     .financialNumber {
         direction: ltr;
         unicode-bidi: bidi-override;
         color: rgb(248, 245, 245);
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .card {
         display: flex;
         flex: 1;
@@ -1050,7 +1053,7 @@ body {
         flex-grow: 1;
         box-sizing: border-box;
     }
-        
+
     .cardAccountBalance {
         height: 5vh;
         display: flex;
@@ -1058,7 +1061,7 @@ body {
         text-align: center;
         position: relative;
         background: rgba(230, 13, 118, 0.2);
-        margin: 8px;
+        margin: 6px;
         border-radius: 28px;
         box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
         backdrop-filter: blur(10px);
@@ -1071,7 +1074,7 @@ body {
         align-items: center;
         box-sizing: border-box;
     }
-        
+
     .cardAccountBalance p {
         display: flex;
         height: 4vh;
@@ -1082,7 +1085,7 @@ body {
         display: flex-center;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .columnGeneral {
         display: flex;
         min-height: calc(70vh - 30px);
@@ -1094,7 +1097,7 @@ body {
         overflow-x: hidden;
         font-family: 'Noto Sans Hebrew', sans-serif !important;
     }
-        
+
     .buttonCalculate {
         display: flex;
         flex-direction: row;
@@ -1150,14 +1153,15 @@ body {
         border: 2px solid rgba(255, 255, 255, 0.3);
         box-sizing: border-box;
     }
-        
+
     .loginName {
         margin-left: 8px;
+        margin-top: 10px;
         font-size: 14px;
         color: #fff;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .content {
         display: flex;
         padding: 4px;
@@ -1171,14 +1175,14 @@ body {
         margin-bottom: 8px;
         margin-top: 8px;
     }
-        
+
     .balanceInfo,
     .summaryInfo {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-        
+
     .totalCurrentBalance {
         height: 10vh;
         align-items: center;
@@ -1193,7 +1197,7 @@ body {
         font-size: 10px;
         margin: 2px 0 2px;
     }
-        
+
     .totalBalance,
     .incomeAmount,
     .expensesAmount {
@@ -1216,7 +1220,7 @@ body {
         color: #ffffff;
         box-sizing: border-box;
     }
-        
+
     .incomeAmount p {
         align-items: center;
         justify-content: center;
@@ -1226,7 +1230,7 @@ body {
         justify-content: space-between;
         color: rgb(24, 124, 224);
     }
-        
+
     .totalBalance p {
         align-items: center;
         justify-content: center;
@@ -1237,7 +1241,7 @@ body {
         /* Adjust font size */
         color: rgb(39, 174, 89);
     }
-        
+
     .expensesAmount p {
         align-items: center;
         justify-content: center;
@@ -1248,7 +1252,7 @@ body {
         /* Adjust font size */
         color: rgb(224, 54, 28);
     }
-        
+
     .financialNumber {
         direction: ltr;
         unicode-bidi: bidi-override;
@@ -1257,7 +1261,7 @@ body {
         font-weight: 400;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .card {
         display: flex;
         flex: 1;
@@ -1279,7 +1283,7 @@ body {
         flex-grow: 1;
         box-sizing: border-box;
     }
-        
+
     .cardAccountBalance {
         height: 5vh;
         display: flex;
@@ -1300,7 +1304,7 @@ body {
         align-items: center;
         box-sizing: border-box;
     }
-        
+
     .cardAccountBalance p {
         display: flex;
         height: 4vh;
@@ -1311,7 +1315,7 @@ body {
         display: flex-center;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .columnGeneral {
         display: flex;
         min-height: calc(70vh - 30px);
@@ -1323,7 +1327,7 @@ body {
         overflow-x: hidden;
         font-family: 'Noto Sans Hebrew', sans-serif !important;
     }
-        
+
     .buttonCalculate {
         display: flex;
         flex-direction: row;
@@ -1379,14 +1383,14 @@ body {
         border: 2px solid rgba(255, 255, 255, 0.3);
         box-sizing: border-box;
     }
-        
+
     .loginName {
         margin-left: 14px;
         font-size: 18px;
         color: #fff;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .content {
         display: flex;
         padding: 4px;
@@ -1400,14 +1404,14 @@ body {
         margin-bottom: 12px;
         margin-top: 12x;
     }
-        
+
     .balanceInfo,
     .summaryInfo {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-        
+
     .totalCurrentBalance {
         height: 10vh;
         align-items: center;
@@ -1422,7 +1426,7 @@ body {
         font-size: 10px;
         margin: 2px 0 2px;
     }
-        
+
     .totalBalance,
     .incomeAmount,
     .expensesAmount {
@@ -1445,7 +1449,7 @@ body {
         color: #ffffff;
         box-sizing: border-box;
     }
-        
+
     .incomeAmount p {
         align-items: center;
         justify-content: center;
@@ -1455,7 +1459,7 @@ body {
         justify-content: space-between;
         color: rgb(24, 124, 224);
     }
-        
+
     .totalBalance p {
         align-items: center;
         justify-content: center;
@@ -1466,7 +1470,7 @@ body {
         /* Adjust font size */
         color: rgb(39, 174, 89);
     }
-        
+
     .expensesAmount p {
         align-items: center;
         justify-content: center;
@@ -1477,7 +1481,7 @@ body {
         /* Adjust font size */
         color: rgb(224, 54, 28);
     }
-        
+
     .financialNumber {
         direction: ltr;
         unicode-bidi: bidi-override;
@@ -1486,7 +1490,7 @@ body {
         font-weight: 400;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .card {
         display: flex;
         flex: 1;
@@ -1508,7 +1512,7 @@ body {
         flex-grow: 1;
         box-sizing: border-box;
     }
-        
+
     .cardAccountBalance {
         height: 5vh;
         display: flex;
@@ -1529,7 +1533,7 @@ body {
         align-items: center;
         box-sizing: border-box;
     }
-        
+
     .cardAccountBalance p {
         display: flex;
         height: 4vh;
@@ -1540,7 +1544,7 @@ body {
         display: flex-center;
         font-family: 'Noto Sans Hebrew', sans-serif;
     }
-        
+
     .columnGeneral {
         display: flex;
         min-height: calc(70vh - 45px);
@@ -1552,7 +1556,7 @@ body {
         overflow-x: hidden;
         font-family: 'Noto Sans Hebrew', sans-serif !important;
     }
-        
+
     .buttonCalculate {
         display: flex;
         flex-direction: row;
