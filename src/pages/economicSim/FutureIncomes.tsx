@@ -1,7 +1,7 @@
 /* ./src/pages/economicSim/FutureIncomes.tsx */
 import React, { useEffect, useState } from 'react';
 import { Card, Typography, Form, InputNumber, Tooltip, Button } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import { InfoCircleOutlined, InfoCircleTwoTone } from '@ant-design/icons';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
 // import { useFutureIncomes } from '../../context/FutureIncomesGSP'; // Import the hook
@@ -10,7 +10,6 @@ import type { ChildData } from '../../GlobalStateProvider'; // Import the hook
 import styles from './css/AccountBalance.module.css';
 // import educationSystemBudgetsMap from '../../components/ui/tables/ChildrenStatusTable';
 
-// immport
 const educationSystemBudgetsMap: { [key: string]: number } = {
     'מיץ פטל': 794,
     'תות': 878,
@@ -169,7 +168,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
         // setNumberOfChildren,
         // setFutureEducationSystemExpenses,
         // setFutureSchoolExpenses,
-        // setfutureHighSchoolExpenses,
+        // setFutureHighSchoolExpenses,
         setFutureWelfareExpenses,
         setFutureDentistExpenses,
         setFuturePartnerDentistExpenses,
@@ -532,7 +531,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על שכר נטו">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureNetIncome')}
                         />
                     </Tooltip>
@@ -551,7 +550,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על שכר ברוטו">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureGrossIncome')}
                         />
                     </Tooltip>
@@ -571,7 +570,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על שכר נטו">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePartnerNetIncome')}
                             />
                         </Tooltip>
@@ -592,7 +591,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על שכר ברוטו">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePartnerGrossIncome')}
                             />
                         </Tooltip>
@@ -608,12 +607,13 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             value={futurePensionAllowance}
                             onChange={(value) => setFuturePensionAllowance(value || 0)}
                             // min={0}
-                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
+                            disabled
                         />
                         <Tooltip title="מידע על קצבת פנסיה">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePensionAllowance')}
                             />
                         </Tooltip>
@@ -629,12 +629,13 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             value={futurePartnerPensionAllowance}
                             onChange={(value) => setFuturePartnerPensionAllowance(value || 0)}
                             // min={0}
-                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
+                            disabled
                         />
                         <Tooltip title="מידע על קצבת פנסיה">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePartnerPensionAllowance')}
                             />
                         </Tooltip>
@@ -649,13 +650,14 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <InputNumber
                             value={futureElderlyPension}
                             onChange={(value) => setFutureElderlyPension(value || 0)}
-                            min={0}
+                            // min={0}
                             style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                            disabled
                         />
                         <Tooltip title="מידע על קצבת זקנה">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futureElderlyPension')}
                             />
                         </Tooltip>
@@ -676,7 +678,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על קצבת זקנה">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePartnerElderlyPension')}
                             />
                         </Tooltip>
@@ -698,7 +700,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             <Tooltip title="מידע על קצבת נכות">
                                 <Button
                                     type="link"
-                                    icon={<InfoCircleOutlined />}
+                                    icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                     onClick={() => showDrawer('futureNationalInsuranceAllowance')}
                                 />
                             </Tooltip>
@@ -714,12 +716,12 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         onChange={(value) => setFutureNationalInsuranceAllowanceCommunity(value || 0)}
                         min={0}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
                     />
                     <Tooltip title="מידע על קצבת ביטוח לאומי">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureNationalInsuranceAllowanceCommunity')}
                         />
                     </Tooltip>
@@ -738,7 +740,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על דמי הבראה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureRecoveryFee')}
                         />
                     </Tooltip>
@@ -757,7 +759,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על דמי הבראה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futurePartnerRecoveryFee')}
                         />
                     </Tooltip>
@@ -776,7 +778,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על קרן השתלמות">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureEducationFund')}
                         />
                     </Tooltip>
@@ -795,7 +797,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על קרן השתלמות">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futurePartnerEducationFund')}
                         />
                     </Tooltip>
@@ -810,12 +812,12 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         onChange={(value) => setFutureWelfareIncomes(value || 0)}
                         min={0}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
                     />
                     <Tooltip title="מידע על זיכוי בגין רווחה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureWelfareIncomes')}
                         />
                     </Tooltip>
@@ -829,12 +831,13 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         value={futureDentistIncomes}
                         onChange={(value) => setFutureDentistIncomes(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
+                        disabled
                     />
                     <Tooltip title="מידע על זיכוי בגין טיפולי שיניים">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureDentistIncomes')}
                         />
                     </Tooltip>
@@ -849,12 +852,13 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             value={futurePartnerDentistIncomes}
                             onChange={(value) => setFuturePartnerDentistIncomes(value || 0)}
                             min={0}
-                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
+                            disabled
                         />
                         <Tooltip title="מידע על זיכוי בגין טיפולי שיניים">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePartnerDentistIncomes')}
                             />
                         </Tooltip>
@@ -869,12 +873,13 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         value={futureChildrenDentistIncomes}
                         onChange={(value) => setFutureChildrenDentistIncomes(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
+                        disabled
                     />
                     <Tooltip title="מידע על זיכוי בגין טיפולי שיניים">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureChildrenDentistIncomes')}
                         />
                     </Tooltip>
@@ -893,7 +898,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על זיכוי בגין ילדים">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureChildrenAddition')}
                         />
                     </Tooltip>
@@ -908,12 +913,12 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         onChange={(value) => setFutureFamilySafetyNet(value || 0)}
                         min={0}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
                     />
                     <Tooltip title="מידע על רשת ביטחון">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureFamilySafetyNet')}
                         />
                     </Tooltip>
@@ -929,12 +934,12 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                             onChange={(value) => setFutureChildrenSafetyNet(value || 0)}
                             min={0}
                             disabled
-                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
                         />
                         <Tooltip title="מידע על רשת ביטחון חינוך">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futureFamilySafetyNet')}
                             />
                         </Tooltip>
@@ -950,12 +955,12 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         onChange={(value) => setFutureAdaptationGrant(value || 0)}
                         min={1000}
                         disabled
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#6ab2ed' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
                     />
                     <Tooltip title="מידע על מענק הסתגלות">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureAdaptationGrant')}
                         />
                     </Tooltip>
@@ -974,7 +979,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על הכנסות אחרות">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureOtherIncome')}
                         />
                     </Tooltip>

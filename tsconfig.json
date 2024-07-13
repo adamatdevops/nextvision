@@ -47,7 +47,6 @@
         "baseUrl": ".",
         "types": [
             "node",
-            "@testing-library/jest-dom",
             "vite/client"
         ],
         "allowSyntheticDefaultImports": true,

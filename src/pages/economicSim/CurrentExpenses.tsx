@@ -1,7 +1,7 @@
 /* ./src/pages/economicSim/CurrentExpenses.tsx */
 import React, { useEffect, useState } from 'react';
 import { Card, Typography, Form, InputNumber, Tooltip, Button } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+import { InfoCircleTwoTone } from '@ant-design/icons';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
 import styles from './css/AccountBalance.module.css';
@@ -254,7 +254,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על חיובי אנרגיה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('electricityExpenses')}
                         />
                     </Tooltip>
@@ -272,7 +272,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על חיובי אחזקה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('maintenanceServiceExpenses')}
                         />
                     </Tooltip>
@@ -290,7 +290,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות תחזוקת בית">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('houseMaintenanceExpenses')}
                         />
                     </Tooltip>
@@ -309,7 +309,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות נוי, שיפוץ ודקורציה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('electricityExpenses')}
                         />
                     </Tooltip>
@@ -321,13 +321,13 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                 >
                     <InputNumber
                         value={networkingExpenses}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#fffff' }}
                         disabled
                     />
                     <Tooltip title="מידע על חיובי תקשורת">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('networkingExpenses')}
                         />
                     </Tooltip>
@@ -346,7 +346,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות כבלים/אינטרנט">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('internetExpenses')}
                         />
                     </Tooltip>
@@ -365,7 +365,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות רכב">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('electricityExpenses')}
                         />
                     </Tooltip>
@@ -388,7 +388,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                                 <Tooltip title="מידע על הוצאות חוגי העשרה">
                                     <Button
                                         type="link"
-                                        icon={<InfoCircleOutlined />}
+                                        icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                         onClick={() => showDrawer('teenageClassExpenses')}
                                     />
                                 </Tooltip>
@@ -410,7 +410,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                                 <Tooltip title="מידע על הוצאות שיעורים פרטיים">
                                     <Button
                                         type="link"
-                                        icon={<InfoCircleOutlined />}
+                                        icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                         onClick={() => showDrawer('privateLessonExpenses')}
                                     />
                                 </Tooltip>
@@ -432,7 +432,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות אחרות">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('electricityExpenses')}
                         />
                     </Tooltip>
@@ -466,7 +466,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                         <Tooltip title="מידע על הוצאות טיפולי שיניים">
                             <Button
                                 type="link"
-                                icon={<InfoCircleOutlined />}
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('partnerDentistExpenses')}
                             />
                         </Tooltip>
@@ -479,7 +479,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                 >
                     <InputNumber
                         value={childrenDentistExpenses}
-                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#fffff' }}
                         min={0}
                         disabled
                         onChange={(value) => setChildrenDentistExpenses(value || 0)}
@@ -487,7 +487,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות טיפולי שיניים">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('childrenDentistExpenses')}
                         />
                     </Tooltip>
@@ -506,7 +506,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על חיובי רווחה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('diningRoomExpenses')}
                         />
                     </Tooltip>
@@ -525,7 +525,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות כלכלה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('foodExpenses')}
                         />
                     </Tooltip>
@@ -544,7 +544,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות חד״א">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('diningRoomExpenses')}
                         />
                     </Tooltip>
@@ -563,7 +563,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות כביסה">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('diningRoomExpenses')}
                         />
                     </Tooltip>
@@ -582,7 +582,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות אחרות">
                         <Button
                             type="link"
-                            icon={<InfoCircleOutlined />}
+                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                             onClick={() => showDrawer('diningRoomExpenses')}
                         />
                     </Tooltip>

@@ -1,6 +1,6 @@
 /* ./src/pages/socialSim/SocialSimulator.tsx */
 import React, { useState } from 'react';
-import { Layout, Card, Typography, Form, Input, Select, InputNumber, Row, Col, Flex } from 'antd';
+import { Layout, Card, Typography, Form, Select, Row, Col, Flex } from 'antd';
 import MemberStatus from '../../components/ui/select/MemberStatus'; // Add this import statement
 import PartnerCommunityStatus from '../../components/ui/select/PartnerCommunityStatus';
 import ChildrenSelect from '../../components/ui/select/ChildrenSelect';
@@ -26,9 +26,6 @@ import styles from './css/SocialSimulator.module.css';
 
 import { useGlobalState } from '../../GlobalStateProvider';
 
-// const baseStyle: React.CSSProperties = {
-//     padding: '0px 4px',
-// };
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -90,14 +87,6 @@ const SocialSimulator: React.FC = () => {
     const handleMemberPartnerGoldenAgeChange = (value: string) => {
         setMemberPartnerGoldenAge(value);
     };
-
-    // const handleMemberAgeChange = (value: number) => {
-    //     setMemberAge(value);
-    // }
-
-    // const handleMemberPartnerAgeChange = (value: number) => {
-    //     setMemberPartnerAge(value);
-    // }
 
 
     return (
@@ -166,17 +155,16 @@ const SocialSimulator: React.FC = () => {
                         </Card>
                     </Col>
                     <Col span={8}>
-                        <Form layout="horizontal" className={styles.form}>
-                            <Card className={styles.card} title="מידע נוסף">
-                                <div className={styles.formRow}>
-                                {/* <ApartmentSquareFootage onApartmentSquareFootageChange={handleApartmentSquareFootageChange}/> */}
+                        <Card className={styles.card} title="מידע נוסף">
+                            <Form layout="horizontal" className={styles.form}>
+                                <div>
                                     <ApartmentSquareFootage />
-                                </div> 
-                                <div className={styles.formRow}>
-                                    <FamilyNationalInsurance />
                                 </div>
-                            </Card>
-                        </Form>
+                                <div className={styles.formRow}>
+                                    <FamilyNationalInsurance/>
+                                </div>
+                            </Form>
+                        </Card>
                     </Col>
                 </Row>
                 <Row justify="center" gutter={8} className={styles.row}>

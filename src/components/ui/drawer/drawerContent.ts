@@ -7,72 +7,84 @@ export const drawerContent = {
 ומקצבאות שונות. חישוב התק"ה נעשה לפי גובה שכר מינימום במשק – מתעדכן מעת לעת -
 לכל חבר בוגר בתא המשפחתי )יחד/זוג( ותוספת 1/3 משכר המינימום במשק לכל ילד מתחת
 לגיל 4 ו- 1/4 משכר המינימום לכל ילד מעל גיל 4 ועד גיל .18 `,
-        budgetingMethod: `תקציב אישי חבר/ה - 2887
-        תקציב משפחתי(שני חברי משק) - 4954`,
+        budgetingMethod: `תקציב אישי חבר/ה : 2887 ש״ח.
+        :תקציב משפחתי(שני חברי משק) - 4954 ש״ח`,
     },
     childrenAddition: {
         description: `תקציב ילדים לפי מערכות חינוך`,
-        budgetingMethod: `מיץ פטל: 794,
-תות: 878,
-סביון: 605,
-פשוש: 605,
-רימון: 663,
-פעמון: 894,
-דובדבן: 921,
-אורנים: 1072,
-נעורים: 1146`,
+        budgetingMethod: `מיץ פטל: 794 ש״ח,
+תות: 878 ש״ח,
+סביון: 605 ש״ח,
+פשוש: 605 ש״ח,
+רימון: 663 ש״ח,
+פעמון: 894 ש״ח,
+דובדבן: 921 ש״ח,
+אורנים: 1072 ש״ח,
+נעורים: 1146 ש״ח`,
     },
     provisions: {
         description: `תקציב מזון`,
-        budgetingMethod: `בני המשפחה x ש״ח 772 + מספר הילדים x 683 ש״ח`,
-    },
+        budgetingMethod: `בני המשפחה x 772 + מספר הילדים x 683`,
+    }, budgetingMethod: `הקצבה של 772 ש״ח לכל בן משפחה, בתוספת 683 ש״ח לכל ילד`,
     laundry: {
         description: `תקציב כביסה`,
-        budgetingMethod: `61 ש״ח X בני המשפחה`,
+        budgetingMethod: `הקצבה של 61 ש״ח לכל בן/ת משפחה`,
     },
     gas: {
         description: `תקציב גז`,
-        budgetingMethod: `92 ש״ח`,
+        budgetingMethod: `הקצבה של 92 ש״ח לכל חבר/ה`,
     },
     hygiene: {
         description: `תקציב היגיינה`,
-        budgetingMethod: `44 ש״ח`,
+        budgetingMethod: `הקצבה של 44 ש״ח לכל בן/ת משפחה`,
     },
     maintenance: {
         description: `אחזקה`,
-        budgetingMethod: `94 ש״ח`,
+        budgetingMethod: `הקצבה של 94 ש״ח לכל חבר/ה`,
     },
     vehicle: {
         description: `תקציב רכב`,
-        budgetingMethod: `547 ש״ח לחבר/ה`,
+        budgetingMethod: `הקצבה של 547 ש״ח לחבר/ה`,
     },
     energy: {
-        description: `אנרגיה`,
-        budgetingMethod: `269 ש״ח לחבר/ה`,
+        description: `חשמל`,
+        budgetingMethod: `הקצבה של 264 ש״ח לחבר/ה`,
+    },
+    benefitForWork: {
+        description: `רכיב שכר (תשלום או הטבה בשווה כסף) שנועד להניע את העובד לפעול בצורה טובה יותר, בתחום מסוים או בכל תחומי עבודתו. את גובה התמריץ מקובל לקבוע לפי הישגיו האישיים של העובד, אך נהוגים גם תמריצים הנקבעים לפי הישגי צוות, מחלקה ואף לפי הישגי הארגון כולו.`,
+        budgetingMethod: `למילוי אישי`,
     },
     outsourcedFood: {
         description: `תקציב כלכלה לעובדי חוץ`,
         budgetingMethod: `למילוי אישי`,
     },
+    chronicleTreatment: {
+        description: `השתתפות קיבוץ בהוצאות עבור טיפולים או תרופות כרוניות`,
+        budgetingMethod: `למילוי אישי`,
+
+    },
     seniorityAddition: {
         description: `חבר ותיק – חבר שהתקבל לחברות טרם מועד אישור הצעה זו`,
-        budgetingMethod: `תוספת ותק לחבר/ה - 41 כפול מספר שנות הותק. מקסימום שנות ותק:25`,
+        budgetingMethod: `תוספת ותק לחבר/ה: 41 ש״ח לכל שנת ותק. מקסימום שנות ותק: 25 שנים`,
     },
     welfare: {
         description: `השתתפות קיבוץ בהוצאות רווחה`,
-        budgetingMethod: `30% מהוצאות הרווחה`,
+        budgetingMethod: `השתתפות של הקהילה ב-30% מסך הוצאות הרווחה`,
     },
-    // partnerSeniorityAddition:
-    // deceasedSeniorityAddition:
+    other: {
+        description: `אחר`,
+        budgetingMethod: `הכנסה אחרת אשר אינה נכללת בסימולטור`,
+    },
+
     /* CurrentExpenses */
     // gasExpenses,
     electricityExpenses: {
         description: `חיוב חשמל`,
-        budgetingMethod: `177 ש״ח X בני המשפחה`,
+        budgetingMethod: `חיוב של 177 ש״ח לכל ב/ת משפחה`,
     },
     maintenanceServiceExpenses: {
         description: `חיוב אחזקה`,
-        budgetingMethod: `63 ש״ח`,
+        budgetingMethod: `חיוב של 63 ש״ח לכל בן/ת משפחה`,
     },
     houseMaintenanceExpenses: {
         description: `הוצאות על תחזוקת בית`,
@@ -80,7 +92,7 @@ export const drawerContent = {
     },
     networkingExpenses: {
         description: `תקשורת`,
-        budgetingMethod: `100 ש״ח`,
+        budgetingMethod: `חיוב של 100 ש״ח למשפחה`,
     },
     internetExpenses: {
         description: `אינטרנט ושירותי כבלים נוספים`,
@@ -90,7 +102,7 @@ export const drawerContent = {
     // highSchoolExpenses:
     privateLessonExpenses: {
         description: `חיוב שיעורים פרטיים`,
-        budgetingMethod: `כיסוי מלא עבור שיעור ראשון`,
+        budgetingMethod: `כיסוי מלא עבור עלות שיעור ראשון`,
     },
     teenageClassExpenses: {
         description: `חיוב בגין חוגי העשרה`,
@@ -141,16 +153,16 @@ export const drawerContent = {
     futurePensionAllowance: {
         description: `פנסיית מטרה - גובה הפנסיה, בוותק מלא, שהקיבוץ יבטיח השלמתה עם פרישת החבר
 מעבודה.`,
-        budgetingMethod: `6783 ש״ח לגמלאי/ת`,
+        budgetingMethod: `זכאות ל-6783 ש״ח לכל גמלאי/ת`,
     },
     futurePartnerPensionAllowance: {
         description: `פנסיית מטרה - גובה הפנסיה, בוותק מלא, שהקיבוץ יבטיח השלמתה עם פרישת החבר
 מעבודה.`,
-        budgetingMethod: `6783 ש״ח לגמלאי/ת`,
+        budgetingMethod: `זכאות ל-6783 ש״ח לכל גמלאי/ת`,
     },
     futureNationalInsuranceAllowance: {
         description: `קצבת נכות`,
-        budgetingMethod: `קצבת נכות כללית היא קצבה חודשית המשולמת על-ידי המוסד לביטוח לאומי לבוגרים/ילדים שליקוי גופני, שכלי או נפשי פוגע ב-50% לפחות מכושרם להשתכר למחייתם (או בכושר לתפקד במשק הבית לעקרות בית). הזכאות לקצבת נכות עשויה להקנות הטבות נוספות בתחומים שונים, כגון דיור, תחבורה ובריאות. בפורטל זה תמצאו את השלבים בתהליך התביעה לקבלת קצבת נכות וכן את הזכויות וההטבות הניתנות למקבלי הקצבה.`,
+        budgetingMethod: `קצבת נכות כללית היא קצבה חודשית המשולמת על-ידי המוסד לביטוח לאומי לבוגרים/ילדים שליקוי גופני, שכלי או נפשי פוגע ב-50% לפחות מכושרם להשתכר למחייתם (או בכושר לתפקד במשק הבית לעקרות בית). הזכאות לקצבת נכות עשויה להקנות הטבות נוספות בתחומים שונים, כגון דיור, תחבורה ובריאות. בפורטל זה תמצאו את השלבים בתהליך התביעה לקבלת קצבת נכות וכן את הזכויות וההטבות הניתנות לחברי הקצבה.`,
     },
     futureNationalInsuranceAllowanceCommunity: {
         description: `קצבת ילדים - קצבה מהמוסד לביטוח לאומי הניתנת בגין ילדים עד גיל .18`,
@@ -166,12 +178,12 @@ export const drawerContent = {
     futureElderlyPension: {
         description: `קצבת זקנה - קצבה מהמוסד לביטוח לאומי הניתנת למי שהגיע לגיל פרישה בהתאם לכללי
 הביטוח הלאומי.`,
-        budgetingMethod: `2234 ש״ח לחבר/ה. חבר/ה אשר הוא/היא אלמן/נה זכאים לתוספת 1748 ש״ח`,
+        budgetingMethod: `זכאות של 2234 ש״ח לחבר/ה. חבר/ה אשר הוא/היא אלמן/נה זכאים לתוספת של 1748 ש״ח`,
     },
     futurePartnerElderlyPension: {
         description: `קצבת זקנה - קצבה מהמוסד לביטוח לאומי הניתנת למי שהגיע לגיל פרישה בהתאם לכללי
 הביטוח הלאומי.`,
-        budgetingMethod: `2234 ש״ח לחבר/ה`,
+        budgetingMethod: `זכאות של 2234 ש״ח לחבר/ה`,
     },
     futureRecoveryFee: {
         description: `דמי הבראה`,
@@ -183,27 +195,27 @@ export const drawerContent = {
     },
     futureEducationFund: {
         description: `קרן השתלמות`,
-        budgetingMethod: `7.5% מגובה שכר הברוטו`,
+        budgetingMethod: `זכאות ל-7.5% מגובה שכר הברוטו`,
     },
     futurePartnerEducationFund: {
         description: `קרן השתלמות`,
-        budgetingMethod: `7.5% מגובה שכר הברוטו`,
+        budgetingMethod: `זכאות ל-7.5% מגובה שכר הברוטו`,
     },
     futureWelfareIncomes: {
         description: `זיכוי בגין רווחה`,
-        budgetingMethod: `השתתפות בגובה 30% מסך הוצאות הרווחה`,
+        budgetingMethod: `השתתפות הקהילה בגובה 30% מסך הוצאות הרווחה`,
     },
     futureDentistIncomes: {
         description: `זיכוי בגין טיפולי שיניים`,
-        budgetingMethod: `השתתפות בגובה 50% מסך הוצאות הטיפולים`,
+        budgetingMethod: `השתתפות הקהילה בגובה 50% מסך הוצאות הטיפולים`,
     },
     futurePartnerDentistIncomes: {
         description: `זיכוי בגין טיפולי שיניים`,
-        budgetingMethod: `השתתפות בגובה 50% מסך הוצאות הטיפולים`,
+        budgetingMethod: `השתתפות הקהילה בגובה 50% מסך הוצאות הטיפולים`,
     },
     futureChildrenDentistIncomes: {
         description: `זיכוי בגין טיפולי שיניים עבור ילדים`,
-        budgetingMethod: `השתתפות בגובה 50% מסך הוצאות הטיפולים`,
+        budgetingMethod: `השתתפות הקהילה בגובה 50% מסך הוצאות הטיפולים`,
     },
     futureFamilySafetyNet: {
         description: `"רשת ביטחון" – השלמה כספית לתא משפחתי הזכאי לכך, בתנאים וברמה שנקבעו על ידי
@@ -219,27 +231,27 @@ export const drawerContent = {
     },
     futureChildrenAddition: {
         description: `השלמה בגין הוצאות ילדים`,
-        budgetingMethod: `השלמה או זכאות להשתתפות חודשית אשר נפרדת מרשת הביטחון החינוכית`, 
+        budgetingMethod: `השלמה או זכאות להשתתפות חודשית אשר נפרדת מרשת הביטחון החינוכית`,
     },
     futureAdaptationGrant: {
         description: `מענק הסתגלות`,
-        budgetingMethod: `1000 ש״ח על בסיס חודשי לעוברים למודל המתחדש`,
+        budgetingMethod: `זכאות לתגמול חודשי ע״ס 1000 ש״ח לכל חבר/ה אשר בחר לעבור למודל המתחדש. משך הזכאות: תקופת המעבר מהמודל השיתופי למתחדש`,
     },
     futureChildrenSafetyNet: {
         description: `רשת ביטחון עבור הוצאות חינוך`,
-        budgetingMethod: `.סך שווי הוצאות החינוך כפי שנקבעו בתק״ה בהפחתת סך ההוצאות החודשי  
-        
-        מיץ פטל: 1767,
-        תות: 1767,
-        סביון: 1392,
-        פשוש: 1392,
-        רימון: 1392,
-        פעמון: 1392,
-        דובדבן: 1392,
-        אורנים: 1392,
-        נעורים: 1392
+        budgetingMethod: `סך שווי הוצאות החינוך כפי שנקבעו בתק״ה בהפחתת סך הוצאות החינוך החודשי
 
-        הערה: רק משפחות שימצאו כזכאיות לרשת ביטחון משפחתית תהיינה גם זכאיות לרשת ביטחון חינוך.סך שווי הוצאות החינוך כפי שנקבעו בתק״ה בהפחתת סך ההוצאות החודשי`,
+        מיץ פטל: 1767 ש״ח,
+        תות: 1767 ש״ח,
+        סביון: 1392 ש״ח,
+        פשוש: 1392 ש״ח,
+        רימון: 1392 ש״ח,
+        פעמון: 1392 ש״ח,
+        דובדבן: 1392 ש״ח,
+        אורנים: 1392 ש״ח,
+        נעורים: 1392 ש״ח
+
+        הערה: רק משפחות שימצאו כזכאיות לרשת ביטחון משפחתית תהיינה גם זכאיות לרשת ביטחון חינוך בהתאמה לסך שווי הוצאות החינוך כפי שנקבעו בתק״ה בהפחתת סך ההוצאות החודשי`,
     },
     // futureProvisions: {
     //    description: `כיסוי הוצאות מזון כולל חד״א`,
@@ -257,21 +269,21 @@ export const drawerContent = {
     /* FutureExpenses */
     futurePropertyTaxExpenses: {
         description: `ארנונה`,
-        budgetingMethod: `43 ש״ח שטח הדירה במטראז׳ כפול `,
+        budgetingMethod: `חיוב של 43 ש״ח לכל מ״ר משטח הדירה במטראז׳`,
     },
     futureWaterAndSewerExpenses: {
         description: `חיוב מים וביוב`,
-        budgetingMethod: `מספר בני המשפחה X  85 ש״ח`,
+        budgetingMethod: `חיוב של 85 ש״ח לכל בן משפחה`,
     },
     // futureGasExpenses:
     // futureElectricityExpenses:
     futureEnergyExpenses: {
         description: `חיוב אנרגיה`,
-        budgetingMethod: `מספר בני המשפחה X 177`,
+        budgetingMethod: `חיוב של 177 ש״ח לכל ב/ת משפחה`,
     },
     futureHouseMaintenanceExpenses: {
         description: `חיוב אחזקה`,
-        budgetingMethod: `250 ש״ח`,
+        budgetingMethod: `חיוב של 250 ש״ח למשפחה`,
     },
     futureGardeningExpenses: {
         description: `הוצאות נוית שיפוץ ודקורציה`,
@@ -279,7 +291,7 @@ export const drawerContent = {
     },
     futureNetworkingExpenses: {
         description: `תקשורת`,
-        budgetingMethod: `100 ש״ח`,
+        budgetingMethod: `חיוב של 100 ש״ח למשפחה`,
     },
     futureInternetExpenses: {
         description: `כבלים, אינטרנט ושירותי רשת נוספים`,
@@ -304,10 +316,10 @@ export const drawerContent = {
     },
     futureKindergartenExpenses: {
         description: `חיוב עבור שכ״ל לילד/ה בגן חובה או פעוטון`,
-        budgetingMethod: `חיוב מלא. כל משפחה מזדכה ב-2000 ש״ח לשנה עבור הוצאות שכ״ל לילד`,
+        budgetingMethod: `חיוב מלא. כל משפחה מזדכה ב-2000 ש״ח לשנה עבור הוצאות תשלומי גן חובה/פעוטון לילד`,
     },
     futureSchoolExpenses: {
-        description: `חיוב עבור שכ״ל ללילד הלומד ביסודי`,
+        description: `חיוב עבור שכ״ל לילד הלומד ביסודי`,
         budgetingMethod: `חיוב שכ״ל חודשי/שנתי מלא. כל משפחה מזדכה ב-2000 ש״ח לשנה עבור הוצאות שכ״ל לילד`,
     },
     futureHighSchoolExpenses: {
@@ -379,18 +391,18 @@ export const drawerContent = {
     },
     futureLaundryExpenses: {
         description: `חיוב כביסה`,
-        budgetingMethod: `חברי משק שיבחו להשתמש בשירותי המכבסה יחויבו לפי ק״ג`,
+        budgetingMethod: `חברי משק שיבחרו להשתמש בשירותי המכבסה יחויבו לפי ק״ג`,
     },
     futureFlatTaxExpenses: {
         description: `מס אחיד – "מס יישובי" המשמש כמקור לשירותים הקהילתיים–מוניציפליים של הקיבוץ.
 המס אחיד לחברי הקיבוץ ולתושבים.`,
-        budgetingMethod: `750 ש״ח לחבר/ה`,
+        budgetingMethod: `חיוב של 750 ש״ח לחבר/ה`,
     },
     futureGrossTaxExpenses: {
         description: `מס הכנסה – המס על ההכנסה בתלוש השכר על פי כללי ומדרגות המס הנהוגים במדינה.
 המיסוי חל על כל מרכיבי הכנסה החייבת במס כמקובל במדינה: שעות נוספות, הוצאות נסיעה,
 אש"ל או ארוחות, טלפון, זקיפת הכנסה בגין רכב צמוד, שי לחג וכד'.`,
-        budgetingMethod: `0.6% מגובה שכר הברוטו הכולל`,
+        budgetingMethod: `חיוב של 0.6% מגובה שכר הברוטו הכולל`,
     },
     futureOtherIncome: {
         description: `אחר`,
