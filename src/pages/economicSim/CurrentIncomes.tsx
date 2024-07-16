@@ -1,7 +1,7 @@
 /* ./src/pages/economicSim/CurrentIncomes.tsx */
 import React, { useEffect, useState} from 'react';
 import { Card, Typography, Form, InputNumber, Tooltip, Button } from 'antd';
-import { InfoCircleTwoTone } from '@ant-design/icons';
+import { InfoCircleTwoTone, InfoCircleFilled, BankFilled } from '@ant-design/icons';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
 import styles from './css/AccountBalance.module.css';
@@ -237,7 +237,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                 labelAlign="right"
             >
                 <Form.Item
-                    label="תקציב אישי"
+                    label="הכנסה מעבודה"
                     labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
                     wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
 
@@ -250,7 +250,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב אישי">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('personalBudget')}
                         />
                     </Tooltip>
@@ -268,7 +268,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב ילדים">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('childrenAddition')}
                         />
                     </Tooltip>
@@ -286,7 +286,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב כלכלה">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('provisions')}
                         />
                     </Tooltip>
@@ -304,7 +304,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב כביסה">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('laundry')}
                         />
                     </Tooltip>
@@ -322,7 +322,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב גז">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('gas')}
                         />
                     </Tooltip>
@@ -340,7 +340,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב היגיינה">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('hygiene')}
                         />
                     </Tooltip>
@@ -358,7 +358,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב אחזקה">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('maintenance')}
                         />
                     </Tooltip>
@@ -376,7 +376,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב רכב">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('vehicle')}
                         />
                     </Tooltip>
@@ -394,7 +394,7 @@ const CurrentIncomes: React.FC<CurrentIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על תקציב חשמל">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('energy')}
                         />
                     </Tooltip>

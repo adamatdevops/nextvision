@@ -22,9 +22,9 @@ export interface ChildData {
     teenageClassFees: number[];
     educationPrivateLessons: number;
     privateLessonFees: number[];
-    futureKindergartenExpenses: number; // Added
-    futureSchoolExpenses: number; // Added
-    futureHighSchoolExpenses: number; // Added
+    // futureKindergartenExpenses: number; // Added
+    // futureSchoolExpenses: number; // Added
+    // futureHighSchoolExpenses: number; // Added
     // educationTuitionFees: number | null;
     class: string | null;
     educationTransportation: string | null;
@@ -87,7 +87,7 @@ export const educationAdditionalCareMap: { [key: string]: number } = {
 }
 
 const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChildren }) => {
-    const { state, dispatch, setEducationLevel, setEducationSystemBudgets, setEducationPersonalCare, setEducationDayCare, setEducationAdditionalCare, setEducationSystem, setEducationSystemFees, setEducationTuitionFees, setFutureKindergartenExpenses, setFutureSchoolExpenses, setFutureHighSchoolExpenses, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setPrivateLessonExpenses, setFutureEducationPersonalCareExpenses, setFutureEducationDayCareExpenses } = useGlobalState();
+    const { state, dispatch, setEducationLevel, setEducationSystemBudgets, setEducationPersonalCare, setEducationDayCare, setEducationSystem, setEducationSystemFees, setEducationTuitionFees, setFutureTeenageClassExpenses, setTeenageClassExpenses, setFuturePrivateLessonExpenses, setEducationTransportation, setPrivateLessonExpenses } = useGlobalState();
 
     const ageOptions = Array.from({ length: 18 }, (_, i) => i + 0);
     const educationLevelOptions = ['גיל הרך', 'יסודי', 'תיכון'];
@@ -112,9 +112,9 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
             educationTeenageClasses: 0,
             teenageClassFees: [],
             educationPrivateLessons: 0,
-            futureKindergartenExpenses: 0,
-            futureSchoolExpenses: 0,
-            futureHighSchoolExpenses: 0,
+            // futureKindergartenExpenses: 0,
+            // futureSchoolExpenses: 0,
+            // futureHighSchoolExpenses: 0,
             // educationTuitionFees: null,
             privateLessonFees: [],
             class: '',
@@ -143,9 +143,9 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                 educationTeenageClasses: state.childrenData[i]?.educationTeenageClasses || 0,
                 teenageClassFees: state.childrenData[i]?.teenageClassFees || [],
                 educationPrivateLessons: state.childrenData[i]?.educationPrivateLessons || 0,
-                futureKindergartenExpenses: state.childrenData[i]?.futureKindergartenExpenses || 0,
-                futureSchoolExpenses: state.childrenData[i]?.futureSchoolExpenses || 0,
-                futureHighSchoolExpenses: state.childrenData[i]?.futureHighSchoolExpenses || 0,
+                // futureKindergartenExpenses: state.childrenData[i]?.futureKindergartenExpenses || 0,
+                // futureSchoolExpenses: state.childrenData[i]?.futureSchoolExpenses || 0,
+                // futureHighSchoolExpenses: state.childrenData[i]?.futureHighSchoolExpenses || 0,
                 // educationTuitionFees: state.childrenData[i]?.educationTuitionFees || null,
                 privateLessonFees: state.childrenData[i]?.privateLessonFees || [],
                 class: '',
@@ -220,88 +220,26 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
         }
 
         if (field === 'educationLevel') {
-            // console.log(`Setting future expenses for ${value}`); // Turn for logging
-
-            if (value === 'גיל הרך') {
-                const updatedTuitionFees = [...state.educationTuitionFees];
-                if (value !== null) {
-                    updatedTuitionFees[index] = educationTuitionFeesMap[value];
-                }
-                setEducationTuitionFees(updatedTuitionFees);
-                
-                const updatedLevel = [...state.educationLevel];
-                if (value !== null) {
-                    updatedLevel[index] = value;
-                }
-                setEducationSystem(updatedLevel);
-            } else if (value === 'יסודי') {
-                const updatedTuitionFees = [...state.educationTuitionFees];
-                if (value !== null) {
-                    updatedTuitionFees[index] = educationTuitionFeesMap[value];
-                }
-                setEducationTuitionFees(updatedTuitionFees);
-
-                const updatedLevel = [...state.educationLevel];
-                if (value !== null) {
-                    updatedLevel[index] = value;
-                }
-                setEducationSystem(updatedLevel);
-            } else if (value === 'תיכון') {
-                const updatedTuitionFees = [...state.educationTuitionFees];
-                if (value !== null) {
-                    updatedTuitionFees[index] = educationTuitionFeesMap[value];
-                } 
-                setEducationTuitionFees(updatedTuitionFees);
-
-                const updatedLevel = [...state.educationLevel];
-                if (value !== null) {
-                    updatedLevel[index] = value;
-                }
-                setEducationSystem(updatedLevel);
+            const updatedLevels = [...state.educationLevel];
+            if (value !== null) {
+                updatedLevels[index] = value;
             }
+            setEducationLevel(updatedLevels);
         }
 
-
         if (field === 'educationPersonalCare') {
-            const updatedAdditionalCare = [...state.educationAdditionalCare];
-            if (value !== null) {
-                updatedAdditionalCare[index] = value;
-            }
-            setEducationAdditionalCare(updatedAdditionalCare)
-
             const updatedPersonalCare = [...state.educationPersonalCare];
-            if (value !== null ) {
-                updatedPersonalCare[index] = value;
-            }
             setEducationPersonalCare(updatedPersonalCare)
         }
 
         if (field === 'educationDayCare') {
-            const updatedAdditionalCare = [...state.educationAdditionalCare];
-            if (value !== null) {
-                updatedAdditionalCare[index] = value;
-            }
-            setEducationAdditionalCare(updatedAdditionalCare)
-
             const updatedDayCare = [...state.educationDayCare];
-            if (value !== null ) {
-                updatedDayCare[index] = value;
-            }
             setEducationDayCare(updatedDayCare)
         }
 
         if (field === 'educationTransportation') {
-            const updatedTransportationExpenses = [...state.educationTransportationExpenses];
-            if (value !== null) {
-                updatedTransportationExpenses[index] = value;
-            }
-            setEducationTransportationExpenses(updatedTransportationExpenses)
-
-            const updatedTransportation = [...state.educationTransportation];
-            if (value !== null ) {
-                updatedTransportation[index] = value;
-            }
-            setEducationTransportation(updatedTransportation)
+            const updatedTransportations = [...state.educationTransportation];
+            setEducationTransportation(updatedTransportations)
         }
     };
 
@@ -437,34 +375,6 @@ const ChildrenStatusTable: React.FC<ChildrenStatusTableProps> = ({ numberOfChild
                             onChange={(value) => handleInputChange(index, 'educationTransportation', value)}
                         >
                             {educationTransportationOptions.map((option, index) => (
-                                <Option key={index} value={option}>
-                                    {option}
-                                </Option>
-                            ))}
-                        </Select>
-                    </Form.Item>
-                    <Form.Item label="טיפול פרטני" className={styles.childField}>
-                        <Select
-                            placeholder="בחר"
-                            className={styles.select}
-                            value={child.educationPersonalCare}
-                            onChange={(value) => handleInputChange(index, 'educationPersonalCare', value)}
-                        >
-                            {educationPersonalCareOptions.map((option, index) => (
-                                <Option key={index} value={option}>
-                                    {option}
-                                </Option>
-                            ))}
-                        </Select>
-                    </Form.Item>
-                    <Form.Item label="צהרון" className={styles.childField}>
-                        <Select
-                                placeholder="בחר"
-                                className={styles.select}
-                                value={child.educationDayCare}
-                                onChange={(value) => handleInputChange(index, 'educationDayCare', value)}
-                            >
-                            {educationDayCareOptions.map((option, index) => (
                                 <Option key={index} value={option}>
                                     {option}
                                 </Option>

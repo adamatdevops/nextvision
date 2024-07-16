@@ -34,13 +34,13 @@ const InfoDrawer: React.FC<InfoDrawerProps> = ({ open, onClose, contentKey }) =>
             open={open}
             height={400}
             className={styles.drawer}
-            style={{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}
         >
             {isContentObject(content) && (
-                <div className={styles.drawerContent} style={{ backgroundColor: 'rgba(225, 22, 117, 0.165)' }}>
+                <div className={styles.drawerContent} style={{ backgroundColor: 'rgba(14, 131, 214, 0.351)' }}>
                     <Title level={4} className={styles.title}>תיאור</Title>
                     <Paragraph className={styles.paragraph}>{content.description}</Paragraph>
-                    <Title level={4} className={styles.title}>שיטת תקצוב</Title>
+                    <Title level={4} className={styles.title}>אופן תקצוב</Title>
                     <Paragraph className={styles.paragraph}>{content.budgetingMethod}</Paragraph>
                 </div>
             )}

@@ -1,7 +1,7 @@
 /* ./src/pages/economicSim/FutureExpenses.tsx */
 import React, { useEffect, useState } from 'react';
-import { Card, Typography, Form, InputNumber ,Tooltip, Button } from 'antd';
-import { InfoCircleOutlined, InfoCircleTwoTone } from '@ant-design/icons';
+import { Card, Typography, Form, InputNumber, Tooltip, Button } from 'antd';
+import { InfoCircleFilled, InfoCircleTwoTone } from '@ant-design/icons';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
 // import { childrenData, useFutureExpensesState } from '../../context/FutureExpensesGSP'; // Import the hook
@@ -15,6 +15,12 @@ const { Title } = Typography;
 interface FutureExpensesProps {
     setExpenses: (expenses: number[]) => void;
 }
+
+export const educationTuitionFeesMap: { [key: string]: number } = {
+    'גיל הרך': 0,
+    'יסודי': 0,
+    'תיכון': 0,
+};
 
 const calculateFamilyMemberCount = (familyStatus, partnerCommunityStatus, childrenCount): number => {
     let familyMemberCount = 1 + childrenCount; // Single parent + children
@@ -38,9 +44,9 @@ const calculateApartmentSquareFootageTax = (apartmentSquareFootage): number => {
     let apartmentSquareFootageTax = 0;
 
     if (apartmentSquareFootage !== null) {
-    apartmentSquareFootageTax = apartmentSquareFootage * 43;
+        apartmentSquareFootageTax = apartmentSquareFootage * 43;
     } else {
-    // Handle the case where apartmentSquareFootage is null
+        // Handle the case where apartmentSquareFootage is null
         apartmentSquareFootageTax = 0; // or any default/fallback value
     }
 
@@ -83,10 +89,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         setFutureInternetExpenses,
         setFutureVehicleExpenses,
         setFutureEducationSystemExpenses,
-        setFutureKindergartenExpenses,
-        setFutureSchoolExpenses,
-        setFutureHighSchoolExpenses,
-        // setEducationTuitionFees,
+        setFutureEducationExpenses,
+        setEducationTuitionFees,
         setFuturePrivateLessonExpenses,
         setFutureTeenageClassExpenses,
         setFutureEducationTransportationExpenses,
@@ -107,6 +111,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         setFutureCleaningExpenses,
         // setFutureDecorationsExpenses,
         setFutureOtherExpenses,
+        /* Added*/
+        setEducationLevel,
     } = useGlobalState();
 
     const handleFutureTeenageClassExpenseChange = (childIndex: number, classIndex: number, value: number) => {
@@ -121,29 +127,26 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         setFuturePrivateLessonExpenses(updatedFuturePrivateLessonFees);
     };
 
-    const handleFutureKindergartenExpensesChange = (index: number, value: number | null) => {
-        setFutureKindergartenExpenses(index, value ?? 0);
-    };
+    // const handleFutureTuitionFeesChange = (childIndex: number, index: number, value: string[]) => {
+    //     const updatedTuitionFees = [...state.educationTuitionFees];
+    //     const updatedLevels = [...state.educationLevel];
 
-    const handleFutureSchoolExpensesChange = (index: number, value: number | null) => {
-        setFutureSchoolExpenses(index, value ?? 0);
-    };
+    //     updatedTuitionFees[childIndex][index] = value;
+    //     setEducationTuitionFees(updatedTuitionFees);
+    //     setEducationLevel(updatedLevels);
+    // };
 
-    const handleFutureHighSchoolExpensesChange = (index: number, value: number | null) => {
-        setFutureHighSchoolExpenses(index, value ?? 0);
-    };
+    // const handleFutureEducationPersonalCareExpenseChange = (childIndex: number, value: number | null) => {
+    //     setFutureEducationPersonalCareExpenses(childIndex, value ?? 0);
+    // };
 
-    const handleFutureEducationPersonalCareExpenseChange = (index: number, value: number | null) => {
-        setFutureEducationPersonalCareExpenses(index, value ?? 0);
-    };
+    // const handleFutureEducationDayCareExpenseChange = (childIndex: number, value: number | null) => {
+    //     setFutureEducationDayCareExpenses(childIndex, value ?? 0);
+    // };
 
-    const handleFutureEducationDayCareExpenseChange = (index: number, value: number | null) => {
-        setFutureEducationDayCareExpenses(index, value ?? 0);
-    };
-
-    const handleFutureEducationTransportationExpenseChange = (index: number, value: number | null) => {
-        setFutureEducationTransportationExpenses(index, value ?? 0);
-    }
+    // const handleFutureEducationTransportationExpenseChange = (childIndex: number, value: number | null) => {
+    //     setFutureEducationTransportationExpenses(childIndex, value ?? 0);
+    // };
 
     const {
         // childrenData, // Added
@@ -158,10 +161,8 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         futureInternetExpenses,
         futureVehicleExpenses,
         futureEducationSystemExpenses,
-        futureKindergartenExpenses,
-        futureSchoolExpenses,
-        futureHighSchoolExpenses,
-        // educationTuitionFees,
+        futureEducationExpenses,
+        educationTuitionFees,
         futurePrivateLessonExpenses,
         futureTeenageClassExpenses,
         futureEducationTransportationExpenses,
@@ -212,9 +213,6 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             setFutureInternetExpenses(futureInternetExpenses || 0);
             setFutureVehicleExpenses(futureVehicleExpenses || 0);
             setFutureEducationSystemExpenses(totalEducationSystemFees || 0);
-            //setFutureKindergartenExpenses(futureKindergartenExpenses);
-            //setFutureSchoolExpenses(futureSchoolExpenses);
-            // setFutureHighSchoolExpenses(futureHighSchoolExpenses || 0);
             //setFuturePrivateLessonExpenses(futurePrivateLessonExpenses);
             //setFutureTeenageClassExpenses(futureTeenageClassExpenses);
             //setFutureTuitionsExpenses(futureTuitionsExpenses || 0);
@@ -306,6 +304,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
 
         setExpenses([
             futureEducationSystemExpenses,
+            futureEducationExpenses,
             futurePropertyTaxExpenses,
             futureWaterAndSewerExpenses,
             // futureGasExpenses,
@@ -316,9 +315,6 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
             futureNetworkingExpenses,
             futureInternetExpenses,
             futureVehicleExpenses,
-            //futureKindergartenExpenses,
-            //futureSchoolExpenses,
-            //futureHighSchoolExpenses,
             //state.futurePrivateLessonExpenses,
             //state.futureTeenageClassExpenses, // IMPORTANT: Adding this might trigger an error
             // futureEducationTransportationExpenses,
@@ -344,6 +340,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
     }, [
         state.childrenData,
         futureEducationSystemExpenses,
+        futureEducationExpenses,
         futurePropertyTaxExpenses,
         futureWaterAndSewerExpenses,
         // futureGasExpenses,
@@ -354,9 +351,6 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
         futureNetworkingExpenses,
         futureInternetExpenses,
         futureVehicleExpenses,
-        futureKindergartenExpenses,
-        futureSchoolExpenses,
-        futureHighSchoolExpenses,
         futurePrivateLessonExpenses,
         futureTeenageClassExpenses,
         futureEducationTransportationExpenses,
@@ -401,7 +395,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על חיובי ארנונה">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futurePropertyTaxExpenses')}
                         />
                     </Tooltip>
@@ -434,7 +428,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futureEnergyExpenses}
                         onChange={(value) => setFutureEnergyExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                     />
                     <Tooltip title="מידע על חיובי אנרגיה">
                         <Button
@@ -496,7 +490,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על חיובי תקשורת">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureNetworkingExpenses')}
                         />
                     </Tooltip>
@@ -554,79 +548,98 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על הוצאות חינוך">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureEducationSystemExpenses')}
                         />
                     </Tooltip>
                 </Form.Item>
+                {state.numberOfChildren > 0 && (
+                    <Form.Item
+                        label="הוצאות חינוך משתנות"
+                        labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
+                        wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
+                    >
+                        <InputNumber
+                            value={futureEducationExpenses}
+                            onChange={(value) => setFutureEducationExpenses(value || 0)}
+                            min={0}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px', color: '#ffff' }}
+                        />
+                        <Tooltip title="מידע על הוצאות חינוך שוטפות">
+                            <Button
+                                type="link"
+                                icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
+                                onClick={() => showDrawer('futureEducationExpenses')}
+                            />
+                        </Tooltip>
+                    </Form.Item>
+                )}
+                {state.numberOfChildren > 0 && (
+                    <Form.Item
+                        label="הסעות"
+                        labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
+                        wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
+                    >
+                        <InputNumber
+                            value={futureEducationTransportationExpenses}
+                            onChange={(value) => setFutureEducationTransportationExpenses(value || 0)}
+                            min={0}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        />
+                        <Tooltip title="מידע על חיובי הסעות">
+                            <Button
+                                type="link"
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                onClick={() => showDrawer('futureEducationTransportationExpenses')}
+                            />
+                        </Tooltip>
+                    </Form.Item>
+                )}
+                {state.numberOfChildren > 0 && (
+                    <Form.Item
+                        label="טיפול פרטני לילד"
+                        labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
+                        wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
+                    >
+                        <InputNumber
+                            value={futureEducationPersonalCareExpenses}
+                            onChange={(value) => setFutureEducationPersonalCareExpenses(value || 0)}
+                            min={0}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        />
+                        <Tooltip title="מידע על הוצאות טיפול פרטני ילדים">
+                            <Button
+                                type="link"
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                onClick={() => showDrawer('futureEducationPersonalCareExpenses')}
+                            />
+                        </Tooltip>
+                    </Form.Item>
+                )}
+                {state.numberOfChildren > 0 && (
+                    <Form.Item
+                        label="צהרון"
+                        labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
+                        wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
+                    >
+                        <InputNumber
+                            value={state.futureEducationDayCareExpenses}
+                            onChange={(value) => setFutureEducationDayCareExpenses(value || 0)}
+                            min={0}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
+                        />
+                        <Tooltip title="מידע על הוצאות צהרון">
+                            <Button
+                                type="link"
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                onClick={() => showDrawer('futureEducationDayCareExpenses')}
+                            />
+                        </Tooltip>
+                    </Form.Item>
+                )}
                 {state.childrenData.map((child, childIndex) => (
                     <div key={child.id}>
-                        {/* Future Kindergarten Expenses */}
-                        {child.educationLevel === 'גיל הרך' && (
-                            <Form.Item
-                                label={`הוצאות גן ילדים לילד ${childIndex + 1}`}
-                                labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                                wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                            >
-                                <InputNumber
-                                    value={state.futureKindergartenExpenses[childIndex] || 0}
-                                    onChange={(value) => handleFutureKindergartenExpensesChange(childIndex, value)}
-                                    min={0}
-                                    style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
-                                />
-                                <Tooltip title="מידע על הוצאות גן ילדים">
-                                    <Button
-                                    type="link"
-                                    icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
-                                    onClick={() => showDrawer('futureKindergartenExpenses')}
-                                />
-                                </Tooltip>
-                            </Form.Item>
-                        )}
-                        {/* Future School Expenses */}
-                        {child.educationLevel === 'יסודי' && (
-                            <Form.Item
-                                label={`הוצאות בית ספר לילד ${childIndex + 1}`}
-                                labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                                wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                            >
-                                <InputNumber
-                                    value={state.futureSchoolExpenses[childIndex] || 0}
-                                    onChange={(value) => handleFutureSchoolExpensesChange(childIndex, value)}
-                                    min={0}
-                                    style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
-                                />
-                                <Tooltip title="מידע על הוצאות בית-ספר">
-                                    <Button
-                                        type="link"
-                                        icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
-                                        onClick={() => showDrawer('futureSchoolExpenses')}
-                                    />
-                                </Tooltip>
-                            </Form.Item>
-                        )}
-                        {/* Future High School Expenses */}
-                        {child.educationLevel === 'תיכון' && (
-                            <Form.Item
-                                label={`הוצאות תיכון לילד ${childIndex + 1}`}
-                                labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                                wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                            >
-                                <InputNumber
-                                    value={state.futureHighSchoolExpenses[childIndex] || 0}
-                                    onChange={(value) => handleFutureHighSchoolExpensesChange(childIndex, value)}
-                                    min={0}
-                                    style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
-                                />
-                                <Tooltip title="מידע על הוצאות תיכון">
-                                    <Button
-                                        type="link"
-                                        icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
-                                        onClick={() => showDrawer('futureHighSchoolExpenses')}
-                                    />
-                                </Tooltip>
-                            </Form.Item>
-                        )}
+                        {/* Future Education Expenses */}
                         {child.teenageClassFees.map((fee, classIndex) => (
                             <Form.Item
                                 key={`child-${childIndex}-future-teenage-class-${classIndex}`}
@@ -660,7 +673,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                                     min={0}
                                     value={fee}
                                     onChange={(value) => handleFuturePrivateLessonExpenseChange(childIndex, lessonIndex, value || 0)}
-                                    style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                                    style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                                 />
                                 <Tooltip title="מידע על הוצאות שיעורים פרטיים">
                                     <Button
@@ -672,77 +685,6 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                             </Form.Item>
                         ))}
                     </div>
-                ))}
-                {state.childrenData.map((child, childIndex) => (
-                    <div key={child.id}>
-                        {child.educationTransportation && (
-                        <Form.Item
-                            label={`הסעות - ${child.name} ${childIndex + 1}`}
-                            labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                            wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                        >
-                            <InputNumber
-                                value={state.futureEducationTransportationExpenses[childIndex] || 0}
-                                onChange={(value) => handleFutureEducationTransportationExpenseChange(childIndex, value)}
-                                min={0}
-                                style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
-                            />
-                            <Tooltip title="מידע על חיובי הסעות">
-                                <Button
-                                    type="link"
-                                    icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
-                                    onClick={() => showDrawer('futureEducationTransportationExpenses')}
-                                />
-                            </Tooltip>
-                        </Form.Item>
-                        )}
-                    </div>
-                ))}
-                {state.childrenData.map((child, childIndex) => (
-                <div key={child.id}>
-                    {child.educationPersonalCare === 'כן' && (
-                        <Form.Item
-                            label={`טיפול פרטני לילד ${childIndex + 1}`}
-                            labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                            wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                        >
-                        <InputNumber
-                            value={state.futureEducationPersonalCareExpenses[childIndex] || 0}
-                            onChange={(value) => handleFutureEducationPersonalCareExpenseChange(childIndex, value)}
-                            min={0}
-                            style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
-                        />
-                            <Tooltip title="מידע על הוצאות טיפול פרטני ילדים">
-                                <Button
-                                    type="link"
-                                    icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
-                                    onClick={() => showDrawer('futureEducationPersonalCareExpenses')}
-                                />
-                            </Tooltip>
-                        </Form.Item>
-                    )}
-                    {child.educationDayCare === 'כן' && (
-                        <Form.Item
-                            label={`צהרון לילד ${childIndex + 1}`}
-                            labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                            wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                        >
-                            <InputNumber
-                                value={state.futureEducationDayCareExpenses[childIndex] || 0}
-                                onChange={(value) => handleFutureEducationDayCareExpenseChange(childIndex, value)}
-                                min={0}
-                                style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
-                            />
-                            <Tooltip title="מידע על הוצאות צהרון">
-                                <Button
-                                    type="link"
-                                    icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
-                                    onClick={() => showDrawer('futureEducationDayCareExpenses')}
-                                />
-                            </Tooltip>
-                        </Form.Item>
-                    )}
-                </div>
                 ))}
                 <Form.Item
                     label="ביטוח בריאות"
@@ -772,7 +714,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futureDentistExpenses}
                         onChange={(value) => setFutureDentistExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                     />
                     <Tooltip title="מידע על הוצאות טיפולי שיניים">
                         <Button
@@ -783,25 +725,25 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                     </Tooltip>
                 </Form.Item>
                 {state.partnerCommunityStatus !== 'no-partner' && (
-                <Form.Item
-                    label="טיפולי שיניים בן/ת זוג"
-                    labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
-                    wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
-                >
-                    <InputNumber
-                        value={futurePartnerDentistExpenses}
-                        onChange={(value) => setFuturePartnerDentistExpenses(value || 0)}
-                        min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
-                    />
-                    <Tooltip title="מידע על הוצאות טיפולי שיניים">
-                        <Button
-                            type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
-                            onClick={() => showDrawer('futurePartnerDentistExpenses')}
+                    <Form.Item
+                        label="טיפולי שיניים בן/ת זוג"
+                        labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
+                        wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
+                    >
+                        <InputNumber
+                            value={futurePartnerDentistExpenses}
+                            onChange={(value) => setFuturePartnerDentistExpenses(value || 0)}
+                            min={0}
+                            style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                         />
-                    </Tooltip>
-                </Form.Item>
+                        <Tooltip title="מידע על הוצאות טיפולי שיניים">
+                            <Button
+                                type="link"
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                onClick={() => showDrawer('futurePartnerDentistExpenses')}
+                            />
+                        </Tooltip>
+                    </Form.Item>
                 )}
                 <Form.Item
                     label="טיפולי שיניים ילדים"
@@ -831,7 +773,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futureWelfareExpenses}
                         onChange={(value) => setFutureWelfareExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                     />
                     <Tooltip title="מידע על הוצאות רווחה">
                         <Button
@@ -850,7 +792,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futureFoodExpenses}
                         onChange={(value) => setFutureFoodExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                     />
                     <Tooltip title="מידע על הוצאות כלכלה">
                         <Button
@@ -869,7 +811,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futureDiningRoomExpenses}
                         onChange={(value) => setFutureDiningRoomExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                     />
                     <Tooltip title="מידע על חיובי חד״א">
                         <Button
@@ -888,7 +830,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         value={futureLaundryExpenses}
                         onChange={(value) => setFutureLaundryExpenses(value || 0)}
                         min={0}
-                        style={{ width: 'calc(100% - 42px)',  marginLeft: '8px' }}
+                        style={{ width: 'calc(100% - 42px)', marginLeft: '8px' }}
                     />
                     <Tooltip title="מידע על הוצאות כביסה">
                         <Button
@@ -914,7 +856,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על חיובי מס אחיד">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureFlatTaxExpenses')}
                         />
                     </Tooltip>
@@ -935,7 +877,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                     <Tooltip title="מידע על חיובי מס ברוטו">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureGrossTaxExpenses')}
                         />
                     </Tooltip>
@@ -998,13 +940,13 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                     </Tooltip>
                 </Form.Item>
                 {drawerContentKey && (
-                <InfoDrawer
-                    //title="מידע"
-                    //content={drawerContent}
-                    open={drawerOpen}
-                    onClose={closeDrawer}
-                    contentKey={drawerContentKey}
-                />
+                    <InfoDrawer
+                        //title="מידע"
+                        //content={drawerContent}
+                        open={drawerOpen}
+                        onClose={closeDrawer}
+                        contentKey={drawerContentKey}
+                    />
                 )}
             </Form>
         </Card>

@@ -1,7 +1,7 @@
 /* ./src/pages/economicSim/FutureIncomes.tsx */
 import React, { useEffect, useState } from 'react';
 import { Card, Typography, Form, InputNumber, Tooltip, Button } from 'antd';
-import { InfoCircleOutlined, InfoCircleTwoTone } from '@ant-design/icons';
+import { InfoCircleTwoTone, InfoCircleFilled } from '@ant-design/icons';
 import InfoDrawer from '../../components/ui/drawer/InfoDrawer';
 import { drawerContent } from '../../components/ui/drawer/drawerContent';
 // import { useFutureIncomes } from '../../context/FutureIncomesGSP'; // Import the hook
@@ -167,8 +167,6 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
         // setPartnerCommunityStatus,
         // setNumberOfChildren,
         // setFutureEducationSystemExpenses,
-        // setFutureSchoolExpenses,
-        // setFutureHighSchoolExpenses,
         setFutureWelfareExpenses,
         setFutureDentistExpenses,
         setFuturePartnerDentistExpenses,
@@ -218,12 +216,10 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
         partnerCommunityStatus,
         numberOfChildren,
         futureEducationSystemExpenses,
-        futureKindergartenExpenses,
-        futureSchoolExpenses,
-        futureHighSchoolExpenses,
         futurePrivateLessonExpenses,
         futureTeenageClassExpenses,
-        futureEducationTransportationExpenses,
+        futureEducationDayCareExpenses,
+        futureEducationPersonalCareExpenses,
         futureWelfareExpenses,
         futureDentistExpenses,
         futurePartnerDentistExpenses,
@@ -293,26 +289,25 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                 ? Object.values(state.futurePrivateLessonExpenses).reduce((acc, childExpenses) => acc + (Array.isArray(childExpenses) ? childExpenses.reduce((sum, expense) => sum + expense, 0) : 0), 0)
                 : 0;
 
-            const totalFutureKindergartenExpenses = sumArray(state.futureKindergartenExpenses);
-            const totalFutureSchoolExpenses = sumArray(state.futureSchoolExpenses);
-            const totalFutureHighSchoolExpenses = sumArray(state.futureHighSchoolExpenses);
+            // const totalEducationExpenses = state.futureEducationExpenses || 0;
+            // const totalTransportationExpenses = state.futureEducationTransportationExpenses || 0;
+            const totalDayCareExpenses = state.futureEducationDayCareExpenses || 0;
+            const totalPersonalCareExpenses = state.futureEducationPersonalCareExpenses || 0;
 
-            console.log('Future Private Lesson Expenses:', totalFuturePrivateLessonExpenses);
-            console.log('Future Teenage Class Expenses:', totalFutureTeenageClassExpenses);
-            console.log('Future Education System Expenses:', state.futureEducationSystemExpenses);
-            console.log('Future Kindergarten Expenses:', totalFutureKindergartenExpenses);
-            console.log('Future School Expenses:', totalFutureSchoolExpenses);
-            console.log('Future High School Expenses:', totalFutureHighSchoolExpenses);
-            console.log('Future Education Transportation Expenses:', state.futureEducationTransportationExpenses);
+            // console.log('Future Private Lesson Expenses:', totalFuturePrivateLessonExpenses);
+            // console.log('Future Teenage Class Expenses:', totalFutureTeenageClassExpenses);
+            // console.log('Future Education System Expenses:', state.futureEducationSystemExpenses);
+            // console.log('Future Kindergarten Expenses:', totalFutureKindergartenExpenses);
+            // console.log('Future School Expenses:', totalFutureSchoolExpenses);
+            // console.log('Future High School Expenses:', totalFutureHighSchoolExpenses);
+            // console.log('Future Education Transportation Expenses:', state.futureEducationTransportationExpenses);
 
             const totalFutureExpenses =
                 totalFuturePrivateLessonExpenses +
                 totalFutureTeenageClassExpenses +
                 state.futureEducationSystemExpenses +
-                totalFutureKindergartenExpenses +
-                totalFutureSchoolExpenses +
-                totalFutureHighSchoolExpenses +
-                state.futureEducationTransportationExpenses;
+                totalDayCareExpenses +
+                totalPersonalCareExpenses;
 
             console.log('Total Future Expenses:', totalFutureExpenses);
 
@@ -497,12 +492,10 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
         partnerCommunityStatus,
         numberOfChildren,
         futureEducationSystemExpenses,
-        futureKindergartenExpenses,
-        futureSchoolExpenses,
-        futureHighSchoolExpenses,
         futurePrivateLessonExpenses,
         futureTeenageClassExpenses,
-        futureEducationTransportationExpenses,
+        futureEducationDayCareExpenses,
+        futureEducationPersonalCareExpenses,
         futureWelfareExpenses,
         futureDentistExpenses,
         futurePartnerDentistExpenses,
@@ -613,7 +606,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על קצבת פנסיה">
                             <Button
                                 type="link"
-                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePensionAllowance')}
                             />
                         </Tooltip>
@@ -635,7 +628,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על קצבת פנסיה">
                             <Button
                                 type="link"
-                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePartnerPensionAllowance')}
                             />
                         </Tooltip>
@@ -657,7 +650,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על קצבת זקנה">
                             <Button
                                 type="link"
-                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futureElderlyPension')}
                             />
                         </Tooltip>
@@ -721,7 +714,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על קצבת ביטוח לאומי">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureNationalInsuranceAllowanceCommunity')}
                         />
                     </Tooltip>
@@ -817,7 +810,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על זיכוי בגין רווחה">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureWelfareIncomes')}
                         />
                     </Tooltip>
@@ -837,7 +830,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על זיכוי בגין טיפולי שיניים">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureDentistIncomes')}
                         />
                     </Tooltip>
@@ -858,7 +851,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על זיכוי בגין טיפולי שיניים">
                             <Button
                                 type="link"
-                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futurePartnerDentistIncomes')}
                             />
                         </Tooltip>
@@ -879,7 +872,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על זיכוי בגין טיפולי שיניים">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureChildrenDentistIncomes')}
                         />
                     </Tooltip>
@@ -918,7 +911,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על רשת ביטחון">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureFamilySafetyNet')}
                         />
                     </Tooltip>
@@ -939,7 +932,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                         <Tooltip title="מידע על רשת ביטחון חינוך">
                             <Button
                                 type="link"
-                                icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                                icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futureFamilySafetyNet')}
                             />
                         </Tooltip>
@@ -960,7 +953,7 @@ const FutureIncomes: React.FC<FutureIncomesProps> = ({ setIncomes }) => {
                     <Tooltip title="מידע על מענק הסתגלות">
                         <Button
                             type="link"
-                            icon={<InfoCircleTwoTone twoToneColor="#2fe21e" style={{ color: '#ffff', fontSize: '18px' }} />}
+                            icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
                             onClick={() => showDrawer('futureAdaptationGrant')}
                         />
                     </Tooltip>
