@@ -2,6 +2,7 @@
 import React from 'react';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import FamilyIcon from '../icons/familyIcon.tsx';
 import styles from './css/FamilyAvatar.module.css';
 
 const FamilyAvatar: React.FC = () => (

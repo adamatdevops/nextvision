@@ -14,6 +14,7 @@ import NodeJSIcon from '../../components/ui/icons/nodeJSIcon.tsx';
 import ANTDesignIcon from '../../components/ui/icons/antDesignIcon.tsx';
 import FigmaIcon from '../../components/ui/icons/figmaIcon.tsx';
 import VSCodeIcon from '../../components/ui/icons/vscodeIcon.tsx';
+import ViteJSIcon from '../../components/ui/icons/viteJSIcon.tsx';
 import styles from './css/Credits.module.css';
 
 const { Title } = Typography;
@@ -62,7 +63,11 @@ const Credits: React.FC = () => {
                 </Col>
                 <Col className={styles.iconCol}>
                     <TypescriptIcon />
-                    <p>Typesscript</p>
+                    <p>Typescript</p>
+                </Col>
+                <Col className={styles.iconCol}>
+                    <ViteJSIcon />
+                    <p>Vite.js</p>
                 </Col>
                 <Col className={styles.iconCol}>
                     <NodeJSIcon />
