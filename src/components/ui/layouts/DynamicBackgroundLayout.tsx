@@ -60,7 +60,7 @@ const DynamicLayout: React.FC<LayoutComponentProps> = ({ children }) => {
                 {children}
             </Content>
             <Footer className={styles.footer}>
-                NextVision@2024 v2.8.456
+                NextVision@2024 v2.8.439
             </Footer>
         </Layout>
     );

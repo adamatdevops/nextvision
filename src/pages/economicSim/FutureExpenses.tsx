@@ -568,7 +568,7 @@ const FutureExpenses: React.FC<FutureExpensesProps> = ({ setExpenses }) => {
                         <Tooltip title="מידע על הוצאות חינוך שוטפות">
                             <Button
                                 type="link"
-                                icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
+                                icon={<InfoCircleTwoTone twoToneColor="#1e8de2" style={{ color: '#ffff', fontSize: '18px' }} />}
                                 onClick={() => showDrawer('futureEducationExpenses')}
                             />
                         </Tooltip>

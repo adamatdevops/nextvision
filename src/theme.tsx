@@ -54,6 +54,8 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
             // }
             Select: {
                 color: '#ffffff', /* White text color */
+                optionActiveBg: '#007fd4',
+                optionSelectedBg: '#007fd4',
             },
         },
     };
