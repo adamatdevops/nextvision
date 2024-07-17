@@ -328,6 +328,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                         <Button
                             type="link"
                             icon={<InfoCircleFilled style={{ color: '#33a2f2', fontSize: '18px' }} />}
+                            onClick={() => showDrawer('networkingExpenses')}
                         />
                     </Tooltip>
                 </Form.Item>

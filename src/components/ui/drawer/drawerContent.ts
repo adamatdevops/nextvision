@@ -24,8 +24,8 @@ export const drawerContent = {
     },
     provisions: {
         description: `תקציב מזון`,
-        budgetingMethod: `בני המשפחה x 772 + מספר הילדים x 683`,
-    }, budgetingMethod: `הקצבה של 772 ש״ח לכל בן משפחה, בתוספת 683 ש״ח לכל ילד`,
+        budgetingMethod: `הקצבה של 772 ש״ח לכל בן משפחה, בתוספת 683 ש״ח לכל ילד`,
+    },
     laundry: {
         description: `תקציב כביסה`,
         budgetingMethod: `הקצבה של 61 ש״ח לכל בן/ת משפחה`,
@@ -135,7 +135,7 @@ export const drawerContent = {
         budgetingMethod: `למילוי עצמי`,
     },
     futureGrossIncome: {
-        description: `הכנסה חייבת במס )שכר ברוטו( - הכנסה מעבודה משלח יד או עסק לפני ניכויי מס הכנסה,
+        description: `הכנסה חייבת במס (שכר ברוטו) - הכנסה מעבודה משלח יד או עסק לפני ניכויי מס הכנסה,
 ביטוח לאומי, מס בריאות, הפרשות לפנסיה וכדומה.`,
         budgetingMethod: `למילוי עצמי`,
     },
@@ -146,7 +146,7 @@ export const drawerContent = {
         budgetingMethod: `למילוי עצמי`,
     },
     futurePartnerGrossIncome: {
-        description: `הכנסה חייבת במס )שכר ברוטו( - הכנסה מעבודה משלח יד או עסק לפני ניכויי מס הכנסה,
+        description: `הכנסה חייבת במס (שכר ברוטו) - הכנסה מעבודה משלח יד או עסק לפני ניכויי מס הכנסה,
 ביטוח לאומי, מס בריאות, הפרשות לפנסיה וכדומה.`,
         budgetingMethod: `למילוי עצמי`,
     },
@@ -172,7 +172,7 @@ export const drawerContent = {
         שלושה ילדים: 578 ש״ח,
         ארבעה ילדים: 785 ש״ח,
         חמישה ילדים: 992 ש״ח,
-        שישה ילדים: 1156 ש״ח,
+        שישה ילדים: 1156 ש״ח
         `,
     },
     futureElderlyPension: {
@@ -216,11 +216,8 @@ export const drawerContent = {
         budgetingMethod: `השתתפות הקהילה בגובה 50% מסך הוצאות הטיפולים`,
     },
     futureFamilySafetyNet: {
-        description: `"רשת ביטחון" – השלמה כספית לתא משפחתי הזכאי לכך, בתנאים וברמה שנקבעו על ידי
-הקהילה, המבטיחה את הכנסת התא המשפחתי, או, מבטיחה שהוצאות המשפחה בתחומי
-הבריאות והחינוך לא יעלו על אחוז מוגדר מהכנסת המשפחה, בהתאם לקריטריונים שייקבעו
-מעת לעת`,
-        budgetingMethod: `"רשת ביטחון" – השלמה כספית לתא משפחתי הזכאי לכך, בתנאים וברמה שנקבעו על ידי
+        description: `"רשת ביטחון" – השלמה כספית לתא משפחתי הזכאי לכך`,
+        budgetingMethod: `"רשת ביטחון" – השלמה כספית בתנאים וברמה שנקבעו על ידי
 הקהילה, המבטיחה את הכנסת התא המשפחתי, או, מבטיחה שהוצאות המשפחה בתחומי
 הבריאות והחינוך לא יעלו על אחוז מוגדר מהכנסת המשפחה, בהתאם לקריטריונים שייקבעו
 מעת לעת
@@ -284,7 +281,7 @@ export const drawerContent = {
         budgetingMethod: `חיוב של 250 ש״ח למשפחה`,
     },
     futureGardeningExpenses: {
-        description: `הוצאות נוית שיפוץ ודקורציה`,
+        description: `הוצאות נוי, שיפוץ ודקורציה`,
         budgetingMethod: `למילוי עצמי`,
     },
     futureNetworkingExpenses: {
@@ -353,7 +350,7 @@ export const drawerContent = {
     // futureTuitionsExpenses:
     // futureSafetyNetExpenses:
     futureHealthInsuranceExpenses: {
-        description: `ביטוח רושבי ישראל מבוטחים בביטוח בריאות במסגרת חוק ביטוח בריאות ממלכתי, החל משנת 1995. עד לאותה שנה היתה ההצטרפות לביטוח רפואי וולונטרית.
+        description: `רוב תושבי ישראל מבוטחים בביטוח בריאות במסגרת חוק ביטוח בריאות ממלכתי, החל משנת 1995. עד לאותה שנה היתה ההצטרפות לביטוח רפואי וולונטרית.
 
 השירות הרפואי, שלו זכאי כל תושב ישראל על פי חוק ביטוח בריאות ממלכתי, ניתן באמצעות קופת החולים שהוא חבר בה. `,
         budgetingMethod: `
@@ -386,7 +383,7 @@ export const drawerContent = {
         budgetingMethod: `למילוי עצמי`,
     },
     futureFoodExpenses: {
-        description: `הוצאות מזון לא כולל חד״א`,
+        description: `הוצאות מזון וכלכלה שוטפות לא כולל חד״א`,
         budgetingMethod: `למילוי עצמי`,
     },
     futureDiningRoomExpenses: {
