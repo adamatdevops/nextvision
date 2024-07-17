@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { jsPDF } from 'jspdf';
 import { Layout, Row, Col, Typography, Button, Modal } from 'antd';
 import StepsBar from '../../components/ui/stepper/StepsBar';
+import Credits from './Credits';
 import DynamicLayout from '../../components/ui/layouts/DynamicBackgroundLayout';
 import { useGlobalState } from '../../GlobalStateProvider';
 import styles from './css/ReviewAndLogout.module.css';
@@ -288,6 +289,7 @@ const ReviewAndLogout: React.FC = () => {
                     {renderSummary()}
                     <Button onClick={handleDownload} type="primary" style={{ marginTop: '20px' }}>הורד דו״ח</Button>
                 </Modal>
+                <Credits />
             </Content>
             <StepsBar />
         </DynamicLayout>

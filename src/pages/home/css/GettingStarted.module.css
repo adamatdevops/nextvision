@@ -100,17 +100,17 @@
 }
 
 .card {
+    display: flex;
     max-height: -moz-fit-content;
     max-height: -webkit-fit-content;
     max-height: fit-content;
-    display: flex;
     flex-direction: column;
     position: relative;
     background-color: #ed3e840f;
     border-color: #8d8d89d2;
     margin: 8px;
     border-radius: 28px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
