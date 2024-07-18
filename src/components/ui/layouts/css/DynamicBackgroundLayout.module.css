@@ -121,7 +121,7 @@
 
 @media (min-width: 414px) {
     .layout {
-        background-image: url('../assets/img/vibrant/background-01-414.jpeg') !important;
+        background-image: url('../assets/img/vibrant/background-01-1536x960.jpeg') !important;
         /* background-size: contain; */
         /* Small background */
         min-height: 100vh; /* Cover the full viewport height */
@@ -311,7 +311,6 @@
 @media (min-width: 1441px) and (max-width: 1536) {
     .layout {
         background-image: url('../assets/img/vibrant/background-01-1536x960.jpeg') !important;
-        /* background-size: cover; */
         /* Extra Large background */
         min-height: 100vh; /* Cover the full viewport height */
         background-size: cover;
