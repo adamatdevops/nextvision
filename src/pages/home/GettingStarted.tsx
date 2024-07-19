@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import { Layout, Input, Flex, Button, Card, Modal } from 'antd';
 import DynamicLayout from '../../components/ui/layouts/DynamicBackgroundLayout';
+import ParticlesBackground from '../../components/ui/layouts/ParticlesBackground';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from '../../GlobalStateProvider';
 import styles from './css/GettingStarted.module.css';
@@ -34,6 +35,7 @@ const GettingStarted: React.FC = () => {
 
     return (
         <DynamicLayout>
+            <ParticlesBackground />
             <Header className={styles.header}>ברוכים הבאים לסימולטור מודל ההתחדשות</Header>
             <Content className={styles.content}>
                 <Card className={styles.card}>

@@ -375,7 +375,7 @@ const CurrentExpenses: React.FC<CurrentExpensesProps> = ({ setExpenses }) => {
                         {child.teenageClassFees.map((fee, classIndex) => (
                             <Form.Item
                                 key={`child-${childIndex}-teenage-class-${classIndex}`}
-                                label={`${child.name || 'Unnamed Child'} חוג העשרה ${classIndex + 1}`}
+                                label={`${child.name} חוג העשרה ${classIndex + 1}`}
                                 labelCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 12 }}
                                 wrapperCol={{ span: 4, sm: 4, md: 6, lg: 8, xl: 10 }}
                             >

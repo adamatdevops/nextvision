@@ -5,6 +5,7 @@ import { Layout, Row, Col, Typography, Button, Modal } from 'antd';
 import StepsBar from '../../components/ui/stepper/StepsBar';
 import Credits from './Credits';
 import DynamicLayout from '../../components/ui/layouts/DynamicBackgroundLayout';
+import ParticlesBackground from '../../components/ui/layouts/ParticlesBackground';
 import { useGlobalState } from '../../GlobalStateProvider';
 import styles from './css/ReviewAndLogout.module.css';
 
@@ -167,13 +168,8 @@ const ReviewAndLogout: React.FC = () => {
                         <Paragraph>ילד {index + 1} - רמת השכלה: {child.educationLevel}</Paragraph>
                         <Paragraph>ילד {index + 1} - חוגי העשרה: {child.teenageClassFees}</Paragraph>
                         <Paragraph>ילד {index + 1} - מערכת חינוך: {child.educationSystem}</Paragraph>
-                        <Paragraph>ילד {index + 1} - תשלום גן/פעוטון: {child.futureKindergartenExpenses}</Paragraph>
-                        <Paragraph>ילד {index + 1} - שכר לימוד יסודי: {child.futureSchoolExpenses}</Paragraph>
-                        <Paragraph>ילד {index + 1} - שכר לימוד תיכון: {child.futureHighSchoolExpenses}</Paragraph>
                         <Paragraph>ילד {index + 1} - שיעורים פרטיים: {child.privateLessonFees}</Paragraph>
                         <Paragraph>ילד {index + 1} - הסעה: {child.educationTransportation}</Paragraph>
-                        <Paragraph>ילד {index + 1} - טיפול מיוחד: {child.futureEducationPersonalCareExpenses}</Paragraph>
-                        <Paragraph>ילד {index + 1} - צהרון: {child.futureEducationDayCareExpenses}</Paragraph>
                     </div>
                 ))}
 
@@ -251,6 +247,9 @@ const ReviewAndLogout: React.FC = () => {
                 <Paragraph>אינטרנט/כבלים: {state.futureInternetExpenses}</Paragraph>
                 <Paragraph>תחבורה: {state.futureVehicleExpenses}</Paragraph>
                 <Paragraph>מערכת חינוך: {state.futureEducationSystemExpenses}</Paragraph>
+                <Paragraph>הוצאות חינוך משתנות: {state.futureEducationExpenses}</Paragraph>
+                <Paragraph>טיפול פרטני: {state.futureEducationPersonalCareExpenses}</Paragraph>
+                <Paragraph>צהרון: {state.futureEducationDayCareExpenses}</Paragraph>
                 <Paragraph>שיעורים פרטיים: {state.futurePrivateLessonExpenses}</Paragraph>
                 <Paragraph>חוגי העשרה: {state.futureTeenageClassExpenses}</Paragraph>
                 <Paragraph>הסעות: {state.futureEducationTransportationExpenses}</Paragraph>
@@ -273,6 +272,7 @@ const ReviewAndLogout: React.FC = () => {
 
     return (
         <DynamicLayout className={styles.layout}>
+            <ParticlesBackground />
             <Header className={styles.header}>
                 <Title level={3} className={styles.title}>סקירה וסיום</Title>
             </Header>
