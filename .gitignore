@@ -1,18 +1,15 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-# Created by https://www.toptal.com/developers/gitignore/api/zsh,web,ssh,rust,react,macos,direnv,git,node,sass,visualstudiocode,yarn
-# Edit at https://www.toptal.com/developers/gitignore?templates=zsh,web,ssh,rust,react,macos,direnv,git,node,sass,visualstudiocode,yarn
 
 ### direnv ###
 .direnv
 .envrc
-*.env
 
 # dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+*.env
+*.env.development
+*.env.local
+*.env.production
+*.env.local
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -356,13 +353,6 @@ web_modules/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

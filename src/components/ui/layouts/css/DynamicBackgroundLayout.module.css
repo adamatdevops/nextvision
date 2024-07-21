@@ -1,34 +1,34 @@
 /* src/components/ui/layouts/css/DynamicBackgroundLayout.module.css */
 /* VERY IMPORTANT: Some style properties can only be edited on App.css or Main.css*/
 .layout {
-    min-height: 100vh; /* Cover the full viewport height */
-    /* background-image: url('../assets/img/vibrant/background-01-3840x4000.jpeg'); */;
-    background-size: cover;
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    /* position: absolute; or relative */
-    direction: rtl;
-    padding: 4px 0px 2px;
-    padding-bottom: 2px;
+	min-height: 100vh; /* Cover the full viewport height */
+	/* background-image: url('../assets/img/vibrant/background-01-3840x4000.jpeg'); */
+	background-size: cover;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	/* position: absolute; or relative */
+	direction: rtl;
+	padding: 4px 0px 2px;
+	padding-bottom: 2px;
 }
 
 .content {
-    flex: 1;
-    height: 30em;
-    min-height: calc(30vh - 90px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: space-between;
-    padding: 4px;
-    line-height: 4px;
-    margin: 8px;
+	flex: 1;
+	height: 30em;
+	min-height: calc(30vh - 90px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+	padding: 4px;
+	line-height: 4px;
+	margin: 8px;
 }
 
 /* Header Needs To Be Included In Each Component CSS */
@@ -43,469 +43,472 @@
 
 /* Footer Needs To Be Included In Each Component CSS */
 .footer {
-    /* display: flex; */
-    height: 25px;
-    width: 100%;
-    text-align: center;
-    padding: 2px;
-    background: #001529;
-    color: #fff;
-    position: fixed;
-    font-family: 'Noto Sans Hebrew', sans-serif;
-    font-size: 12px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-origin: border-box;
-    line-height: 15px;
-    bottom: 0;
+	/* display: flex; */
+	height: 25px;
+	width: 100%;
+	text-align: center;
+	padding: 2px;
+	background: #001529;
+	color: #fff;
+	position: fixed;
+	font-family: "Noto Sans Hebrew", sans-serif;
+	font-size: 12px;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background-origin: border-box;
+	line-height: 15px;
+	bottom: 0;
 }
 
 /* Media Queries for Responsiveness */
 @media (min-width: 375px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-375.jpeg') !important;
-        /* background-size: contain; */
-        /* Small background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-375.jpeg") !important;
+		/* background-size: contain; */
+		/* Small background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        display: flex;
-        height: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 1px;
-        background: #001529;
-        color: #fff;
-        position: static;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 10px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        line-height: 20px;
-        bottom: 0;
-    }
+	.footer {
+		display: flex;
+		height: 20px;
+		width: 100%;
+		text-align: center;
+		padding: 1px;
+		background: #001529;
+		color: #fff;
+		position: static;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 10px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		line-height: 20px;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 390px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-390.jpeg') !important;
-        /* background-size: contain; */
-        /* Small background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-390.jpeg") !important;
+		/* background-size: contain; */
+		/* Small background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 }
 
 @media (min-width: 414px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-1536x960.jpeg') !important;
-        /* background-size: contain; */
-        /* Small background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-1536x960.jpeg") !important;
+		/* background-size: contain; */
+		/* Small background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-576.jpeg') !important;
-        /* background-size: contain; */
-        /* Medium background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-576.jpeg") !important;
+		/* background-size: contain; */
+		/* Medium background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-768.jpeg') !important;
-        /* background-size: cover; */
-        /* Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-768.jpeg") !important;
+		/* background-size: cover; */
+		/* Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 }
 
 @media (min-width: 1024px) and (max-width: 1280px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-1024.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-1024.jpeg") !important;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 }
 
 @media (min-width: 1281px) and (max-width: 1366px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-1366x900.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-1366x900.jpeg") !important;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 12px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 20px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 12px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 1367px) and (max-width: 1420px) {
-    .layout {
-        min-height: 100vh;
-        width: 100vw;
-        background-image: url('../assets/img/vibrant/background-01-1366x900.jpeg') !important;        background-color: #f0f2f5;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 18px;
-    }
+	.layout {
+		min-height: 100vh;
+		width: 100vw;
+		background-image: url("../../../../assets/img/vibrant/background-01-1366x900.jpeg") !important;
+		background-color: #f0f2f5;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 18px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 25px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 14px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 25px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 14px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 1420px) and (max-width: 1440px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-1440x960.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-1440x960.jpeg") !important;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 24px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 12px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 24px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 12px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 1441px) and (max-width: 1536) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-1536x960.jpeg') !important;
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-1536x960.jpeg") !important;
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 10px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 14px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 10px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 14px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 1537px) and (max-width: 1920px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-1920x1280.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-1920x1280.jpeg") !important;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 14px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 20px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 14px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 1921px) and (max-width: 2560px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-2560x1770.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-2560x1770.jpeg") !important;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 14px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 20px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 14px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 2561px) and (max-width: 3840px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-3840x2560.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-3840x2560.jpeg") !important;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 14px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 20px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 14px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @media (min-width: 3841px) {
-    .layout {
-        background-image: url('../assets/img/vibrant/background-01-6000x4000.jpeg') !important;
-        /* background-size: cover; */
-        /* Extra Large background */
-        min-height: 100vh; /* Cover the full viewport height */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* overflow: hidden; */
-        /* position: absolute; or relative */
-        direction: rtl;
-        padding: 8px 0px 8px;
-    }
+	.layout {
+		background-image: url("../../../../assets/img/vibrant/background-01-6000x4000.jpeg") !important;
+		/* background-size: cover; */
+		/* Extra Large background */
+		min-height: 100vh; /* Cover the full viewport height */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		/* overflow: hidden; */
+		/* position: absolute; or relative */
+		direction: rtl;
+		padding: 8px 0px 8px;
+	}
 
-    .footer {
-        /* display: flex; */
-        height: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 0;
-        background: #001529;
-        color: #fff;
-        position: fixed;
-        font-family: 'Noto Sans Hebrew', sans-serif;
-        font-size: 14px;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background-origin: border-box;
-        bottom: 0;
-    }
+	.footer {
+		/* display: flex; */
+		height: 20px;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		background: #001529;
+		color: #fff;
+		position: fixed;
+		font-family: "Noto Sans Hebrew", sans-serif;
+		font-size: 14px;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		background-origin: border-box;
+		bottom: 0;
+	}
 }
 
 @font-face {
-    font-family: 'Noto Sans Hebrew';
-    src: url('/fonts/NotoSans/static/NotoSansHebrew-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: "Noto Sans Hebrew";
+	src: url("/fonts/NotoSans/static/NotoSansHebrew-Regular.ttf")
+		format("truetype");
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Noto Sans Hebrew';
-    src: url('/fonts/NotoSans/static/NotoSansHebrew-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+	font-family: "Noto Sans Hebrew";
+	src: url("/fonts/NotoSans/static/NotoSansHebrew-Bold.ttf")
+		format("truetype");
+	font-weight: 700;
+	font-style: normal;
 }
 
 body {
-    font-family: 'Noto Sans Hebrew', sans-serif;
+	font-family: "Noto Sans Hebrew", sans-serif;
 }

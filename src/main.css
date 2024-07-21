@@ -1,96 +1,120 @@
 /* index.css */
 html,
 body {
-    place-items: center;
-    padding: 0;
-    margin: 0;
-    background: #fff;
-    height: 100vh;
-    width: 100vw;
+	place-items: center;
+	padding: 0;
+	/* font-family: system-ui; */
+	margin: 0;
+	background: #fff;
+	height: 100vh;
+	width: 100vw;
 }
 
 #root {
-    max-width: 3840px;
-    max-height: 2560px;
-    margin: 0 auto;
-    padding: 1px;
-    text-align: center;
+	max-width: 3840px;
+	max-height: 2560px;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding: 1px;
+	text-align: center;
 }
 
 @font-face {
-    font-family: 'Noto Sans Hebrew';
-    src: url('/fonts/NotoSans/static/NotoSansHebrew-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+	font-family: "Noto Sans Hebrew";
+	src: url("/fonts/NotoSans/static/NotoSansHebrew-Regular.ttf")
+		format("truetype");
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Noto Sans Hebrew';
-    src: url('/fonts/NotoSans/static/NotoSansHebrew-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+	font-family: "Noto Sans Hebrew";
+	src: url("/fonts/NotoSans/static/NotoSansHebrew-Bold.ttf")
+		format("truetype");
+	font-weight: 700;
+	font-style: normal;
 }
 
 body {
-    font-family: 'Noto Sans Hebrew', sans-serif;
+	font-family: "Noto Sans Hebrew", sans-serif;
 }
 
 .ant-card .ant-card-body {
-    padding: 4px;
+	padding: 4px;
 }
 
 .ant-form-item {
-    margin: 10px;
+	margin: 10px;
 }
 
 .ant-select-selector {
-    padding: 10px;
+	padding: 10px;
 }
 
 @media (min-width: 1024px) and (max-width: 1600px) {
-    .ant-card .ant-card-head {
-        padding: 4px;
-        height: 25px;
-        min-height: 20px;
-    }
+	.ant-card .ant-card-head {
+		padding: 4px;
+		height: 25px;
+		min-height: 20px;
+	}
 
-    .ant-card-head-title {
-        font-size: 14px;
-    }
+	.ant-card-head-title {
+		font-size: 14px;
+	}
 
-    .ant-form-item {
-        margin: 4px;
-    }
+	.ant-form-item {
+		margin: 4px;
+	}
 }
 
 @media (min-width: 1620px) and (max-width: 2560px) {
-    .ant-card .ant-card-head {
-        padding: 6px;
-        height: 38px;
-        min-height: 25px;
-    }
+	.ant-card .ant-card-head {
+		padding: 6px;
+		height: 38px;
+		min-height: 25px;
+	}
 
-    .ant-card-head-title {
-        font-size: 16px;
-    }
+	.ant-card-head-title {
+		font-size: 16px;
+	}
 
-    .ant-form-item {
-        margin: 12px;
-    }
+	.ant-form-item {
+		margin: 12px;
+	}
 }
 
 @media (min-width: 2561px) and (max-width: 4800px) {
-    .ant-card .ant-card-head {
-        padding: 6px;
-        height: 40px;
-        min-height: 30px;
-    }
+	.ant-card .ant-card-head {
+		padding: 6px;
+		height: 40px;
+		min-height: 30px;
+	}
 
-    .ant-card-head-title {
-        font-size: 20px;
-    }
+	.ant-card-head-title {
+		font-size: 20px;
+	}
 
-    .ant-form-item {
-        margin: 12px;
-    }
+	.ant-form-item {
+		margin: 12px;
+	}
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.flex.fill {
+	height: 100%;
+}
+
+.flex.center {
+	justify-content: center;
 }

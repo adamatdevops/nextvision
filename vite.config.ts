@@ -4,7 +4,6 @@ import react from "@vitejs/plugin-react";
 import reactRefresh from "@vitejs/plugin-react-refresh";
 import checker from "vite-plugin-checker";
 import svgr from "vite-plugin-svgr";
-import { builderDevTools } from "@builder.io/dev-tools/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 // import envCompatible from "vite-plugin-env-compatible";
@@ -22,10 +21,8 @@ export default defineConfig({
 		//      overlay: false,
 		//      typescript: true,
 		//}),
-		builderDevTools(),
         svgr(),
         tsconfigPaths(),
-
 	],
 	resolve: {
 		alias: [
@@ -35,7 +32,7 @@ export default defineConfig({
 			},
 			{
                 find: '@',
-                replacement: resolve(__dirname, 'src'),
+                replacement: resolve(__dirname, './src'),
         	},
 		],
 	},
