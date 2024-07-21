@@ -49,9 +49,9 @@ const BackgroundImages: React.FC = () => {
 	const transitions = useTransition(index, {
 		key: index,
 		from: { opacity: 0 },
-		enter: { opacity: 0.3 },
+		enter: { opacity: 0.5 },
 		leave: { opacity: 0 },
-		config: { duration: 8000 },
+		config: { duration: 5000 },
 		onRest: (_a, _b, item) => {
 			if (index === item) {
 				setIndex((state) => (state + 1) % photos.length);
